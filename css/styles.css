@@ -1,6 +1,7 @@
 /* ===============================================================================VARIABLES Y FUENTES============================================================== */
 :root{
     --fuentePrincipal: 'Adam';
+    --fuenteSecundaria: 'Lato', sans-serif;
 
     --rosaColor: #bc6f6f;
 
@@ -14,22 +15,18 @@
 @font-face{
     font-family: 'Adam';
     src: url(../fonts/Adam-Medium.ttf);
-    font-weight: normal;
-    font-style: normal;
-
 }
-@font-face{
+/* @font-face{
     font-family: 'Adam';
     src: url(../fonts/Adam-Light.ttf);
     font-weight: lighter;
-    font-style: normal;
-}
-@font-face{
+} */
+/* @font-face{
     font-family: 'Adam';
     src: url(../fonts/Adam-Bold.ttf);
     font-weight: bold;
     font-style: normal;
-}
+} */
 /*========================================================================================== GLOBALES ==============================================================*/
 html
 {
@@ -42,6 +39,7 @@ html
 }
 body
 {
+    font-family: var(--fuenteSecundaria);
     font-size: 1.6rem;
     line-height: 2;
 }
@@ -76,7 +74,7 @@ h4
     background-position: center center;
     background-size: cover;
     height: 100vh;
-    min-height: 60rem;
+    /* min-height: 70rem; */
 
 }
 .barra{
@@ -115,8 +113,22 @@ h4
         align-items: center;
     }
     .navegacion a{
-        width: 33.3%;
+        width: 25%;
         padding: 0;
         margin-top: 0;
     }
+}
+.contenido-header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 50%;
+}
+.contenido-header h1{
+    color: var(--paletaUno);
+    font-size: 5vw;
+}
+.contenido-header p{
+
 }
