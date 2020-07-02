@@ -1,4 +1,4 @@
-/* ===============================================================================VARIABLES Y FUENTES======================================================================= */
+/* ===============================================================================VARIABLES Y FUENTES============================================================== */
 :root{
     --fuentePrincipal: 'Adam';
 
@@ -29,4 +29,94 @@
     src: url(../fonts/Adam-Bold.ttf);
     font-weight: bold;
     font-style: normal;
+}
+/*========================================================================================== GLOBALES ==============================================================*/
+html
+{
+    box-sizing: border-box;
+    font-size: 62.5%; /*Reset para REMS - 62.5% = 10px de 16px*/
+}
+*,*:before,:after
+{
+    box-sizing: inherit;
+}
+body
+{
+    font-size: 1.6rem;
+    line-height: 2;
+}
+img
+{
+    max-width: 100%;
+}
+h1
+{
+   font-size: 3.8rem;
+}
+h2
+{
+    font-size: 3.4rem;
+}
+h3
+{
+    font-size: 3rem;
+}
+h4
+{
+    font-size: 2.6rem;
+}
+/*=============================================================================== UTILIDADES ====================================================================*/
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+/*================================================================================ HEADER ==================================================================*/
+.site-header{
+    background-image: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 60rem;
+
+}
+.barra{
+    background-color: var(--paletaUno);
+}
+.logotipo{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+.navegacion{
+    margin-top: 3rem;
+}
+.navegacion a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--rosaColor);
+    font-family: 'Adam';
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    text-transform: uppercase;
+    transition: .5s ease-in-out;
+}
+.navegacion a:hover{
+    background-color: var(--rosaColor);
+    color: var(--paletaUno);
+    transform: scale(1.5);
+}
+@media (min-width: 768px){
+    .navegacion{
+        display: flex;
+        text-align: center;
+        align-items: center;
+    }
+    .navegacion a{
+        width: 33.3%;
+        padding: 0;
+        margin-top: 0;
+    }
 }
