@@ -126,11 +126,12 @@ margin-top: -2.5rem;
 .contenido-header{
     display: flex;
     text-align: center;
-    align-items: flex-end;
-    /* height: 40rem; */
+    align-items: center;
+    height: 50%;
 }
 @media (min-width: 768px){
     .contenido-header{
+        align-items: flex-end;
         height: 50%;
     }
 }
