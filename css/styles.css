@@ -16,17 +16,17 @@
     font-family: 'Adam';
     src: url(../fonts/Adam-Medium.ttf);
 }
-/* @font-face{
+@font-face{
     font-family: 'Adam';
     src: url(../fonts/Adam-Light.ttf);
     font-weight: lighter;
-} */
-/* @font-face{
+}
+@font-face{
     font-family: 'Adam';
     src: url(../fonts/Adam-Bold.ttf);
     font-weight: bold;
     font-style: normal;
-} */
+}
 /*========================================================================================== GLOBALES ==============================================================*/
 html
 {
@@ -85,8 +85,15 @@ h4
     margin: 0 auto;
     width: 100%;
 }
+.logotipo p{
+font-family: var(--fuentePrincipal);
+font-weight: bold;
+color: #000000;
+text-transform: uppercase;
+margin: 0;
+}
 .navegacion{
-    margin-top: 3rem;
+    margin-top: rem;
 }
 .navegacion a{
     display: block;
@@ -97,7 +104,7 @@ h4
     font-weight: bold;
     font-size: 2.5rem;
     padding: 1rem;
-    margin: 1rem 0 1rem 0;
+    /* margin: 1rem 0 1rem 0; */
     text-transform: uppercase;
     transition: .5s ease-in-out;
 }
@@ -128,7 +135,4 @@ h4
 .contenido-header h1{
     color: var(--paletaUno);
     font-size: 5vw;
-}
-.contenido-header p{
-
 }
