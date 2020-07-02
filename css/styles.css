@@ -74,7 +74,7 @@ h4
     background-position: center center;
     background-size: cover;
     height: 100vh;
-    /* min-height: 70rem; */
+    min-height: 70rem;
 
 }
 .barra{
@@ -127,8 +127,7 @@ margin-top: -2.5rem;
     display: flex;
     text-align: center;
     align-items: flex-end;
-    justify-content: bottom;
-    height: 40rem;
+    /* height: 40rem; */
 }
 @media (min-width: 768px){
     .contenido-header{
@@ -136,6 +135,7 @@ margin-top: -2.5rem;
     }
 }
 .contenido-header h1{
+    font-family: var(--fuentePrincipal);
     color: var(--paletaUno);
     font-size: 4rem;
     margin: 0;
