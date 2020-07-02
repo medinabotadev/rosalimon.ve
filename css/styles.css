@@ -90,10 +90,7 @@ font-family: var(--fuentePrincipal);
 font-weight: bold;
 color: #000000;
 text-transform: uppercase;
-margin: 0;
-}
-.navegacion{
-    margin-top: rem;
+margin-top: -2.5rem;
 }
 .navegacion a{
     display: block;
@@ -118,6 +115,7 @@ margin: 0;
         display: flex;
         text-align: center;
         align-items: center;
+        margin-top: 2rem;
     }
     .navegacion a{
         width: 25%;
@@ -127,12 +125,23 @@ margin: 0;
 }
 .contenido-header{
     display: flex;
-    flex-direction: column;
     text-align: center;
-    justify-content: center;
-    height: 50%;
+    align-items: flex-end;
+    justify-content: bottom;
+    height: 40rem;
+}
+@media (min-width: 768px){
+    .contenido-header{
+        height: 50%;
+    }
 }
 .contenido-header h1{
     color: var(--paletaUno);
-    font-size: 5vw;
+    font-size: 4rem;
+    margin: 0;
+}
+@media (min-width: 768px){
+    .contenido-header h1{
+    font-size: 8rem;
+    }
 }
