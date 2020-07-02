@@ -1,3 +1,32 @@
-h1{
-    background-color: red;
+/* ===============================================================================VARIABLES Y FUENTES======================================================================= */
+:root{
+    --fuentePrincipal: 'Adam';
+
+    --rosaColor: #bc6f6f;
+
+    --paletaUno: #f3f2e0;
+    --paletaDos: #f0d8cc;
+    --paletaTres: #ecb2b0;
+    --paletaCuatro: #776163;
+    --paletaCinco: #87907d;
+    --paletaSeis: #b6c9b3;
+}
+@font-face{
+    font-family: 'Adam';
+    src: url(../fonts/Adam-Medium.ttf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face{
+    font-family: 'Adam';
+    src: url(../fonts/Adam-Light.ttf);
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Adam';
+    src: url(../fonts/Adam-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
 }
