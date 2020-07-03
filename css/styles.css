@@ -139,5 +139,6 @@ margin-top: -2.5rem;
 @media (min-width: 768px){
     .site-header h1{
     font-size: 10rem;
+    line-height: 2;
     }
 }
