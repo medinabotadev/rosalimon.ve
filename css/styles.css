@@ -76,9 +76,13 @@ h4
     background-attachment: fixed;
     height: 100vh;
     min-height: 70rem;
-
+}
+.contenido-header{
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
 }
 .barra{
     background-color: var(--paletaUno);
@@ -111,7 +115,7 @@ margin-top: -2.5rem;
 .navegacion a:hover{
     background-color: var(--rosaColor);
     color: var(--paletaUno);
-    transform: scale(1.2);
+    transform: scale(1.25);
 }
 @media (min-width: 768px){
     .navegacion{
@@ -126,13 +130,11 @@ margin-top: -2.5rem;
         margin-top: 0;
     }
 }
-
 .site-header h1{
     font-family: var(--fuentePrincipal);
     color: var(--paletaUno);
     text-align: center;
     font-size: 5rem;
-    margin-top: 15rem;
 }
 @media (min-width: 768px){
     .site-header h1{
