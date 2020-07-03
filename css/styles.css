@@ -135,6 +135,7 @@ margin-top: -2.5rem;
     color: var(--paletaUno);
     text-align: center;
     font-size: 5rem;
+    padding-bottom: 5rem;
 }
 @media (min-width: 768px){
     .site-header h1{
