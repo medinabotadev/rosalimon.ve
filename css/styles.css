@@ -75,7 +75,7 @@ h4
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
-    min-height: 80rem;
+    min-height: 100rem;
 }
 .contenido-header{
     height: 100%;
