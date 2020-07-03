@@ -15,6 +15,7 @@
 @font-face{
     font-family: 'Adam';
     src: url(../fonts/Adam-Medium.ttf);
+    font-weight: normal;
 }
 @font-face{
     font-family: 'Adam';
@@ -25,7 +26,6 @@
     font-family: 'Adam';
     src: url(../fonts/Adam-Bold.ttf);
     font-weight: bold;
-    font-style: normal;
 }
 /*========================================================================================== GLOBALES ==============================================================*/
 html
@@ -42,6 +42,7 @@ body
     font-family: var(--fuenteSecundaria);
     font-size: 1.6rem;
     line-height: 2;
+    background-color: var(--paletaUno);
 }
 img
 {
@@ -68,6 +69,16 @@ h4
     max-width: 120rem;
     margin: 0 auto;
 }
+.seccion{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+/* .h2personalizado{
+    font-family: var(--fuentePrincipal);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+} */
 /*================================================================================ HEADER ==================================================================*/
 .site-header{
     background-image: url(../img/header.jpg);
@@ -142,4 +153,89 @@ margin-top: -2.5rem;
     font-size: 10rem;
     line-height: 2;
     }
+}
+/*===================================================================================== NOSOTROS INICIO =================================================*/
+.nosotros-inicio h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--fuentePrincipal);
+    font-weight: lighter;
+    line-height: 1.5;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.nosotros-inicio h2::after{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    height: 2px;
+    width: 300px;
+    background-color: var(--paletaCinco);
+}
+@media (min-width: 768px){
+    .nosotros-inicio h2::before{
+        content: '';
+        display: inline-block;
+        /* margin: 0 auto; */
+        height: 2px;
+        width: 100px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        background-color: var(--paletaCinco);
+    }
+    .nosotros-inicio h2::after{
+        content: '';
+        display: inline-block;
+        /* margin: 0 auto; */
+        height: 2px;
+        width: 100px;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        background-color: var(--paletaCinco);
+    }
+}
+
+.nosotros-inicio h2 span{
+    color: var(--paletaCinco);
+    font-weight: bold;
+}
+.contenido-nosotros{
+    background-image: url(../img/nosotrosInicio.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 1rem;
+}
+.iconos-nosotros{
+    text-align: center;
+
+}
+@media (min-width: 768px){
+    .iconos-nosotros{
+        display: flex;
+    }
+    .icono{
+
+    }
+}
+.icono{
+    color: var(--paletaUno);
+    background-color: rgba(135, 144, 125, 0.6);
+    margin: 1rem;
+    border-radius: .5rem;
+}
+.icono h3{
+    font-family: var(--fuentePrincipal);
+    text-transform: uppercase;
+}
+.icono p{
+    font-size: 2rem;
+}
+@media (min-width: 768px){
+    .icono{
+        width: 33.3%;
+    }
+}
+.icono img{
+    width: 25rem;
 }
