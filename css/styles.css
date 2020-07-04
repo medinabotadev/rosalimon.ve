@@ -244,3 +244,20 @@ margin-top: -2.5rem;
 .icono img{
     width: 25rem;
 }
+
+/*===================================================================================== PRODUCTOS INICIO =================================================*/
+.contenedor-productos {
+    display: flex;
+    justify-content: space-around;
+}
+.producto {
+    flex-basis: calc(33% - 1rem);
+    border: black solid 1px;
+    text-align: center;
+    height: 65rem;
+   
+    
+}
+.producto img {
+    width: 25rem;
+}
