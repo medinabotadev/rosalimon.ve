@@ -301,7 +301,6 @@ margin-top: -2.5rem;
     background-color: rgba(243, 242, 224, 0.8);
     text-align: center;
     margin: 1rem;
-    padding: 1rem;
     border: 2px solid var(--paletaSeis);
     border-radius: .5rem;
 }
@@ -309,7 +308,4 @@ margin-top: -2.5rem;
     .producto{
         flex-basis: 25%;
     }
-}
-.producto img{
-    width: 250px;
 }
