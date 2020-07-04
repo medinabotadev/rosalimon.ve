@@ -324,7 +324,7 @@ margin-top: -2.5rem;
     }
 }
 .producto{
-    background-color: rgba(243, 242, 224, .9);
+    background-color: rgba(243, 242, 224, 0.8);
     text-align: center;
     margin: 1rem;
     border: 2px solid var(--paletaSeis);
@@ -363,7 +363,7 @@ margin-top: -2.5rem;
     display: block;
 }
 .ver-todas a{
-    background-color: rgb(144, 202, 196);
+    background-color: rgb(134, 204, 197);
 }
 @media (min-width: 768px){
     .ver-todas{
