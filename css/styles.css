@@ -317,7 +317,7 @@ h4 {
   }
 }
 .producto {
-  background-color: rgba(243, 242, 224, 0.8);
+  background-color: rgba(243, 242, 224, 0.9);
   text-align: center;
   margin: 1rem;
   border: 2px solid var(--paletaSeis);
@@ -368,7 +368,10 @@ h4 {
     width: auto;
   }
 }
-body {
+
+/* PAGINAS INTERNAS */
+/* CONTACTO */
+.contacto{
     background: -webkit-gradient(linear, left top, left bottom, from(#f4f8fa), to(#ff4f7b)) fixed;
 
   }
