@@ -184,7 +184,7 @@ h4 {
   padding-bottom: 3rem;
 }
 .nosotros-inicio h2::after {
-  content: "";
+  content: '';
   display: block;
   margin: 0 auto;
   height: 2px;
@@ -193,7 +193,7 @@ h4 {
 }
 @media (min-width: 768px) {
   .nosotros-inicio h2::before {
-    content: "";
+    content: '';
     display: inline-block;
     /* margin: 0 auto; */
     height: 2px;
@@ -203,7 +203,7 @@ h4 {
     background-color: var(--paletaCinco);
   }
   .nosotros-inicio h2::after {
-    content: "";
+    content: '';
     display: inline-block;
     /* margin: 0 auto; */
     height: 2px;
@@ -270,7 +270,7 @@ h4 {
   padding-bottom: 3rem;
 }
 .productos-inicio h2::after {
-  content: "";
+  content: '';
   display: block;
   margin: 0 auto;
   height: 2px;
@@ -279,7 +279,7 @@ h4 {
 }
 @media (min-width: 768px) {
   .productos-inicio h2::before {
-    content: "";
+    content: '';
     display: inline-block;
     /* margin: 0 auto; */
     height: 2px;
@@ -289,7 +289,7 @@ h4 {
     background-color: var(--paletaTres);
   }
   .productos-inicio h2::after {
-    content: "";
+    content: '';
     display: inline-block;
     /* margin: 0 auto; */
     height: 2px;
@@ -368,7 +368,66 @@ h4 {
     width: auto;
   }
 }
-
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ CONTACTO +++++++++++++++++++++++++++++++++++++++++++*/
+.contacto-inicio h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--fuentePrincipal);
+    font-weight: lighter;
+    line-height: 1.5;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .contacto-inicio h2::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    height: 2px;
+    width: 300px;
+    background-color: var(--paletaCuatro);
+  }
+  @media (min-width: 768px) {
+    .contacto-inicio h2::before {
+      content: '';
+      display: inline-block;
+      /* margin: 0 auto; */
+      height: 2px;
+      width: 100px;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      background-color: var(--paletaCuatro);
+    }
+    .contacto-inicio h2::after {
+      content: '';
+      display: inline-block;
+      /* margin: 0 auto; */
+      height: 2px;
+      width: 100px;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      background-color: var(--paletaCuatro);
+    }
+  }
+  .contacto-inicio h2 span {
+    color: var(--paletaCuatro);
+    font-weight: bold;
+  }
+  .contenido-contacto{
+      background-image: url(../img/contacto.jpg);
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      padding: 5rem;
+  }
+  .contenido-contacto p{
+      font-size: 2rem;
+      color: var(--paletaUno);
+}
+  .contenido-contacto a{
+      display: inline-block;
+      width: auto;
+      background-color: rgb(134, 204, 197);
+  }
 /* PAGINAS INTERNAS */
 /* CONTACTO */
 .contacto{
