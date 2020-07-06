@@ -413,21 +413,92 @@ h4 {
     font-weight: bold;
   }
   .contenido-contacto{
-      background-image: url(../img/contacto.jpg);
-      background-position: center center;
-      background-size: cover;
-      background-attachment: fixed;
-      padding: 5rem;
+    background-image: url(../img/contacto.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 5rem;
   }
   .contenido-contacto p{
-      font-size: 2rem;
-      color: var(--paletaUno);
+    font-size: 2rem;
+    color: var(--paletaUno);
 }
   .contenido-contacto a{
-      display: inline-block;
-      width: auto;
-      background-color: rgb(134, 204, 197);
+    display: inline-block;
+    width: auto;
+    background-color: rgb(134, 204, 197);
   }
+  /*========================================= SECCION INFERIOR ==============================================*/
+  /* TESTIMONIALES */
+  .seccion-inferior h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    color: var(--rosaColor);
+    line-height: 1.5;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .seccion-inferior h3::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 30%;
+    background-color: var(--rosaColor);
+    margin: 0 auto;
+  }
+  @media (min-width: 768px){
+      .seccion-inferior{
+        display: flex;
+        justify-content: space-between;
+      }
+      .testimoniales{
+        flex-basis: calc(50% - 1rem);
+      }
+
+  }
+  .testimonial{
+      background-color: var(--rosaColor);
+      font-size: 2.4rem;
+      padding: 2rem;
+      color: var(--paletaUno);
+      border-radius: 2rem;
+      width: 95%;
+      margin: 0 auto;
+  }
+  .testimonial p{
+      text-align: right;
+  }
+  .testimonial blockquote::before
+{
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: -2rem;
+    
+}
+.testimonial blockquote
+{
+    position: relative;
+    padding-left: 5rem;
+}
+/*===================================================== MARCAS ============================*/
+@media (min-width: 768px){
+    .marcas{
+        flex-basis: calc(50% - 1rem);
+      }
+}
+.imagenes-marca{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.imagenes-marca img{
+    width: 25%;
+}
 /* PAGINAS INTERNAS */
 /* CONTACTO */
 .contacto{
