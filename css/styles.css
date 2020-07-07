@@ -92,8 +92,24 @@ h4 {
   font-size: 2.5rem;
   margin: 0;
 }
+.rosa{
+  font-family: 'Adam';
+  color: var(--rosaColor);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.limon{
+  color: #000000;
+  font-weight: lighter;
+}
+.headeres{
+  text-transform: uppercase;
+  font-family: 'Adam';
+  font-weight: lighter;
+  text-align: center;
+}
 /*================================================================================ HEADER ==================================================================*/
-.site-header .header-inicio{
+.site-header.header-inicio{
   background-image: url(../img/headerTresMobile.jpg);
   background-position: center center;
   background-size: cover;
@@ -102,7 +118,7 @@ h4 {
   min-height: 100rem;
 }
 @media (min-width: 768px) {
-  .site-header {
+  .site-header.header-inicio{
     background-image: url(../img/headerTres.jpg);
   }
 }
@@ -630,10 +646,37 @@ h4 {
   font-family: 'Adam';
   color: var(--paletaCuatro)
 } 
-
-
 /* CONTACTO */
 .contacto{
     background: -webkit-gradient(linear, left top, left bottom, from(#f4f8fa), to(#ff4f7b)) fixed;
 
   }
+/*************************************************** NOSOTROS *****************************************/
+.pagina-nosotros{
+  width: 95%;
+  margin: 0 auto;
+}
+@media (min-width: 768px){
+  .pagina-nosotros{
+    display: flex;
+  } 
+}
+.imagen-nosotros{
+
+}
+@media (min-width: 768px){
+  .imagen-nosotros{
+    flex-basis: calc(50% - 1rem);
+  }
+}
+.texto-nosotros blockquote{
+  text-align: center;
+  font-family: 'Adam';
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+@media (min-width: 768px){
+  .texto-nosotros{
+    flex-basis: 50%;
+  }
+}
