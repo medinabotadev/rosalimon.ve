@@ -86,7 +86,7 @@ h4 {
   background-color: var(--paletaTres);
 }
 .botonBanners{
-  
+
 }
 .precio {
   font-family: "Lato";
@@ -615,6 +615,16 @@ h4 {
 .banners{
   flex-basis: calc(75% - 1rem);
 }
+.banners article{
+  height: auto;
+  margin: 0;
+}
+.banners h2{
+  margin: 0;
+}
+.contenido-producto-banner{
+  min-height: unset;
+}
 .card-banner-uno {
   width: 100%;
   height: 350px;
@@ -647,7 +657,8 @@ h4 {
 }
 .content{
   font-family: 'Adam';
-  color: var(--paletaCuatro)
+  color: var(--paletaCuatro);
+  display: flex;
 } 
 /* CONTACTO */
 .contacto{
