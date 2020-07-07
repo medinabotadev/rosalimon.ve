@@ -546,6 +546,12 @@ h4 {
   font-size: 2rem;
   padding: 1rem;
   width: 25%;
+  transition: .5s ease-in-out;
+}
+.navegacion-footer a:hover{
+    background-color: var(--rosaColor);
+    color: var(--paletaUno);
+    border-radius: .5rem;
 }
 @media (min-width: 768px){
     .navegacion-footer{
