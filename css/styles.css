@@ -77,13 +77,16 @@ h4 {
   font-weight: 900;
   color: white;
   border-radius: 0.5rem;
-  display: block;
+  /* display: block; */
 }
 .botonPrimario {
   background-color: var(--paletaSeis);
 }
 .botonSecundario {
   background-color: var(--paletaTres);
+}
+.botonBanners{
+  
 }
 .precio {
   font-family: "Lato";
@@ -662,7 +665,12 @@ h4 {
   } 
 }
 .imagen-nosotros{
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imagen-nosotros img{
+  width: 50%;
 }
 @media (min-width: 768px){
   .imagen-nosotros{
@@ -677,6 +685,6 @@ h4 {
 }
 @media (min-width: 768px){
   .texto-nosotros{
-    flex-basis: 50%;
+    flex-basis: calc(50% - 1rem);
   }
 }
