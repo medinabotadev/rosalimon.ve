@@ -417,7 +417,7 @@ h4 {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    padding: 5rem;
+    padding: 10rem;
   }
   .contenido-contacto p{
     font-size: 2rem;
@@ -498,6 +498,64 @@ h4 {
 }
 .imagenes-marca img{
     width: 25%;
+}
+/*======================================================= FOOTER =========================================*/
+.site-footer{
+    background-color: var(--paletaUno);
+    border-top: 2px solid var(--rosaColor);
+    margin-bottom: 0;
+}
+.site-footer p{
+    background-color: var(--rosaColor);
+    color: var(--paletaUno);
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+}
+.site-footer .logotipo{
+    flex-basis: 30%;
+    margin: 0;
+}
+.site-footer .logotipo img{
+    width: 150px;
+    padding: 1rem;
+}
+.site-footer .navegacion-footer{
+    text-align: center;
+    display: none;
+}
+@media (min-width: 768px){
+    .contenido-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .site-footer .logotipo img{
+        width: 80%;
+        padding: 1rem;
+        flex-basis: 30%;
+    }
+}
+.navegacion-footer a{
+  text-align: end;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--rosaColor);
+  font-family: "Adam";
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 1rem;
+  width: 25%;
+}
+@media (min-width: 768px){
+    .navegacion-footer{
+        flex-basis: 70%;
+    }
+}
+@media (min-width: 768px){
+    .site-footer .navegacion-footer{
+        display: block;
+    }
 }
 /* PAGINAS INTERNAS */
 /* CONTACTO */
