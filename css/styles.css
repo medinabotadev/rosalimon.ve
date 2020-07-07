@@ -93,7 +93,7 @@ h4 {
   margin: 0;
 }
 /*================================================================================ HEADER ==================================================================*/
-.site-header {
+.site-header .header-inicio{
   background-image: url(../img/headerTresMobile.jpg);
   background-position: center center;
   background-size: cover;
@@ -413,22 +413,203 @@ h4 {
     font-weight: bold;
   }
   .contenido-contacto{
-      background-image: url(../img/contacto.jpg);
-      background-position: center center;
-      background-size: cover;
-      background-attachment: fixed;
-      padding: 5rem;
+    background-image: url(../img/contacto.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 10rem;
   }
   .contenido-contacto p{
-      font-size: 2rem;
-      color: var(--paletaUno);
+    font-size: 2rem;
+    color: var(--paletaUno);
 }
   .contenido-contacto a{
-      display: inline-block;
-      width: auto;
-      background-color: rgb(134, 204, 197);
+    display: inline-block;
+    width: auto;
+    background-color: rgb(134, 204, 197);
   }
+  /*========================================= SECCION INFERIOR ==============================================*/
+  /* TESTIMONIALES */
+  .seccion-inferior h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    color: var(--rosaColor);
+    line-height: 1.5;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .seccion-inferior h3::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 30%;
+    background-color: var(--rosaColor);
+    margin: 0 auto;
+  }
+  @media (min-width: 768px){
+      .seccion-inferior{
+        display: flex;
+        justify-content: space-between;
+      }
+      .testimoniales{
+        flex-basis: calc(50% - 1rem);
+      }
+
+  }
+  .testimonial{
+      background-color: var(--rosaColor);
+      font-size: 2.4rem;
+      padding: 2rem;
+      color: var(--paletaUno);
+      border-radius: 2rem;
+      width: 95%;
+      margin: 0 auto;
+  }
+  .testimonial p{
+      text-align: right;
+  }
+  .testimonial blockquote::before
+{
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: -2rem;
+    
+}
+.testimonial blockquote
+{
+    position: relative;
+    padding-left: 5rem;
+}
+/*===================================================== MARCAS ============================*/
+@media (min-width: 768px){
+    .marcas{
+        flex-basis: calc(50% - 1rem);
+      }
+}
+.imagenes-marca{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.imagenes-marca img{
+    width: 25%;
+}
+/*======================================================= FOOTER =========================================*/
+.site-footer{
+    background-color: var(--paletaUno);
+    border-top: 2px solid var(--rosaColor);
+    margin-bottom: 0;
+}
+.site-footer p{
+    background-color: var(--rosaColor);
+    color: var(--paletaUno);
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+}
+.site-footer .logotipo{
+    flex-basis: 30%;
+    margin: 0;
+}
+.site-footer .logotipo img{
+    width: 150px;
+    padding: 1rem;
+}
+.site-footer .navegacion-footer{
+    text-align: center;
+    display: none;
+}
+@media (min-width: 768px){
+    .contenido-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .site-footer .logotipo img{
+        width: 80%;
+        padding: 1rem;
+        flex-basis: 30%;
+    }
+}
+.navegacion-footer a{
+  text-align: end;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--rosaColor);
+  font-family: "Adam";
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 1rem;
+  width: 25%;
+  transition: .5s ease-in-out;
+}
+.navegacion-footer a:hover{
+    background-color: var(--rosaColor);
+    color: var(--paletaUno);
+    border-radius: .5rem;
+}
+@media (min-width: 768px){
+    .navegacion-footer{
+        flex-basis: 70%;
+    }
+}
+@media (min-width: 768px){
+    .site-footer .navegacion-footer{
+        display: block;
+    }
+}
 /* PAGINAS INTERNAS */
+/* PRODUCTOS */
+.pagina-productos{
+  display: flex;
+}
+.categorias{
+  flex-basis: calc(25% - 1rem);
+}
+.banners{
+  flex-basis: calc(75% - 1rem);
+}
+.card-banner-uno {
+  width: 100%;
+  height: 350px;
+  background: url('../img/maquillaje-banner.jpg')no-repeat center center/cover;
+  margin-bottom: 40px;
+}
+.card-banner-dos{
+  width: 100%;
+  height: 350px;
+  background: url('../img/cuidadopiel-banner.jpg')no-repeat center center/cover;
+  margin-bottom: 40px;
+}
+.card-banner-tres {
+  width: 100%;
+  height: 350px;
+  background: url('../img/belleza-banner.jpg')no-repeat center center/cover;
+  margin-bottom: 40px;
+}
+.card-banner-cuatro {
+  width: 100%;
+  height: 350px;
+  background: url('../img/fragancias-banner.jpg')no-repeat center center/cover;
+  margin-bottom: 40px;
+}
+.card-banner-cinco {
+  width: 100%;
+  height: 350px;
+  background: url('../img/accesorios-banner.jpg')no-repeat center center/cover;
+  margin-bottom: 40px;
+}
+.content{
+  font-family: 'Adam';
+  color: var(--paletaCuatro)
+} 
+
+
 /* CONTACTO */
 .contacto{
     background: -webkit-gradient(linear, left top, left bottom, from(#f4f8fa), to(#ff4f7b)) fixed;
