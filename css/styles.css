@@ -648,9 +648,11 @@ h4 {
 } 
 /* CONTACTO */
 .contacto{
-    background: -webkit-gradient(linear, left top, left bottom, from(#f4f8fa), to(#ff4f7b)) fixed;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--paletaUno)), to(var(--paletaUno))) fixed;
+}
 
-  }
+
+
 /*************************************************** NOSOTROS *****************************************/
 .pagina-nosotros{
   width: 95%;
