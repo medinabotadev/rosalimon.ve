@@ -86,7 +86,7 @@ h4 {
   background-color: var(--paletaTres);
 }
 .botonBanners{
-
+background-color: rgb(134, 204, 197);
 }
 .precio {
   font-family: "Lato";
@@ -817,7 +817,14 @@ h4 {
     flex-basis: calc(25% - 1rem);
   }
 }
-
+.contenido-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 25rem;
+  align-items: center;
+  padding: .5rem;
+}
 /* CONTACTO */
 .contacto{
     background: -webkit-gradient(linear, left top, left bottom, from(var(--paletaUno)), to(var(--paletaUno))) fixed;
