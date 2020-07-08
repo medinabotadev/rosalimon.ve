@@ -77,13 +77,16 @@ h4 {
   font-weight: 900;
   color: white;
   border-radius: 0.5rem;
-  display: block;
+  /* display: block; */
 }
 .botonPrimario {
   background-color: var(--paletaSeis);
 }
 .botonSecundario {
   background-color: var(--paletaTres);
+}
+.botonBanners{
+
 }
 .precio {
   font-family: "Lato";
@@ -94,7 +97,7 @@ h4 {
 }
 .rosa{
   font-family: 'Adam';
-  color: var(--rosaColor);
+  color: var(--paletaUno);
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -103,10 +106,20 @@ h4 {
   font-weight: lighter;
 }
 .headeres{
+  color: var(--paletaUno);
   text-transform: uppercase;
   font-family: 'Adam';
-  font-weight: lighter;
+  font-weight: bold;
   text-align: center;
+  margin: 0;
+}
+.headeres:after{
+  content: '';
+  display: block;
+  background-color: var(--paletaUno);
+  height: 2px;
+  width: 200px;
+  margin: 0 auto;
 }
 /*================================================================================ HEADER ==================================================================*/
 .site-header.header-inicio{
@@ -604,26 +617,138 @@ h4 {
 /* PAGINAS INTERNAS */
 /* PRODUCTOS */
 .pagina-productos{
-  display: flex;
+  background: url(../img/green.jpg);
+  background-position: center;
+  background-size: cover;
 }
-.categorias{
-  flex-basis: calc(25% - 1rem);
+@media (min-width: 768px){
+  .pagina-productos{
+    background: linear-gradient(to top, #f3f2e0, #bc6f6f);
+    /* background: url(../img/green.jpg);
+    background-position: center;
+    background-size: cover; */
+  }
+}
+@media (min-width: 768px){
+  .contenido-paginaproductos{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px){
+  .categorias{
+    flex-basis: calc(25% - 1rem);
+  }
+}
+.sidebar ul{
+  list-style: none;
+  padding: 0;
+  background-color: var(--paletaUno);
+  border-radius: .5rem;
+  margin: 0;
+}
+.sidebar ul li{
+  padding: 10px;
+  text-align: center;
+  border-bottom: .5px solid var(--paletaCinco);
+}
+.sidebar ul li:last-of-type{
+  border: none;
+}
+.sidebar ul li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Adam';
+  font-weight: bold;
+  color: var(--rosaColor);
+  font-size: 1.9rem;
+}
+.sidebar ul li:hover{
+  background-color: #b6b5a8;
+  border-radius: .5rem;
+}
+.categorias h3{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Adam';
+  color: var(--paletaUno);
+  font-size: 3rem;
+  margin: 3.8rem 0;
+}
+.categorias h3::after{
+  content: '';
+  display: block;
+  background-color: var(--paletaUno);
+  height: 2px;
+  width: 100px;
+  margin: 0 auto;
 }
 .banners{
   flex-basis: calc(75% - 1rem);
 }
+.banners article h2{
+  color: var(--paletaUno);
+}
+.banners article p{
+  font-family: 'Lato';
+  text-align: center;
+  color: #000000;
+}
+.banners h1{
+  text-transform: uppercase;
+  font-family: 'Adam';
+  color: var(--paletaUno);
+  text-align: center;
+  margin: 3rem 0;
+}
+.banners h1:after{
+  content: '';
+  display: block;
+  background-color: var(--paletaUno);
+  height: 2px;
+  width: 100px;
+  margin: 0 auto;
+}
+.banners article{
+  border-radius: .5rem;
+  height: auto;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+.banners h2{
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Adam';
+  color: var(--paletaUno);
+}
+.contenido-producto-banner{
+  min-height: unset;
+}
 .card-banner-uno {
   width: 100%;
   height: 350px;
-  background: url('../img/maquillaje-banner.jpg')no-repeat center center/cover;
+  background: url('../img/maquillaje-banner2.jpg')no-repeat center center/cover;
   margin-bottom: 40px;
 }
+/* .card-banner-uno h2{
+  background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(255, 255, 255));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
 .card-banner-dos{
   width: 100%;
   height: 350px;
   background: url('../img/cuidadopiel-banner.jpg')no-repeat center center/cover;
   margin-bottom: 40px;
 }
+/* .card-banner-dos h2{
+  background: -webkit-linear-gradient(rgb(10, 94, 7), rgb(255, 255, 255));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
 .card-banner-tres {
   width: 100%;
   height: 350px;
@@ -644,8 +769,46 @@ h4 {
 }
 .content{
   font-family: 'Adam';
-  color: var(--paletaCuatro)
+  color: var(--paletaCuatro);
+  display: flex;
 } 
+/*=========================================================== ELEMENTOS DE PRODUCTOS */
+.items{
+  display: none;
+
+}
+.items:target{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.items h3{
+  font-family: 'Adam';
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+}
+.item{
+  margin-top: 1rem;
+  background-color: var(--paletaUno);
+  flex-basis: calc(50% - 1rem);
+  border-radius: .5rem;
+}
+.item img{
+  padding: .5rem;
+}
+.item .precio{
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(0, 107, 0);
+}
+@media (min-width: 768px){
+  .item{
+    flex-basis: calc(25% - 1rem);
+  }
+}
+
 /* CONTACTO */
 .contacto{
     background: -webkit-gradient(linear, left top, left bottom, from(var(--paletaUno)), to(var(--paletaUno))) fixed;
@@ -658,13 +821,22 @@ h4 {
   width: 95%;
   margin: 0 auto;
 }
+.fondo-nosotros{
+  background: linear-gradient(to top, #f3f2e0, #bc6f6f);
+}
 @media (min-width: 768px){
   .pagina-nosotros{
     display: flex;
   } 
 }
 .imagen-nosotros{
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.imagen-nosotros img{
+  width: 50%;
 }
 @media (min-width: 768px){
   .imagen-nosotros{
@@ -676,9 +848,10 @@ h4 {
   font-family: 'Adam';
   font-weight: bolder;
   font-size: 2.5rem;
+  color: var(--paletaUno);
 }
 @media (min-width: 768px){
   .texto-nosotros{
-    flex-basis: 50%;
+    flex-basis: calc(50% - 1rem);
   }
 }
