@@ -522,18 +522,23 @@ background-color: rgb(134, 204, 197);
     padding-left: 5rem;
 }
 /*===================================================== MARCAS ============================*/
-@media (min-width: 768px){
-    .marcas{
-        flex-basis: calc(50% - 1rem);
-      }
-}
+
 .imagenes-marca{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  display: flex;
+  -webkit-display: flex;
+  justify-content: space-evenly;
+  -webkit-justify-content: space-evenly;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+@media (min-width: 768px){
+  .marcas{
+      flex-basis: calc(50% - 1rem);
+    }
 }
 .imagenes-marca img{
     width: 25%;
+    -webkit-width: 25%;
 }
 /*======================================================= FOOTER =========================================*/
 .site-footer{
@@ -605,7 +610,6 @@ background-color: rgb(134, 204, 197);
 @media (min-width: 768px){
   .redes-sociales{
     text-align: unset;
-
   }
 }
 .redes-sociales img{
