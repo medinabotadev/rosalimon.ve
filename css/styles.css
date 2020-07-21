@@ -124,6 +124,9 @@ background-color: rgb(134, 204, 197);
 .d-block{
   display: block;
 }
+.ocultar{
+  display: none;
+}
 /*================================================================================ HEADER ==================================================================*/
 .site-header.header-inicio{
   background-image: url(../img/headerTresMobile.jpg);
@@ -678,6 +681,17 @@ background-color: rgb(134, 204, 197);
   background-color: #b6b5a8;
   border-radius: .5rem;
 }
+.categorias a{
+  position: relative;
+}
+.activo::after{
+  position: absolute;
+  content: '';
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background-color: var(--rosaColor);
+}
 .categorias h3{
   text-align: center;
   text-transform: uppercase;
@@ -792,12 +806,14 @@ background-color: rgb(134, 204, 197);
   color: var(--paletaCuatro);
   display: flex;
 } 
-/*=========================================================== ELEMENTOS DE PRODUCTOS */
-.items{
-  display: none;
+/* =========================================================== ELEMENTOS DE PRODUCTOS */
 
-}
-.items:target{
+/*.items:target{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}*/
+.mostrar-items{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
