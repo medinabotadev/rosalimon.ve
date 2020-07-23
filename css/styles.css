@@ -1098,6 +1098,7 @@ background-color: rgb(134, 204, 197);
 @media (min-width: 768px){
   .item-carrito{
     display: flex;
+    flex-direction: row;
     align-items: center;
   }
   .item-carrito h3{
