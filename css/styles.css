@@ -14,6 +14,17 @@
   --paletaCinco: #87907d;
   --paletaSeis: #b6c9b3;
 }
+::-webkit-scrollbar{
+  width: 1rem;
+}
+::-webkit-scrollbar-track{
+  border-radius: .5rem;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: .5rem;
+  background-color: var(--paletaCinco);
+}
 @font-face {
   font-family: "Adam";
   src: url(../fonts/Adam-Medium.ttf);
@@ -158,8 +169,8 @@ width: 55px;
   text-align: center;
 }
 .miniaturas{
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 60px;
+  max-height: 60px;
   object-fit: contain;
 }
 /* LOADING  */
@@ -339,15 +350,16 @@ width: 55px;
 @media (min-width: 768px) {
   .iconos-nosotros {
     display: flex;
+    justify-content: space-between;
   }
   .icono {
-    width: 33.3%;
+    flex-basis: calc(33.3% - 1rem);
   }
 }
 .icono {
   color: var(--paletaCuatro);
   background-color: rgba(236, 178, 176, 0.5);
-  margin: 1rem;
+  /* margin: 1rem; */
   border-radius: 0.5rem;
   padding: 1rem;
 }
