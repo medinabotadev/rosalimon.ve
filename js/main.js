@@ -1,5 +1,7 @@
+$('.page').hide()
 $(document).ready(function(){
-    
+    $('.loading').remove()
+    $('.page').fadeIn(500)
 
     // MENU MOVIL
     var img = $('.menu-movil img').attr('src');
@@ -18,16 +20,20 @@ $(document).ready(function(){
 
     // MOSTRAR Y OCULTAR PRODUCTOS
     $('.items').hide()
-    $('.categorias a').on('click', function(event){
 
-        var enlace = $(this).attr('href')
-        $(enlace).addClass('mostrar-items')
-        $(enlace).slideToggle(1500)
-    })
 
-    $('.banner a').on('click', function(event){
-        var enlace = $(this).attr('href')
-        $(enlace).addClass('mostrar-items')
-        $(enlace).slideToggle(500)
-    })
+
+
+    // $('.categorias a').on('click', function(event){
+
+    //     var enlace = $(this).attr('href')
+    //     $(enlace).addClass('mostrar-items')
+    //     $(enlace).slideToggle(1000)
+    // })
+
+    // $('.banner a').on('click', function(event){
+    //     var enlace = $(this).attr('href')
+    //     $(enlace).addClass('mostrar-items')
+    //     $(enlace).slideToggle(1000)
+    // })
 })
