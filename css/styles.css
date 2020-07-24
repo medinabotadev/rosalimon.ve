@@ -150,6 +150,16 @@ background-color: var(--blancorosaColor);
 .menu-movil img{
 width: 55px;
 }
+/* LIGHTBOX */
+.galeria{
+  margin-top: 3rem;
+  text-align: center;
+}
+.miniaturas{
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: contain;
+}
 /*================================================================================ HEADER ==================================================================*/
 .site-header.header-inicio{
   background-image: url(../img/headerTresMobile.jpg);
