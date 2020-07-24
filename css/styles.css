@@ -131,7 +131,7 @@ background-color: var(--blancorosaColor);
   display: none;
 }
 .menu-activo{
-  border-bottom: 2px solid var(--rosaColor);
+  border: 2px solid var(--rosaColor);
 }
 .menu-movil:hover{
   cursor: pointer;
@@ -166,6 +166,7 @@ width: 55px;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  -webkit-background-attachment: fixed;
   height: 100vh;
   min-height: 100rem;
 }
