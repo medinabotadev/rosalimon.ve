@@ -4,6 +4,8 @@
   --fuenteSecundaria: "Lato", sans-serif;
 
   --rosaColor: #bc6f6f;
+  --blancorosaColor: #ffeeee;
+  --rosaProductos: rgba(236, 178, 176,); 
 
   --paletaUno: #f3f2e0;
   --paletaDos: #f0d8cc;
@@ -41,7 +43,7 @@ body {
   font-family: var(--fuenteSecundaria);
   font-size: 1.6rem;
   line-height: 2;
-  background-color: var(--paletaUno);
+  background-color: white; /** CAMBIO DE PRUEBA **/
 }
 img {
   width: 100%;
@@ -74,19 +76,19 @@ h4 {
   text-transform: uppercase;
   text-align: center;
   font-family: "Lato";
-  font-weight: 900;
-  color: white;
-  border-radius: 0.5rem;
+  font-weight: 400;
+  color: black;
+  border-radius: 2rem;
   /* display: block; */
 }
 .botonPrimario {
-  background-color: var(--paletaSeis);
-}
-.botonSecundario {
-  background-color: var(--paletaTres);
+  background-color: var(--blancorosaColor);
+    border: 1px solid black;
+    border-radius: 2rem;
+    color: black;
 }
 .botonBanners{
-background-color: rgb(134, 204, 197);
+background-color: var(--blancorosaColor);
 }
 .precio {
   font-family: "Lato";
@@ -97,7 +99,7 @@ background-color: rgb(134, 204, 197);
 }
 .rosa{
   font-family: 'Adam';
-  color: var(--paletaUno);
+  color: var(--rosaColor);
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -106,17 +108,18 @@ background-color: rgb(134, 204, 197);
   font-weight: lighter;
 }
 .headeres{
-  color: var(--paletaUno);
+  /* background-color: var(--paletaSeis); */
+  color: var(--paletaCinco);
   text-transform: uppercase;
   font-family: 'Adam';
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   margin: 0;
 }
 .headeres:after{
   content: '';
   display: block;
-  background-color: var(--paletaUno);
+  background-color: var(--rosaColor);
   height: 2px;
   width: 200px;
   margin: 0 auto;
@@ -126,6 +129,26 @@ background-color: rgb(134, 204, 197);
 }
 .ocultar{
   display: none;
+}
+.menu-activo{
+  border-bottom: 2px solid var(--rosaColor);
+}
+.menu-movil:hover{
+  cursor: pointer;
+}
+@media (min-width: 768px){
+  .menu-movil{
+    display: none;
+  }
+}
+.menu-movil p{
+  text-transform: uppercase;
+  font-family: var(--fuentePrincipal);
+  font-weight: bold;
+  margin: 0;
+}
+.menu-movil img{
+width: 55px;
 }
 /*================================================================================ HEADER ==================================================================*/
 .site-header.header-inicio{
@@ -149,7 +172,7 @@ background-color: rgb(134, 204, 197);
   text-align: center;
 }
 .barra {
-  background-color: var(--paletaUno);
+  background-color: white; /** CAMBIO COLOR PRUEBA **/ 
 }
 .logotipo {
   text-align: center;
@@ -163,6 +186,9 @@ background-color: rgb(134, 204, 197);
   color: #000000;
   text-transform: uppercase;
   margin-top: -2.5rem;
+}
+.navegacion{
+  display: none;
 }
 .navegacion a {
   display: block;
@@ -183,7 +209,7 @@ background-color: rgb(134, 204, 197);
 
 .navegacion a:hover {
   background-color: var(--rosaColor);
-  color: var(--paletaUno);
+  color: white;
   transform: scale(1.25);
 }
 @media (min-width: 768px) {
@@ -201,7 +227,8 @@ background-color: rgb(134, 204, 197);
 }
 .site-header h1 {
   font-family: var(--fuentePrincipal);
-  color: var(--paletaUno);
+  /* color: var(--paletaUno); */
+  color: white;
   text-align: center;
   font-size: 5rem;
   padding-bottom: 5rem;
@@ -228,7 +255,7 @@ background-color: rgb(134, 204, 197);
   margin: 0 auto;
   height: 2px;
   width: 300px;
-  background-color: var(--paletaCinco);
+  background-color: var(--paletaTres);
 }
 @media (min-width: 768px) {
   .nosotros-inicio h2::before {
@@ -239,7 +266,7 @@ background-color: rgb(134, 204, 197);
     width: 100px;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    background-color: var(--paletaCinco);
+    background-color: var(--paletaTres);
   }
   .nosotros-inicio h2::after {
     content: '';
@@ -249,16 +276,16 @@ background-color: rgb(134, 204, 197);
     width: 100px;
     margin-left: 1rem;
     margin-bottom: 1rem;
-    background-color: var(--paletaCinco);
+    background-color: var(--paletaTres);
   }
 }
 
 .nosotros-inicio h2 span {
-  color: var(--paletaCinco);
+  color: var(--paletaTres);
   font-weight: bold;
 }
 .contenido-nosotros {
-  background-image: url(../img/nosotrosInicio.jpg);
+ /** background-image: url(../img/nosotrosInicio.jpg); **/
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -276,8 +303,8 @@ background-color: rgb(134, 204, 197);
   }
 }
 .icono {
-  color: var(--paletaUno);
-  background-color: rgba(135, 144, 125, 0.8);
+  color: var(--paletaCuatro);
+  background-color: rgba(236, 178, 176, 0.5);
   margin: 1rem;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -343,7 +370,7 @@ background-color: rgb(134, 204, 197);
   font-weight: bold;
 }
 .contenido-productos {
-  background-image: url(../img/productosInicio.jpg);
+ /** background-image: url(../img/productosInicio.jpg); **/
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -356,10 +383,10 @@ background-color: rgb(134, 204, 197);
   }
 }
 .producto {
-  background-color: rgba(243, 242, 224, 0.9);
+  /* background-color: rgba(236, 178, 176, 0.5); */
   text-align: center;
   margin: 1rem;
-  border: 2px solid var(--paletaSeis);
+  border: 2px solid lightgrey;
   border-radius: 0.5rem;
 }
 @media (min-width: 768px) {
@@ -391,11 +418,19 @@ background-color: rgb(134, 204, 197);
 .contenido-producto p {
   margin: 0;
 }
+.contenido-producto a:hover {
+  background-color: var(--paletaTres);
+  color: white;
+}
 .ver-todas .boton {
   display: block;
 }
 .ver-todas a {
-  background-color: rgb(134, 204, 197);
+ 
+}
+.ver-todas a:hover {
+  background-color: var(--paletaSeis);
+  color: white;
 }
 @media (min-width: 768px) {
   .ver-todas {
@@ -423,7 +458,7 @@ background-color: rgb(134, 204, 197);
     margin: 0 auto;
     height: 2px;
     width: 300px;
-    background-color: var(--paletaCuatro);
+    background-color: var(--paletaTres);
   }
   @media (min-width: 768px) {
     .contacto-inicio h2::before {
@@ -434,7 +469,7 @@ background-color: rgb(134, 204, 197);
       width: 100px;
       margin-right: 1rem;
       margin-bottom: 1rem;
-      background-color: var(--paletaCuatro);
+      background-color: var(--paletaTres);
     }
     .contacto-inicio h2::after {
       content: '';
@@ -444,28 +479,46 @@ background-color: rgb(134, 204, 197);
       width: 100px;
       margin-left: 1rem;
       margin-bottom: 1rem;
-      background-color: var(--paletaCuatro);
+      background-color: var(--paletaTres);
     }
   }
   .contacto-inicio h2 span {
-    color: var(--paletaCuatro);
+    color: var(--paletaTres);
     font-weight: bold;
   }
   .contenido-contacto{
-    background-image: url(../img/contacto.jpg);
-    background-position: center center;
+    background-image: url(/img/contactar-inicio.jpg);
+    background-position: top;
     background-size: cover;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
     padding: 10rem;
+    /* margin-left: 5rem;
+    margin-right: 5rem; */
   }
   .contenido-contacto p{
     font-size: 2rem;
-    color: var(--paletaUno);
+    color: var(--paletaCuatro);
+    max-width: 30rem;
+}
+@media (min-width: 768px){
+  .contenido-contacto p{
+    max-width: 55rem;
+  } 
 }
   .contenido-contacto a{
     display: inline-block;
     width: auto;
-    background-color: rgb(134, 204, 197);
+    background-color: var(--blancorosaColor);
+    border: 1px solid #363636;
+    color: black;
+  
+    
+  }
+  .contenido-contacto a:hover{
+    background-color: var(--paletaTres);
+    color: #ffffff;
+    font-weight: 600;
   }
   /*========================================= SECCION INFERIOR ==============================================*/
   /* TESTIMONIALES */
@@ -474,7 +527,7 @@ background-color: rgb(134, 204, 197);
     text-transform: uppercase;
     font-family: var(--fuentePrincipal);
     font-weight: bold;
-    color: var(--rosaColor);
+    color: var(--paletaTres);
     line-height: 1.5;
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -484,7 +537,7 @@ background-color: rgb(134, 204, 197);
     display: block;
     height: 2px;
     width: 30%;
-    background-color: var(--rosaColor);
+    background-color: var(--paletaTres);
     margin: 0 auto;
   }
   @media (min-width: 768px){
@@ -498,10 +551,10 @@ background-color: rgb(134, 204, 197);
 
   }
   .testimonial{
-      background-color: var(--rosaColor);
+      background-color: var(--blancorosaColor);
       font-size: 2.4rem;
       padding: 2rem;
-      color: var(--paletaUno);
+      color: black;
       border-radius: 2rem;
       width: 95%;
       margin: 0 auto;
@@ -545,13 +598,13 @@ background-color: rgb(134, 204, 197);
 }
 /*======================================================= FOOTER =========================================*/
 .site-footer{
-    background-color: var(--paletaUno);
-    border-top: 2px solid var(--rosaColor);
+    background-color: white; /** CAMBIO DE PRUEBA **/
+    border-top: 2px solid #ffeeee;
     margin-bottom: 0;
 }
 .site-footer p{
-    background-color: var(--rosaColor);
-    color: var(--paletaUno);
+    background-color: #ffeeee; /** CAMBIO DE PRUEBA **/
+    color: var(--rosaColor); /** CAMBIO DE PRUEBA **/
     text-align: center;
     padding: 1rem;
     margin: 0;
@@ -593,7 +646,7 @@ background-color: rgb(134, 204, 197);
 }
 .navegacion-footer a:hover{
     background-color: var(--rosaColor);
-    color: var(--paletaUno);
+    color: white; /** CAMBIO COLOR PRUEBA **/
     border-radius: .5rem;
 }
 @media (min-width: 768px){
@@ -628,16 +681,16 @@ background-color: rgb(134, 204, 197);
   margin-left: 15px;
   }
 }
-/* PAGINAS INTERNAS */
+/*======================================================= PAGINAS INTERNAS =========================================*/
 /* PRODUCTOS */
 .pagina-productos{
-  background: linear-gradient(to top, #f3f2e0, #bc6f6f);
+  background-color: white;
   /* background-position: center;
   background-size: cover; */
 }
 @media (min-width: 768px){
   .pagina-productos{
-    background: linear-gradient(to top, #f3f2e0, #bc6f6f);
+    background: white
     /* background: url(../img/green.jpg);
     background-position: center;
     background-size: cover; */
@@ -657,7 +710,7 @@ background-color: rgb(134, 204, 197);
 .sidebar ul{
   list-style: none;
   padding: 0;
-  background-color: var(--paletaUno);
+  background-color: whitesmoke;
   border-radius: .5rem;
   margin: 0;
 }
@@ -665,6 +718,7 @@ background-color: rgb(134, 204, 197);
   padding: 10px;
   text-align: center;
   border-bottom: .5px solid var(--paletaCinco);
+  cursor: pointer;
 }
 .sidebar ul li:last-of-type{
   border: none;
@@ -676,9 +730,14 @@ background-color: rgb(134, 204, 197);
   font-weight: bold;
   color: var(--rosaColor);
   font-size: 1.9rem;
+  
+}
+.sidebar ul li a:hover{
+  color: var(--paletaUno);
+  
 }
 .sidebar ul li:hover{
-  background-color: #b6b5a8;
+  background-color: var(--paletaSeis);
   border-radius: .5rem;
 }
 .categorias a{
@@ -696,14 +755,14 @@ background-color: rgb(134, 204, 197);
   text-align: center;
   text-transform: uppercase;
   font-family: 'Adam';
-  color: var(--paletaUno);
+  color: var(--paletaTres);
   font-size: 3rem;
   margin: 3.8rem 0;
 }
 .categorias h3::after{
   content: '';
   display: block;
-  background-color: var(--paletaUno);
+  background-color: var(--paletaTres);
   height: 2px;
   width: 100px;
   margin: 0 auto;
@@ -713,31 +772,31 @@ background-color: rgb(134, 204, 197);
 }
 .banners article h2{
   color: var(--rosaColor);
-  background-color: rgba(243, 242, 224, 0.9);
+  background-color: rgba(245, 245, 245, 0.8);
   border-radius: .5rem;
   width: 70%;
   margin: 0 auto;
 }
-.banners article p{
+.banner p{
   font-family: 'Lato';
   text-align: center;
   color: var(--rosaColor);
-  background-color: rgba(243, 242, 224, 0.9);
+  background-color: rgba(245, 245, 245, 0.8); /** WhiteSmoke RGBA **/
   border-radius: .5rem;
-  width: 95%;
+  width: 70%;
   margin: 1rem auto;
 }
 .banners h1{
   text-transform: uppercase;
   font-family: 'Adam';
-  color: var(--paletaUno);
+  color: var(--paletaTres);
   text-align: center;
   margin: 3rem 0;
 }
 .banners h1:after{
   content: '';
   display: block;
-  background-color: var(--paletaUno);
+  background-color: var(--paletaTres);
   height: 2px;
   width: 100px;
   margin: 0 auto;
@@ -823,12 +882,14 @@ background-color: rgb(134, 204, 197);
   text-align: center;
   margin: 0;
   line-height: 1;
+
 }
 .item{
   margin-top: 1rem;
-  background-color: var(--paletaUno);
   flex-basis: calc(50% - 1rem);
   border-radius: .5rem;
+  /* background-color: rgba(236, 178, 176, 0.5); */
+  border: 2px solid lightgrey;
 
   display: flex;
   flex-direction: column;
@@ -859,16 +920,23 @@ background-color: rgb(134, 204, 197);
   min-height: 25rem;
   align-items: center;
   padding: .5rem;
+ 
+}
+.contenido-item a:hover {
+  background-color: var(--paletaTres);
+  color: white;
 }
 /*============================================================ DESCRIPCION PRODUCTO  ================================*/
 .descripcion-producto{
-  background: linear-gradient(to top, #f3f2e0, #87907d);
+  /* background: linear-gradient(to top, #ffffff, var(--paletaSeis)); */
+
 }
 .titulo-producto{
   text-align: center;
   font-family: 'Adam';
   text-transform: uppercase;
-  color: var(--paletaUno);
+  font-size: 3rem;
+  /* color: var(--paletaCuatro); */
   margin: 0 auto;
   margin-top: 0;
   margin-bottom: 2rem;
@@ -877,7 +945,7 @@ background-color: rgb(134, 204, 197);
 .titulo-producto::after{
   content: '';
   display: block;
-  background-color: var(--paletaUno);
+  /* background-color: var(--paletaTres); */
   height: 2px;
   width: 300px;
   margin: 0 auto;
@@ -937,6 +1005,14 @@ background-color: rgb(134, 204, 197);
     flex-basis: calc(50% - 1rem);
   }
 }
+.imagen-descripcion {
+  text-align: center;
+}
+.imagen-descripcion img{
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+}
 .agregarCarrito{
   width: 95%;
   margin: 1rem auto;
@@ -955,7 +1031,7 @@ background-color: rgb(134, 204, 197);
 /* CONTACTO */
 .contacto{
     /* background: -webkit-gradient(linear, left top, left bottom, from(var(--paletaUno)), to(var(--paletaUno))) fixed; */
-    background: linear-gradient(to top, #f3f2e0, #bc6f6f);
+    background-color: white;
 }
 .contacto h1{
   margin-top: 1rem;
@@ -973,7 +1049,7 @@ background-color: rgb(134, 204, 197);
   margin: 0 auto;
 }
 .fondo-nosotros{
-  background: linear-gradient(to top, #f3f2e0, #bc6f6f);
+  background: white
 }
 @media (min-width: 768px){
   .pagina-nosotros{
@@ -999,7 +1075,7 @@ background-color: rgb(134, 204, 197);
   font-family: 'Adam';
   font-weight: bolder;
   font-size: 2.5rem;
-  color: var(--paletaUno);
+  color: var(--rosaColor);
 }
 @media (min-width: 768px){
   .texto-nosotros{
@@ -1008,7 +1084,7 @@ background-color: rgb(134, 204, 197);
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ CARRITO DE COMPRAS  ++++++++++++++++++++++++++++++++++++++*/
 .carritohtml{
-  background: linear-gradient(to top, #f3f2e0, #bc6f6f);
+  background-color: white;
 }
 .total{
   display: flex;
@@ -1037,6 +1113,7 @@ background-color: rgb(134, 204, 197);
 .total input:hover{
   cursor: pointer;
   background-color: #585e51;
+  color: white;
 }
 @media (min-width: 768px){
   .total{
@@ -1088,12 +1165,19 @@ background-color: rgb(134, 204, 197);
 }
 .botones-carrito a{
   display: block;
-  width: 95%;
+  width: 100%;
   margin: .5rem auto;
-  padding: 0;
+  padding: .2rem;
+}
+.botones-carrito a:hover{
+  color: white;
+  background-color: var(--paletaSeis);
 }
 .botones-carrito a:last-of-type{
   background-color: rgb(207, 78, 78);
+}
+.botones-carrito a:last-of-type:hover{
+  background-color: #D62727;
 }
 @media (min-width: 768px){
   .item-carrito{
