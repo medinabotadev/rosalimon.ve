@@ -201,6 +201,9 @@ width: 55px;
 .loading.loading p:nth-child(2){
   margin: 0;
 }
+.page{
+  display: none;
+}
 /*================================================================================ HEADER ==================================================================*/
 .site-header.header-inicio{
   background-image: url(../img/headerTresMobile.jpg);
