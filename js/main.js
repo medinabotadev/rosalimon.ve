@@ -3,6 +3,17 @@ $(document).ready(function(){
     $('.loading').remove()
     $('.page').fadeIn(500)
 
+
+    // BARRA FIJA - MENU ON TOP
+    var alturaLogotipo = $('.logotipo').innerHeight();
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if(scroll > alturaLogotipo){
+            $('.barra-fija').addClass('fixed')
+        } else {
+            $('.barra-fija').removeClass('fixed')
+        }
+    })
     // MENU MOVIL
     var img = $('.menu-movil img').attr('src');
     $('.menu-movil').on('click', function(event){

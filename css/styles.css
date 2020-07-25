@@ -226,6 +226,16 @@ width: 55px;
 .barra {
   background-color: white; /** CAMBIO COLOR PRUEBA **/ 
 }
+.barra-fija{
+  background-color: white;
+}
+.fixed{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
 .logotipo {
   text-align: center;
   margin: 0 auto;
