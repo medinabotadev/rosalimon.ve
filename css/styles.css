@@ -100,6 +100,7 @@ h4 {
 }
 .botonBanners{
 background-color: var(--blancorosaColor);
+transition: .5s ease-in-out;
 }
 .precio {
   font-family: "Lato";
@@ -143,7 +144,7 @@ background-color: var(--blancorosaColor);
 }
 .menu-activo{
   background-color: var(--rosaColor);
-  color: var(--paletaUno)!important;
+  color: white!important;
   /* background: -webkit-linear-gradient(white, #ffeeee); */
 }
 .menu-movil:hover{
@@ -805,14 +806,37 @@ width: 55px;
   text-transform: uppercase;
   font-family: 'Adam';
   font-weight: bold;
-  color: var(--rosaColor);
+  /* color: var(--rosaColor); */
   font-size: 1.9rem;
   
   transition: .5s ease-in-out;
 }
+.sidebar ul li:nth-child(1) a{
+  color: #ec2c26;
+}
+.sidebar ul li:nth-child(1) a:hover{
+  background-color: #da9694;
+}
+.sidebar ul li:nth-child(2) a{
+  color: #ff7c11;
+}
+.sidebar ul li:nth-child(2) a:hover{
+  background-color: #fabf8f;
+}
+.sidebar ul li:nth-child(3) a{
+  color: #92b93c;
+}
+.sidebar ul li:nth-child(3) a:hover{
+  background-color: #c4d79b;
+}
+.sidebar ul li:nth-child(4) a{
+  color: #44bad8;
+}
+.sidebar ul li:nth-child(4) a:hover{
+  background-color: #92cddc;
+}
 .sidebar ul li a:hover{
-  color: var(--paletaUno);
-  background-color: var(--paletaCinco);
+  color: white;
 }
 .sidebar ul li:hover{
   background-color: var(--paletaSeis);
