@@ -55,6 +55,7 @@ body {
   font-size: 1.6rem;
   line-height: 2;
   background-color: white; /** CAMBIO DE PRUEBA **/
+  margin: 0;
 }
 img {
   width: 100%;
@@ -90,7 +91,6 @@ h4 {
   font-weight: 400;
   color: black;
   border-radius: 2rem;
-  /* display: block; */
 }
 .botonPrimario {
   background-color: var(--blancorosaColor);
@@ -101,6 +101,8 @@ h4 {
 .botonBanners{
 background-color: var(--blancorosaColor);
 transition: .5s ease-in-out;
+position: relative;
+z-index: 1;
 }
 .precio {
   font-family: "Lato";
@@ -120,7 +122,6 @@ transition: .5s ease-in-out;
   font-weight: lighter;
 }
 .headeres{
-  /* background-color: var(--paletaSeis); */
   color: var(--paletaCinco);
   text-transform: uppercase;
   font-family: 'Adam';
@@ -145,7 +146,6 @@ transition: .5s ease-in-out;
 .menu-activo{
   background-color: var(--rosaColor);
   color: white!important;
-  /* background: -webkit-linear-gradient(white, #ffeeee); */
 }
 .menu-movil:hover{
   cursor: pointer;
@@ -210,8 +210,6 @@ width: 55px;
   background-image: url(../img/headerTresMobile.jpg);
   background-position: center center;
   background-size: cover;
-  /* background-attachment: fixed;
-  -webkit-background-attachment: fixed; */
   height: 100vh;
   min-height: 100rem;
 }
@@ -270,7 +268,6 @@ width: 55px;
   font-weight: bold;
   font-size: 2.5rem;
   padding: 1rem;
-  /* margin: 1rem 0 1rem 0; */
   text-transform: uppercase;
   transition: 0.5s ease-in-out;
 }
@@ -294,7 +291,6 @@ width: 55px;
 }
 .site-header h1 {
   font-family: var(--fuentePrincipal);
-  /* color: var(--paletaUno); */
   color: white;
   text-align: center;
   font-size: 5rem;
@@ -328,7 +324,6 @@ width: 55px;
   .nosotros-inicio h2::before {
     content: '';
     display: inline-block;
-    /* margin: 0 auto; */
     height: 2px;
     width: 100px;
     margin-right: 1rem;
@@ -338,7 +333,6 @@ width: 55px;
   .nosotros-inicio h2::after {
     content: '';
     display: inline-block;
-    /* margin: 0 auto; */
     height: 2px;
     width: 100px;
     margin-left: 1rem;
@@ -352,7 +346,6 @@ width: 55px;
   font-weight: bold;
 }
 .contenido-nosotros {
- /** background-image: url(../img/nosotrosInicio.jpg); **/
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -373,7 +366,6 @@ width: 55px;
 .icono {
   color: var(--paletaCuatro);
   background-color: rgba(236, 178, 176, 0.5);
-  /* margin: 1rem; */
   border-radius: 0.5rem;
   padding: 1rem;
 }
@@ -415,7 +407,6 @@ width: 55px;
   .productos-inicio h2::before {
     content: '';
     display: inline-block;
-    /* margin: 0 auto; */
     height: 2px;
     width: 100px;
     margin-right: 1rem;
@@ -425,7 +416,6 @@ width: 55px;
   .productos-inicio h2::after {
     content: '';
     display: inline-block;
-    /* margin: 0 auto; */
     height: 2px;
     width: 100px;
     margin-left: 1rem;
@@ -438,7 +428,6 @@ width: 55px;
   font-weight: bold;
 }
 .contenido-productos {
- /** background-image: url(../img/productosInicio.jpg); **/
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -451,7 +440,6 @@ width: 55px;
   }
 }
 .producto {
-  /* background-color: rgba(236, 178, 176, 0.5); */
   text-align: center;
   margin: 1rem;
   border: 2px solid lightgrey;
@@ -497,9 +485,6 @@ width: 55px;
 }
 .ver-todas .boton {
   display: block;
-}
-.ver-todas a {
- 
 }
 .ver-todas a:hover {
   background-color: var(--paletaSeis);
@@ -783,10 +768,11 @@ width: 55px;
 .sidebar ul{
   list-style: none;
   padding: 0;
-
   border-radius: .5rem;
-  margin: 0;
+  background-color:whitesmoke;
+  margin: 0 auto;
   transition: .5 ease-in-out;
+  width: 95%;
 }
 .sidebar ul li{
   text-align: center;
@@ -801,14 +787,12 @@ width: 55px;
   padding: 1rem;
   width: 100%;
   height: 100%;
-  background-color: whitesmoke;
   text-decoration: none;
   text-transform: uppercase;
   font-family: 'Adam';
   font-weight: bold;
-  /* color: var(--rosaColor); */
   font-size: 1.9rem;
-  
+  border-radius: .5rem;
   transition: .5s ease-in-out;
 }
 .sidebar ul li:nth-child(1) a{
@@ -857,9 +841,9 @@ width: 55px;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Adam';
-  color: var(--paletaTres);
-  font-size: 3rem;
-  margin: 3.8rem 0;
+  font-weight: lighter;
+  font-size: 3.8rem;
+  margin: 3rem 0;
 }
 .categorias h3::after{
   content: '';
@@ -872,12 +856,17 @@ width: 55px;
 .banners{
   flex-basis: calc(75% - 1rem);
 }
-.banners article h2{
-  color: var(--rosaColor);
+.banners h2{
   background-color: rgba(245, 245, 245, 0.8);
   border-radius: .5rem;
   width: 70%;
   margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Adam';
+  color: var(--rosaColor);
+  position: relative;
+  z-index: 1;
 }
 .banner p{
   font-family: 'Lato';
@@ -887,11 +876,13 @@ width: 55px;
   border-radius: .5rem;
   width: 70%;
   margin: 1rem auto;
+  position: relative;
+  z-index: 1;
 }
 .banners h1{
   text-transform: uppercase;
   font-family: 'Adam';
-  color: var(--paletaTres);
+  font-weight: lighter;
   text-align: center;
   margin: 3rem 0;
 }
@@ -910,57 +901,84 @@ width: 55px;
   margin-bottom: 2rem;
   padding: 1rem;
 }
-.banners h2{
-  margin: 0;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Adam';
-  color: var(--paletaUno);
-}
 .contenido-producto-banner{
   min-height: unset;
 }
 .card-banner-uno {
   width: 100%;
   height: 350px;
-  background: url('../img/maquillaje-banner.jpg')no-repeat center center/cover;
-  margin-bottom: 40px;
+  background: url('../img/skincare-banner.jpg')no-repeat center center/cover;
+  /* margin-bottom: 40px; */
+  position: relative;
 }
-/* .card-banner-uno h2{
-  background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(255, 255, 255));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
+.card-banner-uno::after{
+  content: '';
+  background-color: rgba(218, 150, 148, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
+}
 .card-banner-dos{
   width: 100%;
   height: 350px;
-  background: url('../img/cuidadopiel-banner.jpg')no-repeat center center/cover;
+  background: url('../img/bodycare-banner.jpg')no-repeat center center/cover;
   margin-bottom: 40px;
+  position: relative;
 }
-/* .card-banner-dos h2{
-  background: -webkit-linear-gradient(rgb(10, 94, 7), rgb(255, 255, 255));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
+.card-banner-dos::after{
+  content: '';
+  background-color: rgba(250, 191, 143, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
+}
 .card-banner-tres {
   width: 100%;
   height: 350px;
-  background: url('../img/belleza-banner.jpg')no-repeat center center/cover;
+  background: url('../img/haircare-banner.jpg')no-repeat center center/cover;
   margin-bottom: 40px;
+  position: relative;
+}
+.card-banner-tres::after{
+  content: '';
+  background-color: rgba(196, 215, 155, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
 }
 .card-banner-cuatro {
   width: 100%;
   height: 350px;
-  background: url('../img/fragancias-banner.jpg')no-repeat center center/cover;
+  background: url('../img/makeup-banner.jpg')no-repeat center center/cover;
   margin-bottom: 40px;
+  position: relative;
 }
-.card-banner-cinco {
+.card-banner-cuatro::after{
+  content: '';
+  background-color: rgba(146, 205, 220, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 350px;
-  background: url('../img/accesorios-banner.jpg')no-repeat center center/cover;
-  margin-bottom: 40px;
+  height: 100%;
+  border-radius: .5rem;
 }
 .content{
   font-family: 'Adam';
@@ -968,12 +986,6 @@ width: 55px;
   display: flex;
 } 
 /* =========================================================== ELEMENTOS DE PRODUCTOS */
-
-/*.items:target{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}*/
 .mostrar-items{
   display: flex;
   justify-content: space-between;
@@ -990,7 +1002,6 @@ width: 55px;
   margin-top: 1rem;
   flex-basis: calc(50% - 1rem);
   border-radius: .5rem;
-  /* background-color: rgba(236, 178, 176, 0.5); */
   border: 2px solid lightgrey;
 
   display: flex;
@@ -1007,7 +1018,6 @@ width: 55px;
   max-width: 30rem;
   max-height: 30rem;
   object-fit: contain;
-  /* overflow: hidden; */
 }
 .item .precio{
   padding: 1rem;
@@ -1029,10 +1039,6 @@ width: 55px;
   color: white;
 }
 /*============================================================ DESCRIPCION PRODUCTO  ================================*/
-.descripcion-producto{
-  /* background: linear-gradient(to top, #ffffff, var(--paletaSeis)); */
-
-}
 .titulo-producto{
   text-align: center;
   font-family: 'Adam';
@@ -1047,7 +1053,6 @@ width: 55px;
 .titulo-producto::after{
   content: '';
   display: block;
-  /* background-color: var(--paletaTres); */
   height: 2px;
   width: 300px;
   margin: 0 auto;
@@ -1059,9 +1064,6 @@ width: 55px;
   width: 95%;
   padding: 1rem;
   margin: 1rem auto;
-}
-@media (min-width: 768px){
-
 }
 .formulario-pedido fieldset{
   border-radius: .5rem;
@@ -1130,21 +1132,7 @@ width: 55px;
   cursor: pointer;
   background-color: #585e51;
 }
-/* CONTACTO */
-.contacto{
-    /* background: -webkit-gradient(linear, left top, left bottom, from(var(--paletaUno)), to(var(--paletaUno))) fixed; */
-    background-color: white;
-}
-.contacto h1{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.row.justify-content-center{
-  height: 100vh;
-}
-
-
-
+/*====================================================== CONTACTO.HTML */
 /*************************************************** NOSOTROS *****************************************/
 .pagina-nosotros{
   width: 95%;
@@ -1194,7 +1182,6 @@ width: 55px;
   justify-content: space-evenly;
   align-items: center;
   border-radius: .5rem;
-  /* background-color: rgba(243, 242, 224, 0.8); */
   border: 2px solid lightgrey;
   height: 25rem;
   text-align: center;
