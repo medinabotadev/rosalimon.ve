@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/img/title.png">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ROSALIMON</title>
+    <title>ROSALIMON | CONTACTO</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -40,6 +40,53 @@
         </div>
     </header>
             <h1 class="headeres">Contactanos</h1>
+            <main class="contenedor seccion">
+               
+                <form class="contacto"action="">
+        
+                    <fieldset>
+        
+                        <legend>Informacion Personal</legend>
+        
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Tu Nombre">
+        
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" placeholder="Tu Correo Electronico" required> 
+        
+                        <label for="telefono">Telefono:</label>
+                        <input type="tel" id="telefono" placeholder="Tu Telefono" required>
+        
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+        
+                    </fieldset>
+                        
+                    <fieldset>
+                        <legend>Tipo de contacto</legend>
+                        
+                        <p>Como desea ser contactado</p>
+                        
+                        <div class="forma-contacto">
+                            <label for="telefono">Telefono</label>
+                            <input type="radio" name="contacto" value="telefono" id="telefono">
+        
+                            <label for="correo">E-Mail</label>
+                            <input type="radio" name="contacto" value="correo" id="correo">
+                        </div>
+        
+                        <p>Si eligio Telefono, elija la fecha y la hora</p>
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha">
+        
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora" min="09:00" max="18:00">
+        
+                    </fieldset>
+                    
+                    <input type="submit" value="Enviar" class="boton botonPrimario">
+                </form>
+            </main>
     <footer class="site-footer seccion">
         <div class="contenido-footer contenedor">
             <div class="logotipo">

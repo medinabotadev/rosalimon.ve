@@ -1133,6 +1133,58 @@ width: 55px;
   background-color: #585e51;
 }
 /*====================================================== CONTACTO.HTML */
+.contacto fieldset{
+  border-color: var(--rosaColor);
+  color: var(--rosaColor);
+}
+.contacto p{
+  font-size: 1.4rem;
+  color: #4f4f4f;
+  margin: 2rem 0 0 0;
+}
+legend {
+  font-size: 2.4rem;
+  color: var(--rosaColor);
+}
+label {
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+}
+input:only-of-type{ /** BOTON ENVIAR **/
+  margin-top: 4rem;
+  width: auto;
+  cursor: pointer;
+}
+input:not([type="submit"]),
+textarea,
+select
+{
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  background-color: var(--paletaUno) ;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 1rem;
+}
+input[type="radio"] {
+  width: auto;
+  margin: auto;
+}
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+textarea {
+  height: 20rem;
+}
+.forma-contacto {
+  max-width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /*************************************************** NOSOTROS *****************************************/
 .pagina-nosotros{
   width: 95%;
