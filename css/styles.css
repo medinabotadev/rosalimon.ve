@@ -2,11 +2,9 @@
 :root {
   --fuentePrincipal: "Adam";
   --fuenteSecundaria: "Lato", sans-serif;
-
   --rosaColor: #bc6f6f;
   --blancorosaColor: #ffeeee;
   --rosaProductos: rgba(236, 178, 176,); 
-
   --paletaUno: #f3f2e0;
   --paletaDos: #f0d8cc;
   --paletaTres: #ecb2b0;
@@ -819,6 +817,12 @@ width: 55px;
 .sidebar ul li:nth-child(4) a:hover{
   background-color: #92cddc;
 }
+.sidebar ul li:nth-child(5) a{
+  color: #c154ff;
+}
+.sidebar ul li:nth-child(5) a:hover{
+  background-color: #d6b2eb;
+}
 .sidebar ul li a:hover{
   color: white;
 }
@@ -971,6 +975,25 @@ width: 55px;
 .card-banner-cuatro::after{
   content: '';
   background-color: rgba(146, 205, 220, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
+}
+.card-banner-cinco {
+  width: 100%;
+  height: 350px;
+  background: url('../img/miscelaneos-banner.jpg')no-repeat center center/cover;
+  margin-bottom: 40px;
+  position: relative;
+}
+.card-banner-cinco::after{
+  content: '';
+  background-color: rgba(216, 149, 255, 0.5);
   position: absolute;
   top: 0;
   left: 0;
