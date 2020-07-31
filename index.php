@@ -7,16 +7,14 @@
                     <div class="icono">
                         <h3>Confianza</h3>
                         <img src="img/agreement.svg" alt="Confianza">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, recusandae qui debitis ipsam.
+                        <p>En RosaLimon la atencion a nuestros clientes es prioridad
                         </p>
                     </div>
 
                     <div class="icono">
                         <h3>Lo mejor para ti</h3>
                         <img src="img/skincare.svg" alt="skincare">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium illum at veniam nemo
-                            neque
-                            fuga
+                        <p>Te brindamos variedades de productos de excelente calidad para tu necesidad con excelente atencion.
                         </p>
                     </div>
 
@@ -24,8 +22,7 @@
                         <h3>Seguridad</h3>
                         <img src="img/payment.svg" alt="Seguridad">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quaerat aut libero rerum,
-                            fuga.
+                            Disponemos de parametros de seguridad para tus compras
                         </p>
                     </div>
                 </div>
