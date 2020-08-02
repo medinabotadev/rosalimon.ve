@@ -302,7 +302,7 @@ width: 55px;
   text-align: center;
   font-size: 5rem;
   padding-bottom: 5rem;
-  text-shadow: 5px 5px 0px var(--rosaColor);
+  text-shadow: .4rem .4rem 0px var(--rosaColor);
 }
 @media (min-width: 768px) {
   .site-header h1 {
