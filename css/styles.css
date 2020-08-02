@@ -376,6 +376,7 @@ width: 55px;
   background-color: rgba(236, 178, 176, 0.5);
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-top: .5rem;
 }
 .icono h3 {
   font-family: var(--fuentePrincipal);
@@ -390,7 +391,7 @@ width: 55px;
   }
 }
 .icono img {
-  width: 25rem;
+  width: 20rem;
 }
 
 /*===================================================================================== PRODUCTOS INICIO =================================================*/
@@ -617,7 +618,7 @@ width: 55px;
 
   }
   .testimonial{
-      background-color: var(--blancorosaColor);
+      /* background-color: var(--blancorosaColor); */
       font-size: 2.4rem;
       padding: 2rem;
       color: black;

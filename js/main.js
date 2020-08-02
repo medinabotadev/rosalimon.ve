@@ -18,13 +18,13 @@ $(document).ready(function(){
     var img = $('.menu-movil img').attr('src');
     $('.menu-movil').on('click', function(event){
 
-        if(img == 'img/open-menu.png'){
+        if(img == 'img/open-menu.svg'){
         $('.navegacion').slideDown(1000);
-        $('.menu-movil img').attr('src', 'img/close.png');
+        $('.menu-movil img').attr('src', 'img/close.svg');
         img = $('.menu-movil img').attr('src');
         } else if (img = 'img/close.png'){
             $('.navegacion').slideUp(1000);
-            $('.menu-movil img').attr('src', 'img/open-menu.png');
+            $('.menu-movil img').attr('src', 'img/open-menu.svg');
             img = $('.menu-movil img').attr('src');
         }
     })
@@ -45,4 +45,17 @@ $(document).ready(function(){
         $(enlace).slideToggle(1000);
 
     })
+
+    // TESTIMONIALES
+
+    var testimoniales = ["testimonial1", "testimonial2", "testimonial3", "testimonial4"]
+    var i = 1;
+    var temporizador = setInterval(function(){
+        if(i <= 4) {
+        $('.testimonial blockquote img').attr('src', 'img/testimoniales/' + 'testimonial' + i + '.jpg')
+        i++
+        } else {
+           i = 1
+        }
+    }, 3500);
 })
