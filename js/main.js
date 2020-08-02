@@ -48,14 +48,18 @@ $(document).ready(function(){
 
     // TESTIMONIALES
 
-    var testimoniales = ["testimonial1", "testimonial2", "testimonial3", "testimonial4"]
+    $('.testimonial blockquote img').hide()
+    $('.testimonial blockquote img:nth-child(1)').show()
     var i = 1;
-    var temporizador = setInterval(function(){
+    setInterval(function(){
         if(i <= 4) {
-        $('.testimonial blockquote img').attr('src', 'img/testimoniales/' + 'testimonial' + i + '.jpg')
+        $('.testimonial blockquote img:nth-child(' + i +')').fadeIn(1500);
+        $('.testimonial blockquote img:nth-child(' + (i - 1) +')').fadeOut(200);
         i++
         } else {
-           i = 1
+        // $('.testimonial blockquote img:nth-child(1)').show();
+        $('.testimonial blockquote img:nth-child(4)').fadeOut(4000);
+        i = 1
         }
-    }, 3500);
+    }, 4500);
 })

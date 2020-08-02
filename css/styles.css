@@ -627,7 +627,11 @@ width: 55px;
       margin: 0 auto;
   }
   .testimonial p{
-      text-align: right;
+      text-align: center;
+      font-size: 1.6rem;
+  }
+  .testimonial p a{
+    color: var(--rosaColor);
   }
   .testimonial blockquote::before
 {
