@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" href="/img/title.png">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ROSALIMON | Contacto</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -19,7 +18,6 @@
                     <a href="index.html">
                         <img src="img/png.png" alt="logotipo">
                     </a>
-                    <p>Sientete en casa</p>
                 </div>
 
                 <div class="barra-fija">
@@ -30,7 +28,6 @@
 
                     <nav class="navegacion">
                         <a href="index.html">Inicio<img src="img/home.png" alt="home"></a>
-                        <a href="nosotros.html">Nosotros</a>
                         <a href="productos.html">Productos</a>
                         <a class="menu-activo" href="contacto.html">Contacto</a>
                         <a href="carrito.html" class="botonCarrito">Carrito<img src="/img/carrito.png" alt=""></a>
@@ -39,54 +36,45 @@
             </div>
         </div>
     </header>
-            <h1 class="headeres">Contactanos</h1>
-            <main class="contenedor seccion">
-               
-                <form class="contacto"action="">
-        
-                    <fieldset>
-        
-                        <legend>Informacion Personal</legend>
-        
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" placeholder="Tu Nombre">
-        
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" placeholder="Tu Correo Electronico" required> 
-        
-                        <label for="telefono">Telefono:</label>
-                        <input type="tel" id="telefono" placeholder="Tu Telefono" required>
-        
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-        
-                    </fieldset>
-                        
-                    <fieldset>
-                        <legend>Tipo de contacto</legend>
-                        
-                        <p>Como desea ser contactado</p>
-                        
-                        <div class="forma-contacto">
-                            <label for="telefono">Telefono</label>
-                            <input type="radio" name="contacto" value="telefono" id="telefono">
-        
-                            <label for="correo">E-Mail</label>
-                            <input type="radio" name="contacto" value="correo" id="correo">
-                        </div>
-        
-                        <p>Si eligio Telefono, elija la fecha y la hora</p>
-                        <label for="fecha">Fecha</label>
-                        <input type="date" id="fecha">
-        
-                        <label for="hora">Hora</label>
-                        <input type="time" id="hora" min="09:00" max="18:00">
-        
-                    </fieldset>
-                    
-                    <input type="submit" value="Enviar" class="boton botonPrimario">
-                </form>
-            </main>
+    <h1 class="headeres">Contactanos</h1>
+
+    <div class="fondo-contacto seccion">
+        <main class="contacto contenedor ">
+
+            <form action="">
+
+                <fieldset>
+
+                    <legend>Informacion Personal</legend>
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Tu Nombre">
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Tu Correo Electronico" required>
+
+                    <label for="telefono">Telefono:</label>
+                    <input type="tel" id="telefono" placeholder="Tu Telefono" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Deja tu mensaje aqui..."></textarea>
+
+                    <p>Como desea ser contactado</p>
+
+                    <div class="forma-contacto">
+                        <label for="telefono">Telefono</label>
+                        <input type="radio" name="contacto" value="telefono" id="telefono">
+
+                        <label for="correo">E-Mail</label>
+                        <input type="radio" name="contacto" value="correo" id="correo">
+                    </div>
+
+                </fieldset>
+                <input type="submit" value="Enviar" class="boton botonPrimario">
+            </form>
+        </main>
+    </div>
+
     <footer class="site-footer seccion">
         <div class="contenido-footer contenedor">
             <div class="logotipo">
@@ -98,12 +86,6 @@
                 <a href="https://www.instagram.com/rosalimon.ve/"><img src="img/instagram.svg" alt=""></a>
                 <a href="#"><img src="img/whatsapp.svg" alt=""></a>
             </div>
-            <nav class="navegacion-footer">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="productos.html">Productos</a>
-                <a href="contacto.html">Contacto</a>
-                <a href="carrito.html">Carrito</a>
-            </nav>
         </div>
         <p>Todos Los Derechos Reservados 2020&copy;</p>
     </footer>

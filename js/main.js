@@ -53,7 +53,7 @@ $(document).ready(function(){
     var i = 1;
     setInterval(function(){
         if(i <= 4) {
-        $('.testimonial blockquote img:nth-child(' + i +')').fadeIn(1500);
+        $('.testimonial blockquote img:nth-child(' + i +')').fadeIn(2000);
         $('.testimonial blockquote img:nth-child(' + (i - 1) +')').fadeOut(200);
         i++
         } else {

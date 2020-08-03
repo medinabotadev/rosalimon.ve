@@ -661,7 +661,7 @@ width: 55px;
     }
 }
 .imagenes-marca img{
-  width: calc(45% - 1rem);
+  width: calc(40% - 1rem);
   object-fit: contain;
 }
 /*======================================================= FOOTER =========================================*/
@@ -1168,18 +1168,35 @@ width: 55px;
   background-color: #585e51;
 }
 /*====================================================== CONTACTO.HTML */
+.fondo-contacto{
+  background-image: url(../img/contact.jpg);
+  background-size: cover;
+  background-position: center center;
+  padding: 1rem;
+}
+.contacto{
+  width: 95%;
+  max-width: 100rem;
+}
 .contacto fieldset{
-  border-color: var(--rosaColor);
-  color: var(--rosaColor);
+  border-color: var(--paletaCuatro);
+  color: var(--paletaCuatro);
+  border-radius: .5rem;
 }
 .contacto p{
   font-size: 1.4rem;
   color: #4f4f4f;
   margin: 2rem 0 0 0;
 }
+form{
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
 legend {
   font-size: 2.4rem;
-  color: var(--rosaColor);
+  color: var(--paletaCuatro);
 }
 label {
   font-weight: 700;
@@ -1198,7 +1215,7 @@ select
   padding: 1rem;
   display: block;
   width: 100%;
-  background-color: var(--paletaUno) ;
+  background-color: rgba(255, 255, 255, .7) ;
   margin-bottom: 2rem;
   border: none;
   border-radius: 1rem;
