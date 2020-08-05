@@ -163,9 +163,14 @@ z-index: 1;
 width: 55px;
 }
 /* LIGHTBOX */
-.galeria{
+.fotos .galeria{
   margin-top: 3rem;
   text-align: center;
+}
+.fotos .galeria p{
+  font-family: var(--fuentePrincipal);
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .miniaturas{
   max-width: 60px;
@@ -737,7 +742,7 @@ width: 55px;
   }
 }
 .redes-sociales img{
-  width: 5%;
+  width: 10%;
 }
 @media (min-width: 768px){
   .redes-sociales img{
@@ -806,34 +811,44 @@ width: 55px;
   transition: .5s ease-in-out;
 }
 .sidebar ul li:nth-child(1) a{
-  color: #ec2c26;
+  color: var(--paletaTres);
 }
 .sidebar ul li:nth-child(1) a:hover{
-  background-color: #da9694;
+  background-image: url(../img/skincare-banner.jpg);
+  background-position: bottom;
+  background-size: cover;
 }
 .sidebar ul li:nth-child(2) a{
-  color: #ff7c11;
+  color: var(--paletaTres);
 }
 .sidebar ul li:nth-child(2) a:hover{
-  background-color: #fabf8f;
+  background-image: url(../img/bodycare-banner.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .sidebar ul li:nth-child(3) a{
-  color: #92b93c;
+  color: var(--paletaTres);
 }
 .sidebar ul li:nth-child(3) a:hover{
-  background-color: #c4d79b;
+  background-image: url(../img/haircare-banner.jpg);
+  background-position: bottom;
+  background-size: cover;
 }
 .sidebar ul li:nth-child(4) a{
-  color: #44bad8;
+  color: var(--paletaTres);
 }
 .sidebar ul li:nth-child(4) a:hover{
-  background-color: #92cddc;
+  background-image: url(../img/makeup-banner.jpg);
+  background-position: bottom;
+  background-size: cover;
 }
 .sidebar ul li:nth-child(5) a{
-  color: #c154ff;
+  color: var(--paletaTres);
 }
 .sidebar ul li:nth-child(5) a:hover{
-  background-color: #d6b2eb;
+  background-image: url(../img/miscelaneos-banner.jpg);
+  background-position: bottom;
+  background-size: cover;
 }
 .sidebar ul li a:hover{
   color: white;
@@ -873,16 +888,23 @@ width: 55px;
   flex-basis: calc(75% - 1rem);
 }
 .banners h2{
-  background-color: rgba(245, 245, 245, 0.8);
-  border-radius: .5rem;
   width: 70%;
   margin: 0 auto;
+  padding: 1rem;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Adam';
-  color: var(--rosaColor);
+  color: black;
   position: relative;
   z-index: 1;
+}
+.banners h2::after{
+  content: '';
+  display: block;
+  margin: 0 auto;
+  height: .3rem;
+  width: 100%;
+  background-color: white;
 }
 .banner p{
   font-family: 'Lato';
@@ -920,16 +942,10 @@ width: 55px;
 .contenido-producto-banner{
   min-height: unset;
 }
-.card-banner-uno {
-  width: 100%;
-  height: 350px;
-  background: url('../img/skincare-banner.jpg')no-repeat center center/cover;
-  /* margin-bottom: 40px; */
-  position: relative;
-}
-.card-banner-uno::after{
+.banner::after{
   content: '';
-  background-color: rgba(218, 150, 148, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
   position: absolute;
   top: 0;
   left: 0;
@@ -938,6 +954,13 @@ width: 55px;
   width: 100%;
   height: 100%;
   border-radius: .5rem;
+}
+.card-banner-uno {
+  width: 100%;
+  height: 350px;
+  background: url('../img/skincare-banner.jpg')no-repeat center center/cover;
+  /* margin-bottom: 40px; */
+  position: relative;
 }
 .card-banner-dos{
   width: 100%;
@@ -946,18 +969,6 @@ width: 55px;
   margin-bottom: 40px;
   position: relative;
 }
-.card-banner-dos::after{
-  content: '';
-  background-color: rgba(250, 191, 143, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: .5rem;
-}
 .card-banner-tres {
   width: 100%;
   height: 350px;
@@ -965,36 +976,12 @@ width: 55px;
   margin-bottom: 40px;
   position: relative;
 }
-.card-banner-tres::after{
-  content: '';
-  background-color: rgba(196, 215, 155, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: .5rem;
-}
 .card-banner-cuatro {
   width: 100%;
   height: 350px;
-  background: url('../img/makeup-banner.jpg')no-repeat center center/cover;
+  background: url('../img/makeup-banner.jpg')no-repeat bottom/cover;
   margin-bottom: 40px;
   position: relative;
-}
-.card-banner-cuatro::after{
-  content: '';
-  background-color: rgba(146, 205, 220, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: .5rem;
 }
 .card-banner-cinco {
   width: 100%;
@@ -1002,18 +989,6 @@ width: 55px;
   background: url('../img/miscelaneos-banner.jpg')no-repeat center center/cover;
   margin-bottom: 40px;
   position: relative;
-}
-.card-banner-cinco::after{
-  content: '';
-  background-color: rgba(216, 149, 255, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: .5rem;
 }
 .content{
   font-family: 'Adam';
@@ -1174,9 +1149,23 @@ width: 55px;
   background-position: center center;
   padding: 1rem;
 }
+.texto-contacto p{
+  text-align: center;
+  font-family: var(--fuentePrincipal);
+  font-size: 3rem;
+}
 .contacto{
   width: 95%;
   max-width: 100rem;
+}
+@media (min-width: 768px){
+  .contacto{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.contacto h3{
+  font-family: var(--fuentePrincipal);
 }
 .contacto fieldset{
   border-color: var(--paletaCuatro);
@@ -1184,15 +1173,23 @@ width: 55px;
   border-radius: .5rem;
 }
 .contacto p{
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #4f4f4f;
-  margin: 2rem 0 0 0;
+  margin: 0 0 0 0;
 }
 form{
+  margin-bottom: .5rem;
+  text-align: center;
   padding: 1rem;
   border-radius: .5rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
+  flex-basis: calc(50% - 1rem);
+}
+@media (min-width: 768px){
+  form{
+    margin-bottom: unset;
+  }
 }
 legend {
   font-size: 2.4rem;
@@ -1236,6 +1233,14 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.otros-metodos{
+  text-align: center;
+  flex-basis: calc(50% - 1rem);
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
 }
 /*************************************************** NOSOTROS *****************************************/
 .pagina-nosotros{
