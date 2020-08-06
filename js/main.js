@@ -52,13 +52,13 @@ $(document).ready(function(){
     $('.testimonial blockquote img:nth-child(1)').show()
     var i = 1;
     setInterval(function(){
-        if(i <= 4) {
+        if(i <= 5) {
         $('.testimonial blockquote img:nth-child(' + i +')').fadeIn(2000);
         $('.testimonial blockquote img:nth-child(' + (i - 1) +')').fadeOut(200);
         i++
         } else {
         // $('.testimonial blockquote img:nth-child(1)').show();
-        $('.testimonial blockquote img:nth-child(4)').fadeOut(4000);
+        $('.testimonial blockquote img:nth-child(5)').fadeOut(4000);
         i = 1
         }
     }, 4500);
