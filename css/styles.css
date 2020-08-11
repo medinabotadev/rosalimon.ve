@@ -1055,7 +1055,7 @@ width: 55px;
   font-family: 'Adam';
   text-transform: uppercase;
   font-size: 3rem;
-  /* color: var(--paletaCuatro); */
+  color: #444444;
   margin: 0 auto;
   margin-top: 0;
   margin-bottom: 2rem;
@@ -1069,7 +1069,7 @@ width: 55px;
   margin: 0 auto;
 }
 .texto-descripcion p{
-  background-color: rgba(243, 242, 224, 0.8);
+  background-color: rgb(255, 235, 239);
   border-radius: .5rem;
   text-align: center;
   width: 95%;
@@ -1080,32 +1080,30 @@ width: 55px;
   border-radius: .5rem;
   width: 95%;
   margin: 0 auto;
-  background-color: rgba(243, 242, 224, 0.8);
-  border: 2px solid var(--paletaCinco);
+  background-color: rgb(255, 235, 239);
 }
 .formulario-pedido fieldset legend{
-  color: var(--paletaCinco);
+  /* color: var(--paletaCinco); */
 }
 .formulario-pedido label{
   text-transform: uppercase;
   font-weight: bold;
-  color: var(--paletaCinco);
+  /* color: var(--paletaCinco); */
   padding: 1rem;
   margin-left: 1rem;
 }
 .formulario-pedido select{
-  background-color: var(--paletaUno);
   margin: 1rem auto;
   padding: 1rem;
   width: 95%;
-  color: var(--paletaCinco);
+  /* color: var(--paletaCinco); */
   font-weight: bold;
 }
 .texto-descripcion p:first-of-type{
-  color: var(--paletaCinco);
+  color: #444444;
 }
 .texto-descripcion span{
-  color: var(--paletaCinco);
+  color: #444444;
 }
 @media (min-width: 768px){
   .contenido-descripcion{
@@ -1194,7 +1192,7 @@ form{
 }
 legend {
   font-size: 2.4rem;
-  color: var(--paletaCuatro);
+  /* color: var(--paletaCuatro); */
 }
 label {
   font-weight: 700;
