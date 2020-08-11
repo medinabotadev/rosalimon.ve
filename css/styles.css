@@ -1283,8 +1283,21 @@ textarea {
   }
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ CARRITO DE COMPRAS  ++++++++++++++++++++++++++++++++++++++*/
-.carritohtml{
-  background-color: white;
+.recordatorio{
+  text-align: center;
+  background-image: url(../img/headerNew.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.recordatorio p{
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  margin: 0 0;
+  padding: 1rem;
+}
+.recordatorio img{
+  width: 2.5rem;
+  vertical-align: middle;
 }
 .total{
   display: flex;
