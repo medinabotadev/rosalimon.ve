@@ -238,9 +238,6 @@ width: 55px;
 .barra {
   background-color: white;
 }
-.barra-fija{
-
-}
 .fixed{
   position: fixed;
   width: 100%;
@@ -591,6 +588,10 @@ width: 55px;
     background-color: var(--paletaTres);
     color: #ffffff;
     font-weight: 600;
+  }
+  .mapa{
+    width: 100%;
+    height: 50rem;
   }
   /*========================================= SECCION INFERIOR ==============================================*/
   /* TESTIMONIALES */
@@ -1144,7 +1145,7 @@ width: 55px;
 }
 /*====================================================== CONTACTO.HTML */
 .fondo-contacto{
-  background-image: url(../img/contact.jpg);
+  /* background-image: url(../img/contact.jpg); */
   background-size: cover;
   background-position: center center;
   padding: 1rem;
@@ -1182,7 +1183,7 @@ form{
   text-align: center;
   padding: 1rem;
   border-radius: .5rem;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgb(255, 235, 239);
   backdrop-filter: blur(10px);
   flex-basis: calc(50% - 1rem);
 }
@@ -1239,7 +1240,7 @@ textarea {
   flex-basis: calc(50% - 1rem);
   padding: 1rem;
   border-radius: .5rem;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgb(255, 235, 239);
   backdrop-filter: blur(10px);
 }
 /*************************************************** NOSOTROS *****************************************/

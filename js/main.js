@@ -1,5 +1,15 @@
 $('.page').hide()
 $(document).ready(function(){
+    // MAPA
+    if(document.getElementById('mapa')){
+    var map = L.map('mapa').setView([9.435197, -64.465971], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([9.435197, -64.465971]).addTo(map)
+      .bindPopup('ROSALIMON')
+      .openPopup();
+    }
     $('.loading').remove();
     $('.page').fadeIn(500);
 
