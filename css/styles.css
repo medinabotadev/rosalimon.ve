@@ -556,7 +556,7 @@ width: 55px;
     font-weight: bold;
   }
   .contenido-contacto{
-    background-image: url(/img/contactar-inicio.jpg);
+    background-image: url(../img/contactar-inicio.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1148,10 +1148,13 @@ width: 55px;
   background-position: center center;
   padding: 1rem;
 }
-.texto-contacto p{
+.texto-contacto{
   text-align: center;
   font-family: var(--fuentePrincipal);
   font-size: 3rem;
+}
+.texto-contacto p:nth-child(3){
+  font-weight: bold;
 }
 .contacto{
   width: 95%;
