@@ -1,12 +1,11 @@
-<?php include_once 'includes/templates/header.php' ?>
 <?php if(isset($_POST['submit'])){
     date_default_timezone_set('America/Caracas');
 
     $formulario = $_POST;
-    $nombre = $formulario['nombre'];
-    $email = $formulario['email'];
-    $telefono = $formulario['telefono'];
-    $mensaje = $formulario['mensaje'];
+    $nombre = filter_var($formulario['nombre'], FILTER_SANITIZE_STRING);
+    $email = filter_var($formulario['email'], FILTER_SANITIZE_EMAIL);
+    $telefono = filter_var($formulario['telefono'], FILTER_SANITIZE_NUMBER_INT);
+    $mensaje = filter_var($formulario['mensaje'], FILTER_SANITIZE_STRING);
     $forma_contacto = $formulario['formacontacto'];
     $fecha_contacto = date('Y-m-d H:i:s');
 
@@ -17,16 +16,19 @@
         $statements->execute();
         $statements->close();
         $connection->close();
+        header('Location: validacion_contacto.php?registro_exitoso_=1' . '&' . 'nombre=' . $nombre);
     } catch (\Exception $e) {
         $error = $e->getMessage();
         var_dump($error);
     }
 }?>
 
+<?php include_once 'includes/templates/header.php' ?>
+
 <div class="texto-contacto">
         <h1 class="headeres">Contactanos</h1>
         <p>Estamos listos para guiarte en lo mejor de tu cuidado</p>
-        <p><?php echo $nombre; ?>,<br>te estaremos contactando en breve...</p>
+        <p><?php echo $_GET['nombre']; ?>,<br>te estaremos contactando en breve...</p>
 </div>
 
 <?php include_once 'includes/templates/footer.php' ?>

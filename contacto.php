@@ -20,7 +20,7 @@
                     <input type="email" id="email" name="email" placeholder="Tu Correo Electronico" required>
 
                     <label for="telefono">Telefono:</label>
-                    <input type="number" id="telefono" name="telefono" placeholder="Tu Telefono" required>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Tu Telefono" required>
 
                     <label for="mensaje">Mensaje:</label>
                     <textarea name="mensaje" id="" cols="30" rows="10" placeholder="Deja tu mensaje aqui..."></textarea>
@@ -29,10 +29,10 @@
 
                     <div class="forma-contacto">
                         <label for="telefono">Telefono</label>
-                        <input type="radio" name="formacontacto" value="telefono" id="telefono">
+                        <input type="radio" name="formacontacto" value="telefono" id="telefono" required>
 
                         <label for="correo">E-Mail</label>
-                        <input type="radio" name="formacontacto" value="correo" id="correo">
+                        <input type="radio" name="formacontacto" value="correo" id="correo" required>
                     </div>
 
                 </fieldset>
