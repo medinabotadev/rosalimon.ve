@@ -1,26 +1,24 @@
 <?php include_once 'includes/templates/header.php' ?>
-
     <div class="pagina-productos">
         <div class="contenedor">
             <div class="contenido-paginaproductos">
                 <aside class="sidebar categorias">
                     <h3>Categorias</h3>
                     <ul>
+                    <?php
+                        try{
+                        require_once 'includes/functions/db_connection.php';
+                        $sql = " SELECT categoria FROM categorias ";
+                        $resultado = $connection->query($sql);
+                        } catch (\Exception $e) {
+                        echo $e->getMessage();
+                        }
+                    ?>
+                    <?php while($categorias = $resultado->fetch_assoc()) { ?>
                         <li>
-                            <a href="#skincare">Skincare</a>
+                            <a href="#<?php echo strtolower($categorias['categoria']); ?>"><?php echo $categorias['categoria'];?></a>
                         </li>
-                        <li>
-                            <a href="#bodycare">Bodycare</a>
-                        </li>
-                        <li>
-                            <a href="#haircare">Haircare</a>
-                        </li>
-                        <li>
-                            <a href="#makeup">Makeup</a>
-                        </li>
-                        <li>
-                            <a href="#miscelaneos">Miscelaneos</a>
-                        </li>
+                    <?php } ?>
                     </ul>
                 </aside>
                 <main class="banners">
@@ -37,249 +35,25 @@
                     </article>
 
                     <article class="items" id="skincare">
+                    <?php
+                        try{
+                        require_once 'includes/functions/db_connection.php';
+                        $sql = " SELECT codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 1 ";
+                        $resultado = $connection->query($sql);
+                        } catch (\Exception $e) {
+                        echo $e->getMessage();
+                        }
+                    ?>
+                    <?php while($productos = $resultado->fetch_assoc()) { ?>
                         <div class="item">
-                            <img src="media/A3/A3.1.jpg" alt="Producto">
+                            <img src="media/<?php echo $productos['codigo_producto']; ?>/<?php echo $productos['img_1']; ?>" alt="Producto">
                             <div class="contenido-item">
-                                <h3>Clean & Clear Deep Action Cream Facial Cleanser, 1 oz</h3>
-                                <p class="precio">$ 3.00</p>
-                                <a href="items/item_a3.php" class="boton botonPrimario">Ver Producto</a>
+                                <h3><?php echo $productos['nombre_producto'];; ?></h3>
+                                <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
+                                <a href="items/item_<?php echo strtolower($productos['codigo_producto']); ?>.php" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
-
-                        <div class="item">
-                            <img src="media/A4/A4.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Alcohol-Free Lemon Juice Facial Toner</h3>
-                                <p class="precio">$ 12.00</p>
-                                <a href="items/item_a4.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A5/A5.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Lemon Zesty Oil-Free Face Scrub with Vitamin C, 4.2 oz</h3>
-                                <p class="precio">$ 12.00</p>
-                                <a href="items/item_a5.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A6/A6.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Morning Burst Facial Cleanser For Daily Skincare Routines, 1 Fl. Oz.
-                                </h3>
-                                <p class="precio">$ 3.00</p>
-                                <a href="items/item_a6.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A7/A7.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Hydrating Watermelon Daily Gel Face Moisturizer, 1.7 oz</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a7.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A8/A8.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Morning Burst Hydrating Gel Face Moisturizer, 3 oz</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a8.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A9/A9.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Lemon Gel Facial Cleanser with Vitamin C, 7.5 fl. Oz</h3>
-                                <p class="precio">$ 12.00</p>
-                                <a href="items/item_a9.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A10/A10.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Advantage Spot Treatment with Witch Hazel,.75 fl. oz</h3>
-                                <p class="precio">$ 12.00</p>
-                                <a href="items/item_a10.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A11/A11.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Essentials Oil-Free Deep Cleaning Astringent, 8 fl. oz</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a11.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A12/A12.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Clean & Clear Daily Acne Skincare Set</h3>
-                                <p class="precio">$ 22.00</p>
-                                <a href="items/item_a12.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A13/A13.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>St. Ives Blackhead Clearing Face Scrub with Salicylic Acid, 6 oz</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a13.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A14/A14.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>St Ives Radiant Skin Pink Lemon and Mandarin Orange Face Scrub 6 oz</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a14.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A15/A15.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>St. Ives Detox Me Daily Cleansing Stick, 1.6 Ounce</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a15.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A16/A16.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Neutrogena Facial Cleansing Bar Facial Cleanser to Acne, 3.5 oz</h3>
-                                <p class="precio">$ 6.00</p>
-                                <a href="items/item_a16.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A17/A17.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Neutrogena Facial Cleansing Bar Facial Cleanser, All Skin Types, 3.5 oz</h3>
-                                <p class="precio">$ 6.00</p>
-                                <a href="items/item_a17.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A18/A18.1.jpeg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Freeman Feeling Beautiful Polishing Mask, Charcoal & Black Sugar, 6 Fl Oz</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a18.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A19/A19.1.jpeg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Freeman Feeling Beautiful Facial Clay Mask Avocado & Oatmeal 6 oz</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a19.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A20/A20.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Freeman Dead Sea Minerals Facial Anti-Stress Mask, 6 Ounce</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a20.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A21/A21.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Equate Beauty Deep Cleaning Astringent, 10 fl oz</h3>
-                                <p class="precio">$ 7.00</p>
-                                <a href="items/item_a21.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A22/A22.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Equate Beauty Foaming Facial Cleanser, 12 fl oz</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a22.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A23/A23.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Equate Sunscreen, SPF 100, 3 fl oz</h3>
-                                <p class="precio">$ 12.00</p>
-                                <a href="items/item_a23.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A25/A25.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Equate Beauty Oil-Free Acne Wash, 6 fl oz</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a25.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A31/A31.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Palmer's Skin Success Anti-Dark Spot Fade Cream, 2.7 oz.</h3>
-                                <p class="precio">$ 16.00</p>
-                                <a href="items/item_a31.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A32/A32.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Esponjas Faciales</h3>
-                                <p class="precio">$ 1.00</p>
-                                <a href="items/item_a32.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A35/A35.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Aplicador de mascarilla</h3>
-                                <p class="precio">$ 2.00</p>
-                                <a href="items/item_a35.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A44/A44.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Noxzema Clears and Prevents Acne Face Pads Anti-Blemish, 90 ct</h3>
-                                <p class="precio">$ 8.00</p>
-                                <a href="items/item_a44.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A45/A45.1.webp" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Splash Victoria Secret's Grande</h3>
-                                <p class="precio">$ 15.00</p>
-                                <a href="items/item_a45.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
+                    <?php } ?>
                     </article>
 
                     <article class="banner card-banner-dos">
@@ -292,95 +66,25 @@
                     </article>
 
                     <article class="items" id="bodycare">
+                    <?php
+                        try{ 
+                        require_once 'includes/functions/db_connection.php';
+                        $sql = " SELECT codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 2 ";
+                        $resultado = $connection->query($sql);
+                        } catch (\Exception $e) {
+                            echo $e->getMessage();
+                        }
+                    ?>
+                    <?php while($productos = $resultado->fetch_assoc()) { ?>
                         <div class="item">
-                            <img src="img/unnamed.jpg" alt="Producto">
+                            <img src="media/<?php echo $productos['codigo_producto']; ?>/<?php echo $productos['img_1']; ?>" alt="Producto">
                             <div class="contenido-item">
-                                <h3>Fragance Mist PINK 75ml.</h3>
-                                <p class="precio">$ 6.00</p>
-                                <a href="items/item_a1.php" class="boton botonPrimario">Ver Producto</a>
+                                <h3><?php echo $productos['nombre_producto']; ?></h3>
+                                <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
+                                <a href="items/item_<?php echo strtolower($productos['codigo_producto']); ?>.php" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
-
-                        <div class="item">
-                            <img src="media/A2/A2.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Fragance Mist PINK 250ml.</h3>
-                                <p class="precio">$ 12.00</p>
-                                <a href="items/item_a2.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A24/A24.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Equate Beauty Clarifying Pink Grapefruit Body Wash, 8.5 fl oz</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a24.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A26/A26.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Dove Body Wash Mousse 10.3 oz</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a26.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A27/A27.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Dove Exfoliating Body, 10.5 oz</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a27.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A28/A28.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Tree Hut Soothing Himalayan Salt Scrub Cherry Blossom, 15oz</h3>
-                                <p class="precio">$ 12.00</p>
-                                <a href="items/item_a28.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A29/A29.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Vitamin E Oil, 2 oz</h3>
-                                <p class="precio">$ 6.00</p>
-                                <a href="items/item_a29.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A30/A30.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Organic Unrefined Virgin Coconut Oil, 14 fl oz</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a30.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A34/A34.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Spascriptions Kit Gel Face Mask</h3>
-                                <p class="precio">$ 16.00</p>
-                                <a href="items/item_a34.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A43/A43.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Copas Menstruales</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a43.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
+                    <?php } ?>
                     </article>
 
                     <article class="banner card-banner-tres">
@@ -393,41 +97,25 @@
                     </article>
 
                     <article class="items" id="haircare">
+                    <?php
+                        try{ 
+                        require_once 'includes/functions/db_connection.php';
+                        $sql = " SELECT codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 3 ";
+                        $resultado = $connection->query($sql);
+                        } catch (\Exception $e) {
+                            echo $e->getMessage();
+                        }
+                    ?>
+                    <?php while($productos = $resultado->fetch_assoc()) { ?>
                         <div class="item">
-                            <img src="media/A33/A33.1.jpg" alt="Producto">
+                            <img src="media/<?php echo $productos['codigo_producto']; ?>/<?php echo $productos['img_1']; ?>" alt="Producto">
                             <div class="contenido-item">
-                                <h3>Bandanas para el cabello</h3>
-                                <p class="precio">$ 6.00</p>
-                                <a href="items/item_a33.php" class="boton botonPrimario">Ver Producto</a>
+                                <h3><?php echo $productos['nombre_producto'];; ?></h3>
+                                <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
+                                <a href="items/item_<?php echo strtolower($productos['codigo_producto']); ?>.php" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
-
-                        <div class="item">
-                            <img src="media/A36/A36.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Herbal Essences Curl-Boosting Mousse, 6.8 Oz</h3>
-                                <p class="precio">$ 6.00</p>
-                                <a href="items/item_a36.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A37/A37.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>OGX Smoothing + Liquid Pearl Luminescent Serum, 3.8 oz</h3>
-                                <p class="precio">$ 10.00</p>
-                                <a href="items/item_a37.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A38/A38.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Plancha REVLON</h3>
-                                <p class="precio">$ 25.00</p>
-                                <a href="items/item_a38.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
+                    <?php } ?>
                     </article>
 
                     <article class="banner card-banner-cuatro">
@@ -440,41 +128,25 @@
                     </article>
 
                     <article class="items" id="makeup">
+                    <?php
+                        try{ 
+                        require_once 'includes/functions/db_connection.php';
+                        $sql = " SELECT codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 4 ";
+                        $resultado = $connection->query($sql);
+                        } catch (\Exception $e) {
+                            echo $e->getMessage();
+                        }
+                    ?>
+                    <?php while($productos = $resultado->fetch_assoc()) { ?>
                         <div class="item">
-                            <img src="media/A39/A39.1.jpg" alt="Producto">
+                            <img src="media/<?php echo $productos['codigo_producto']; ?>/<?php echo $productos['img_1']; ?>" alt="Producto">
                             <div class="contenido-item">
-                                <h3>Lip Balm m&m</h3>
-                                <p class="precio">$ 2.00</p>
-                                <a href="items/item_a39.php" class="boton botonPrimario">Ver Producto</a>
+                                <h3><?php echo $productos['nombre_producto'];; ?></h3>
+                                <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
+                                <a href="items/item_<?php echo strtolower($productos['codigo_producto']); ?>.php" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
-
-                        <div class="item">
-                            <img src="media/A40/A40.0.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>wet n wild Lip Gloss</h3>
-                                <p class="precio">$ 6.00</p>
-                                <a href="items/item_a40.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A41/A41.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Blistex Medicated Lip Balm SPF 15.</h3>
-                                <p class="precio">$ 4.00</p>
-                                <a href="items/item_a41.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="media/A42/A42.1.jpg" alt="Producto">
-                            <div class="contenido-item">
-                                <h3>Labiales Matte</h3>
-                                <p class="precio">$ 3.00</p>
-                                <a href="items/item_a42.php" class="boton botonPrimario">Ver Producto</a>
-                            </div>
-                        </div>
+                    <?php } ?>
                     </article>
 
                     <article class="banner card-banner-cinco">
@@ -717,5 +389,5 @@
             </div>
         </div>
     </div>
-
+<?php $connection->close(); ?>
 <?php include_once 'includes/templates/footer.php'; ?>

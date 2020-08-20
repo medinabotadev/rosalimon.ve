@@ -19,7 +19,6 @@
         header('Location: validacion_contacto.php?registro_exitoso_=1' . '&' . 'nombre=' . $nombre);
     } catch (\Exception $e) {
         $error = $e->getMessage();
-        var_dump($error);
     }
 }?>
 
