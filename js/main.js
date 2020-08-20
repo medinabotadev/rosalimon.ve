@@ -13,7 +13,6 @@ $(document).ready(function(){
     $('.loading').remove();
     $('.page').fadeIn(500);
 
-
     // BARRA FIJA - MENU ON TOP
     var alturaLogotipo = $('.logotipo').innerHeight();
     $(window).scroll(function(){
@@ -28,13 +27,13 @@ $(document).ready(function(){
     var img = $('.menu-movil img').attr('src');
     $('.menu-movil').on('click', function(event){
 
-        if(img == '../img/open-menu.svg'){
+        if(img == 'img/open-menu.svg'){
         $('.navegacion').slideDown(1000);
-        $('.menu-movil img').attr('src', '../img/close.svg');
+        $('.menu-movil img').attr('src', 'img/close.svg');
         img = $('.menu-movil img').attr('src');
-        } else if (img = '../img/close.png'){
+        } else if (img = 'img/close.png'){
             $('.navegacion').slideUp(1000);
-            $('.menu-movil img').attr('src', '../img/open-menu.svg');
+            $('.menu-movil img').attr('src', 'img/open-menu.svg');
             img = $('.menu-movil img').attr('src');
         }
     })

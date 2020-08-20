@@ -145,6 +145,9 @@ z-index: 1;
   background-color: var(--rosaColor);
   color: white!important;
 }
+.menu-movil{
+  text-align: center;
+}
 .menu-movil:hover{
   cursor: pointer;
 }
@@ -556,7 +559,7 @@ width: 55px;
     font-weight: bold;
   }
   .contenido-contacto{
-    background-image: url(/img/contactar-inicio.jpg);
+    background-image: url(../img/contactar-inicio.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1053,7 +1056,7 @@ width: 55px;
 .titulo-producto{
   text-align: center;
   font-family: 'Adam';
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-size: 3rem;
   color: #444444;
   margin: 0 auto;
@@ -1148,10 +1151,13 @@ width: 55px;
   background-position: center center;
   padding: 1rem;
 }
-.texto-contacto p{
+.texto-contacto{
   text-align: center;
   font-family: var(--fuentePrincipal);
   font-size: 3rem;
+}
+.texto-contacto p:nth-child(3){
+  font-weight: bold;
 }
 .contacto{
   width: 95%;
