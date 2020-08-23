@@ -52,7 +52,7 @@
                     <div class="icono">
                         <h3>Envio Gratis</h3>
                         <img src="img/shipping.svg" alt="Confianza">
-                        <p>Envío gratis en compras mayores a 60$</p>
+                        <p>A partir de 60$ el envío te sale gratis</p>
                     </div>
 
                     <div class="icono">
@@ -65,7 +65,7 @@
                         <h3>Delivery</h3>
                         <img src="img/location.svg" alt="Seguridad">
                         <p>
-                            Disponemos de servicio delivery para tu comodidad
+                            Para mayor comodidad disponemos de servicio delivery
                         </p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
         </section>
 
         <main class="seccion productos-inicio">
-            <h2 class="contenedor">Nuestros mas destacados <span>Productos</span></h2>
+            <h2 class="contenedor">Nuestros <span>productos</span> mas destacados </h2>
 
             <div class="contenido-productos">
                 <div class="iconos-productos contenedor">
@@ -82,7 +82,7 @@
 
                         <h3>Bandanas para el cabello</h3>
                         <p>Permite realizar tu rutina de skincare y maquillaje sujetando tu cabello.</p>
-                        <a href="items/item_a33.html" class="boton botonPrimario">Ver Producto Ahora</a>
+                        <a href="items/item_a33.php" class="boton botonPrimario">Ver Producto Ahora</a>
                     </div>
 
                     <div class="producto">
@@ -91,7 +91,7 @@
                         <h3>Freeman Feeling Beautiful Facial Clay Mask Avocado & Oatmeal 6 oz</h3>
                         <p>Mascarilla purificante a base de aguacate y avena con vitamina E, limpia e hidrata
                             profundamente. Para todo tipo de piel.</p>
-                        <a href="items/item_a19.html" class="boton botonPrimario">Ver Producto Ahora</a>
+                        <a href="items/item_a19.php" class="boton botonPrimario">Ver Producto Ahora</a>
 
                     </div>
 
@@ -102,7 +102,7 @@
                         <p>Crema desmanchadora a base de retinol, vitamina C y vitamina E. devuelve la uniformidad al
                             tono de tu piel
                             Para todo tipo de piel</p>
-                        <a href="items/item_a31.html" class="boton botonPrimario">Ver Producto Ahora</a>
+                        <a href="items/item_a31.php" class="boton botonPrimario">Ver Producto Ahora</a>
 
                     </div>
 
@@ -111,7 +111,7 @@
 
                         <h3>Balsamo labial M&M</h3>
                         <p>Hidratante de labios. Se vende individual.</p>
-                        <a href="items/item_a39.html" class="boton botonPrimario">Ver Producto Ahora</a>
+                        <a href="items/item_a39.php" class="boton botonPrimario">Ver Producto Ahora</a>
                     </div>
                 </div>
 
@@ -122,7 +122,7 @@
         </main>
 
         <section class="contacto-inicio seccion">
-            <h2 class="contenedor"><span>Encuentra</span> tu mas adecuado producto</h2>
+            <h2 class="contenedor"><span>Encuentra</span> el producto mas adecuado para ti</h2>
             <div class="contenido-contacto">
                 <div class="contenedor">
                     <p>Si no encuentras tu producto ideal, puedes llenar el formulario y nos pondremos en contacto

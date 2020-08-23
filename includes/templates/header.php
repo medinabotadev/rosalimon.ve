@@ -48,7 +48,4 @@ if($item == 'item'){
                                 </nav>
                             </div>
                         </div>
-                <?php if($nombre_archivo == 'index'){ ?>
-                   <?php echo '</div>'; echo '<!-- Probando esta verga-->'; ?>
-                <?php } ?>
                 </header>

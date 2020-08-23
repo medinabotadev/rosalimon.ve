@@ -17,7 +17,7 @@ if ($item == 'item') {
                     <a href="../contacto.html">Contacto</a>
                 </nav>
             </div>
-            <p>Anaco, 6003 Edo. Anzoátegui, Venezuela</p>
+            <p>Anaco, 6003 Edo. Anzoátegui, Venezuela.</p>
             <p>Todos Los Derechos Reservados 2020&copy;</p>
         </footer>
     
@@ -44,7 +44,7 @@ if ($item == 'item') {
                     <a href="contacto.php">Contacto</a>
                 </nav>
             </div>
-            <p>Anaco, 6003 Edo. Anzoátegui, Venezuela</p>
+            <p>Anaco, 6003 Edo. Anzoátegui, Venezuela.</p>
             <p>Todos Los Derechos Reservados 2020&copy;</p>
     </footer>
         </div>
