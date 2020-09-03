@@ -1,11 +1,6 @@
 <?php
 $archivo = basename($_SERVER['PHP_SELF']);
 $nombre_archivo = strstr($archivo, '.php',true);
-$item = strstr($archivo, '_', true);
-$ruta = '';
-if($item == 'item'){
-    $ruta = '../';
-}
 ?>
 <!DOCTYPE html>
             <html lang="en">
@@ -18,9 +13,9 @@ if($item == 'item'){
                 <title>ROSALIMON | <?php echo ucfirst($nombre_archivo) ?></title>
                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
-                <link rel="stylesheet" href="<?php echo $ruta; ?>css/normalize.css">
-                <link rel="stylesheet" href="<?php echo $ruta; ?>css/lightbox.css">
-                <link rel="stylesheet" href="<?php echo $ruta; ?>css/styles.css">
+                <link rel="stylesheet" href="css/normalize.css">
+                <link rel="stylesheet" href="css/lightbox.css">
+                <link rel="stylesheet" href="css/styles.css">
             </head>
             
             <body>
@@ -30,21 +25,21 @@ if($item == 'item'){
                 <?php } ?>
                         <div class="barra">
                             <div class="logotipo">
-                                <a href="<?php echo $ruta; ?>index.php">
-                                    <img src="<?php echo $ruta; ?>img/png.png" alt="logotipo">
+                                <a href="index.php">
+                                    <img src="img/png.png" alt="logotipo">
                                 </a>
                             </div>
             
                             <div class="barra-fija">
                                 <div class="menu-movil">
                                     <p>Menu</p>
-                                    <img src="<?php echo $ruta; ?>img/open-menu.svg" alt="">
+                                    <img src="img/open-menu.svg" alt="">
                                 </div>
             
                                 <nav class="navegacion">
-                                    <a href="<?php echo $ruta; ?>index.php">Inicio<img src="<?php echo $ruta; ?>img/home.png" alt="home"></a>
-                                    <a href="<?php echo $ruta; ?>productos.php">Productos</a>
-                                    <a href="<?php echo $ruta; ?>carrito.php" class="botonCarrito">Carrito<img src="<?php echo $ruta; ?>img/carrito.png" alt=""></a>
+                                    <a href="index.php">Inicio<img src="img/home.png" alt="home"></a>
+                                    <a href="productos.php">Productos</a>
+                                    <a href="carrito.php" class="botonCarrito">Carrito<img src="img/carrito.png" alt=""></a>
                                 </nav>
                             </div>
                         </div>

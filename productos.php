@@ -46,11 +46,16 @@
                     ?>
                     <?php while($productos = $resultado->fetch_assoc()) { ?>
                         <div class="item">
-                            <img src="media/<?php echo $productos['codigo_producto']; ?>/<?php echo $productos['img_1']; ?>" alt="Producto">
+                        <img src="<?php 
+                        if($productos['img_1'] == ''){
+                       echo 'img/unnamed.jpg';
+                       } else {
+                       echo 'media/' . $productos['codigo_producto'] . '/' . $productos['img_1'];
+                       }?>" alt="Producto">
                             <div class="contenido-item">
                                 <h3><?php echo $productos['nombre_producto'];; ?></h3>
                                 <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
-                                <a href="items/item_<?php echo strtolower($productos['codigo_producto']); ?>.php" class="boton botonPrimario">Ver Producto</a>
+                                <a href="item.php?producto=<?php echo $productos['codigo_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
                     <?php } ?>
@@ -77,11 +82,16 @@
                     ?>
                     <?php while($productos = $resultado->fetch_assoc()) { ?>
                         <div class="item">
-                            <img src="media/<?php echo $productos['codigo_producto']; ?>/<?php echo $productos['img_1']; ?>" alt="Producto">
+                            <img src="<?php 
+                        if($productos['img_1'] == ''){
+                       echo 'img/unnamed.jpg';
+                       } else {
+                       echo 'media/' . $productos['codigo_producto'] . '/' . $productos['img_1'];
+                       }?>" alt="Producto">
                             <div class="contenido-item">
                                 <h3><?php echo $productos['nombre_producto']; ?></h3>
                                 <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
-                                <a href="items/item_<?php echo strtolower($productos['codigo_producto']); ?>.php" class="boton botonPrimario">Ver Producto</a>
+                                <a href="item.php?producto=<?php echo $productos['codigo_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
                     <?php } ?>
@@ -108,11 +118,16 @@
                     ?>
                     <?php while($productos = $resultado->fetch_assoc()) { ?>
                         <div class="item">
-                            <img src="media/<?php echo $productos['codigo_producto']; ?>/<?php echo $productos['img_1']; ?>" alt="Producto">
+                        <img src="<?php 
+                        if($productos['img_1'] == ''){
+                       echo 'img/unnamed.jpg';
+                       } else {
+                       echo 'media/' . $productos['codigo_producto'] . '/' . $productos['img_1'];
+                       }?>" alt="Producto">
                             <div class="contenido-item">
                                 <h3><?php echo $productos['nombre_producto'];; ?></h3>
                                 <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
-                                <a href="items/item_<?php echo strtolower($productos['codigo_producto']); ?>.php" class="boton botonPrimario">Ver Producto</a>
+                                <a href="item.php?producto=<?php echo $productos['codigo_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
                     <?php } ?>
@@ -139,11 +154,16 @@
                     ?>
                     <?php while($productos = $resultado->fetch_assoc()) { ?>
                         <div class="item">
-                            <img src="media/<?php echo $productos['codigo_producto']; ?>/<?php echo $productos['img_1']; ?>" alt="Producto">
+                        <img src="<?php 
+                        if($productos['img_1'] == ''){
+                       echo 'img/unnamed.jpg';
+                       } else {
+                       echo 'media/' . $productos['codigo_producto'] . '/' . $productos['img_1'];
+                       }?>" alt="Producto">
                             <div class="contenido-item">
                                 <h3><?php echo $productos['nombre_producto'];; ?></h3>
                                 <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
-                                <a href="items/item_<?php echo strtolower($productos['codigo_producto']); ?>.php" class="boton botonPrimario">Ver Producto</a>
+                                <a href="item.php?producto=<?php echo $productos['codigo_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
                     <?php } ?>

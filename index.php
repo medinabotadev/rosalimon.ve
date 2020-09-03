@@ -82,7 +82,7 @@
 
                         <h3>Bandanas para el cabello</h3>
                         <p>Permite realizar tu rutina de skincare y maquillaje sujetando tu cabello.</p>
-                        <a href="items/item_a33.php" class="boton botonPrimario">Ver Producto Ahora</a>
+                        <a href="item.php?producto=A33" class="boton botonPrimario">Ver Producto Ahora</a>
                     </div>
 
                     <div class="producto">
@@ -91,7 +91,7 @@
                         <h3>Freeman Feeling Beautiful Facial Clay Mask Avocado & Oatmeal 6 oz</h3>
                         <p>Mascarilla purificante a base de aguacate y avena con vitamina E, limpia e hidrata
                             profundamente. Para todo tipo de piel.</p>
-                        <a href="items/item_a19.php" class="boton botonPrimario">Ver Producto Ahora</a>
+                        <a href="item.php?producto=A19" class="boton botonPrimario">Ver Producto Ahora</a>
 
                     </div>
 
@@ -102,7 +102,7 @@
                         <p>Crema desmanchadora a base de retinol, vitamina C y vitamina E. devuelve la uniformidad al
                             tono de tu piel
                             Para todo tipo de piel</p>
-                        <a href="items/item_a31.php" class="boton botonPrimario">Ver Producto Ahora</a>
+                        <a href="item.php?producto=A31" class="boton botonPrimario">Ver Producto Ahora</a>
 
                     </div>
 
@@ -111,7 +111,7 @@
 
                         <h3>Balsamo labial M&M</h3>
                         <p>Hidratante de labios. Se vende individual.</p>
-                        <a href="items/item_a39.php" class="boton botonPrimario">Ver Producto Ahora</a>
+                        <a href="item.php?producto=A39" class="boton botonPrimario">Ver Producto Ahora</a>
                     </div>
                 </div>
 
