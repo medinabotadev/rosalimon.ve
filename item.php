@@ -1,5 +1,7 @@
-<?php echo $producto['nombre_producto']; ?>
-<?php include_once 'includes/templates/header.php' ?>
+<?php
+include 'includes/functions/sesiones.php';
+include_once 'includes/templates/header.php' 
+?>
 <?php $codigoProducto = $_GET['producto'];
     try{
     require_once 'includes/functions/db_connection.php';
@@ -79,10 +81,12 @@
                             <label for="cantidad">Cantidad: </label>
                             <select name="" id="cantidad" required class="d-block">
                                 <option value="" disabled selected>--Seleccione--</option>
-                                <option value="1" disabled>1</option>
+                                <option value="1">1</option>
                             </select>
 
-                            <input type="submit" value="Agregar Al Carrito" class="d-block agregarCarrito">
+                            <input type="hidden" id="id_producto" value="<?php echo $producto['id_producto']; ?>">
+                            <input type="hidden" id="codigo_producto" value="<?php echo $codigoProducto; ?>">
+                            <input type="submit" value="Agregar Al Carrito" class="d-block agregarCarrito" id="agregarAlCarrito">
                         </fieldset>
                     </form>
                 </div>

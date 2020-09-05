@@ -1,4 +1,7 @@
-<?php include_once 'includes/templates/header.php' ?>
+<?php
+    include 'includes/functions/sesiones.php';
+    include_once 'includes/templates/header.php' 
+?>
     <div class="pagina-productos">
         <div class="contenedor">
             <div class="contenido-paginaproductos">

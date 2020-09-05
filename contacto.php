@@ -1,4 +1,7 @@
-<?php include_once 'includes/templates/header.php' ?>
+<?php
+    include 'includes/functions/sesiones.php'; 
+    include_once 'includes/templates/header.php'; 
+?>
 
     <div class="texto-contacto">
         <h1 class="headeres">Contactanos</h1>

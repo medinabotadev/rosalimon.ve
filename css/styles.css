@@ -1017,6 +1017,9 @@ width: 55px;
   flex-basis: calc(50% - 1rem);
   border-radius: .5rem;
   border: 2px solid lightgrey;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 
   display: flex;
   flex-direction: column;
@@ -1143,6 +1146,13 @@ width: 55px;
 .agregarCarrito:hover{
   cursor: pointer;
   background-color: #585e51;
+}
+.carrito-vacio{
+  text-align: center;
+  font-size: 2rem;
+}
+.carrito-vacio a{
+  color: var(--rosaColor);
 }
 /*====================================================== CONTACTO.HTML */
 .fondo-contacto{
@@ -1333,83 +1343,54 @@ textarea {
   color: white;
 }
 @media (min-width: 768px){
-  .total{
-    flex-basis: calc(30% - 1rem);
-    order: 2;
-    margin: unset;
-    margin-top: 1rem;
-  }
-}
-.productosCarrito{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 95%;
-  margin: 0 auto;
-  text-align: center;
-}
-@media (min-width: 768px){
-  .productosCarrito{
-  display: block;
-  }
-}
-.itemCarrito{
-  flex-basis: calc(50% - .5rem);
-  min-height: 40.5rem;
-}
-@media (min-width: 768px){
-  .itemCarrito{
-  min-height: unset;
-}
-}
-.itemCarrito h3{
-  line-height: 1;
-  width: 95%;
-  margin: 0 auto;
-  color: var(--rosaColor);
-}
-@media (min-width: 768px){
   .contenido-carrito{
     display: flex;
     justify-content: space-between;
   }
+}
+@media (min-width: 768px){
+  .total{
+    flex-basis: calc(33.3% - 1rem);
+    order: 2;
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 768px){
   .productosCarrito{
-    flex-basis: calc(70% - 1rem);
-  }
-  .carritohtml h2{
-    display: none;
+    flex-basis: calc(77.7% - 1rem);
   }
 }
-.botones-carrito a{
-  display: block;
-  width: 100%;
-  margin: .5rem auto;
-  padding: .2rem;
+.item-carrito{
+  text-align: center;
+  justify-content: space-between;
 }
-.botones-carrito a:hover{
-  color: white;
-  background-color: var(--paletaSeis);
+.item-carrito h3{
+  font-size: 1.8rem;
 }
-.botones-carrito a:last-of-type{
-  background-color: rgb(207, 78, 78);
-}
-.botones-carrito a:last-of-type:hover{
-  background-color: #D62727;
+.item-carrito img{
+  max-width: 20rem;
+  max-height: 20rem;
 }
 @media (min-width: 768px){
   .item-carrito{
     display: flex;
-    flex-direction: row;
     align-items: center;
   }
-  .item-carrito h3{
-    height: 3rem;
-  }
-  .imagen-carrito img{
-    width: 150px;
-  }
-  .item-carrito p{
-    order: 3;
-    
+}
+.botonesCarrito{
+  padding: 1rem;
+  text-align: center;
+}
+.eliminarProducto{
+  border: 1px solid black;
+  border-radius: 2rem;
+  background-color: rgb(207, 78, 78);
+  padding: 1rem;
+  text-transform: uppercase;
+  margin-top: .5rem;
+}
+@media (min-width: 768px){
+  .eliminarProducto{
+    margin-top: unset;
   }
 }

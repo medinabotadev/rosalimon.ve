@@ -21,6 +21,8 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script type="text/javascript" src="js/carrito.js"></script>
+    <script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
