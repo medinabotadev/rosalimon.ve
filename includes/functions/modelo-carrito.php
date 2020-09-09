@@ -1,13 +1,13 @@
 <?php
 include 'sesiones.php';
-$cantidad = $_POST['cantidad'];
-$codigo_producto = $_POST['codigo_producto'];
-$id_producto = $_POST['id_producto'];
 $accion = $_POST['accion'];
 $codigo_usuario = $_SESSION['codigo_usuario'];
 $id_usuario = $_SESSION['id'];
 
 if($accion === 'agregaralcarrito'){
+    $cantidad = $_POST['cantidad'];
+    $codigo_producto = $_POST['codigo_producto'];
+    $id_producto = $_POST['id_producto'];
     try{
         include 'db_connection.php';
         $stmt = $connection->prepare(" INSERT INTO carrito (id_usuario_carrito, id_producto_carrito) VALUES (?, ?) ");
@@ -29,13 +29,28 @@ if($accion === 'agregaralcarrito'){
 
     echo json_encode($respuesta);
 }
-// $datos = array(
-//     'cantidad' => $cantidad,
-//     'codigo_producto' => $codigo_producto,
-//     'id_producto' => $id_producto,
-//     'accion' => $accion,
-//     'codigo_usuario' => $codigo_usuario,
-//     'id' => $id_usuario
-// );
-// echo json_encode($datos);
+
+if($_GET['accion'] === 'eliminar'){
+    $idProducto = (int) filter_var($_GET['idProducto'], FILTER_SANITIZE_NUMBER_INT);
+
+    include 'db_connection.php';
+    try{
+        $stmt = $connection->prepare(" DELETE FROM carrito WHERE id_producto_carrito = ? AND id_usuario_carrito = ? ");
+        $stmt->bind_param('ii', $idProducto, $id_usuario);
+        $stmt->execute();
+        if($stmt->affected_rows == 1){
+            $respuesta = array(
+                'respuesta' => 'correcto'
+            );
+        }
+            $stmt->close();
+            $connection->close();
+    } catch(Exception $e) {
+        $respuesta = array(
+            'error' => $e->getMessage()
+        );
+    }
+
+    echo json_encode($respuesta);
+}
 ?>

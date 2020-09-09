@@ -1394,3 +1394,8 @@ textarea {
     margin-top: unset;
   }
 }
+.productosCarrito .item{
+  border: unset;
+  border-radius: unset;
+  border-bottom: 2px solid #d3d3d3;
+}

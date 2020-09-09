@@ -42,6 +42,5 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-echo "Usted no tiene una sesion, se ha creado un usuario";
 }
 ?>

@@ -22,8 +22,8 @@ include_once 'includes/templates/header.php'
             <div class="contenido-carrito contenedor">
             <aside class="total">
                 <span class="d-block">Total:</span>
-                <span>(3 productos)</span>
-                <span class="precio">35.99$</span>
+                <span class="totalProductos"></span>
+                <span class="precio totalCompra"></span>
 
                 <input type="submit" value="Procesar pago" class="d-block boton botonPrimario">
             </aside>
@@ -74,7 +74,7 @@ include_once 'includes/templates/header.php'
                     </div>
                     <div class="botonesCarrito">
                         <a class="boton botonPrimario" href="item.php?producto=<?php echo $producto['codigo_producto'] ?>">Ver producto</a>
-                        <button class="eliminarProducto">Eliminar del carrito</button>
+                        <button class="eliminarProducto" data-idproducto="<?php echo $producto['id_producto'] ?>" id="eliminarDelCarrito" >Eliminar del carrito</button>
                     </div>
                 </div>
 
@@ -89,4 +89,6 @@ include_once 'includes/templates/header.php'
                     <p>Mira nuestro <a href="productos.php">catalogo</a> para agregar un producto</p>
                 </div>
         <?php    } ?>
+
+        
         <?php include_once 'includes/templates/footer.php'; ?>
