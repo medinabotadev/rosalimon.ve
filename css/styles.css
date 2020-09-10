@@ -1088,9 +1088,10 @@ width: 55px;
   margin: 0 auto;
   background-color: rgb(255, 235, 239);
 }
-.formulario-pedido fieldset legend{
-  /* color: var(--paletaCinco); */
+/*.formulario-pedido fieldset legend{
+   color: var(--paletaCinco); 
 }
+*/
 .formulario-pedido label{
   text-transform: uppercase;
   font-weight: bold;
@@ -1320,10 +1321,13 @@ textarea {
   align-items: center;
   border-radius: .5rem;
   border: 2px solid lightgrey;
-  height: 25rem;
+  height: 30rem;
   text-align: center;
   width: 95%;
   margin: 0 auto;
+}
+.total a{
+  color: var(--rosaColor);
 }
 .total span{
   color: var(--rosaColor);
@@ -1335,7 +1339,7 @@ textarea {
 }
 .total input{
   border: none;
-  width: 95%;
+  /* width: 95%; */
 }
 .total input:hover{
   cursor: pointer;
@@ -1398,4 +1402,30 @@ textarea {
   border: unset;
   border-radius: unset;
   border-bottom: 2px solid #d3d3d3;
+}
+/*===================================================== RESUMEN DE ORDEN ====================*/
+.resumen-orden .item{
+  border: unset;
+  border-radius: unset;
+  border-bottom: 2px solid #d3d3d3;
+}
+
+.resumenInfoOrden{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.resumenInfoOrden p{
+  flex-basis: calc(50% - 1rem);
+  font-weight: bold;
+  line-height: 1.5;
+}
+@media (min-width: 768px){
+  .resumenInfoOrden p{
+    flex-basis: calc(33.3% - 1rem);
+  }
+}
+.resumenInfoOrden p span{
+  display: block;
+  font-weight: initial;
 }

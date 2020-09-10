@@ -1,16 +1,71 @@
 <?php
 include 'includes/functions/sesiones.php'; 
 $idUsuario = $_SESSION['id'];
-include_once 'includes/templates/header.php'
-// SELECT * FROM carrito INNER JOIN productos ON carrito.id_producto_carrito = productos.id_producto INNER JOIN usuarios ON carrito.id_usuario_carrito = usuarios.id_usuario WHERE id_usuario = 
+include_once 'includes/templates/header.php';
 ?>
-
-    <main class="carritohtml">
-        <h1 class="headeres">Tu carrito de compras</h1>
-        <div class="recordatorio seccion">
-            <p><img src="img/bell.svg" alt=""> Te recordamos que por compras mayores a 60$ tu envio sale totalmente gratis <img src="img/bell.svg" alt=""></p>
+        <main>
+        <div class="texto-contacto">
+            <h1 class="headeres">Formulario de orden de compra</h1>
+            <p>*Por tu seguridad y la nuestra todos los campos son obligatorios</p>
         </div>
-        <?php
+
+            <form action="validacion_compra.php" method="POST" class="contenedor">
+                <fieldset>
+                    <legend>Informacion personal</legend>
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                    <label for="nombre">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Tu nombre" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Tu correo electronico" required>
+
+                    <label for="telefono">Telefono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Tu numero de telefono" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Direccion y metodo de entrega</legend>
+
+                    <label for="pais">Pais:</label>
+                    <input type="text" id="pais" name="pais" placeholder="Venezuela" value="Venezuela" disabled>
+
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" placeholder="Estado" required>
+
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+
+                    <label for="direccion1">Direccion 1:</label>
+                    <input type="text" id="direccion1" name="direccion1" placeholder="Direccion 1" required>
+
+                    <label for="direccion2">Direccion 2:</label>
+                    <input type="text" id="direccion2" name="direccion2" placeholder="Direccion 2">
+
+                    <label for="codigopostal">Codigo postal:</label>
+                    <input type="num" id="codigopostal" name="codigopostal" placeholder="Codigo postal" required>
+
+                    <!-- METODO DE ENVIO -->
+                    <div class="metodo-envio">
+                    <label for="delivery">(Solo en Anaco) Delivery:</label>
+                    <input type="radio" name="metodo-envio" value="delivery" id="delivery" required>
+
+                    <label for="envio">Envio nacional:</label>
+                    <input type="radio" name="metodo-envio" value="envio" id="envio" required>
+
+                    <label for="retiro">Retirar en nuestra ubicacion</label>
+                    <input type="radio" name="metodo-envio" value="retiro" id="retiro" required>
+                    </div>
+
+                    <input type="submit" name="submit" value="Confirmar pedido" class="d-block boton botonPrimario">
+
+                </fieldset>
+
+            </form>
+
+<?php
             include 'includes/functions/db_connection.php';
             try {
                 $productos = $connection->query(" SELECT * FROM carrito INNER JOIN productos ON carrito.id_producto_carrito = productos.id_producto INNER JOIN usuarios ON carrito.id_usuario_carrito = usuarios.id_usuario WHERE id_usuario = $idUsuario ORDER BY id_carrito DESC ");
@@ -24,10 +79,6 @@ include_once 'includes/templates/header.php'
                 <span class="d-block">Total:</span>
                 <span class="totalProductos"></span>
                 <span class="precio totalCompra"></span>
-
-                <a class="" href="formulario-compra.php">
-                <input type="submit" value="Procesar orden de compra" class="d-block boton botonPrimario">
-                </a>
                 <p>Tienes preguntas sobre el proceso de compra? <a href="contacto.php">Contactanos</a> o mira los <a href="pasos-compra.php">pasos a seguir!</a></p>
             </aside>
             <div class="productosCarrito">
@@ -75,10 +126,6 @@ include_once 'includes/templates/header.php'
                         <p>Cantidad: 1</p>
                         <p class="precio"><?php echo "$" . $producto['precio_producto']; ?></p>
                     </div>
-                    <div class="botonesCarrito">
-                        <a class="boton botonPrimario" href="item.php?producto=<?php echo $producto['codigo_producto'] ?>">Ver producto</a>
-                        <button class="eliminarProducto" data-idproducto="<?php echo $producto['id_producto'] ?>" id="eliminarDelCarrito" >Eliminar del carrito</button>
-                    </div>
                 </div>
 
         <?php        } ?>
@@ -93,5 +140,6 @@ include_once 'includes/templates/header.php'
                 </div>
         <?php    } ?>
 
-        
-        <?php include_once 'includes/templates/footer.php'; ?>
+<?php
+include_once 'includes/templates/footer.php';
+?>

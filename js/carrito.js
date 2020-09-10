@@ -147,10 +147,4 @@ function totalCompra(){
         total += precios
     }
     document.querySelector('.totalCompra').innerHTML = `${total} $`;
-    Swal.fire({
-        icon: 'success',
-        title: 'Se eliminó este producto del carrito',
-        showConfirmButton: false,
-        timer: 3000
-    })
 };
