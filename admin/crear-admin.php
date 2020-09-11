@@ -17,6 +17,16 @@
         <div class="contenedor-formulario">
             <img src="../img/png.png" alt="">
                 <form id="formulario" method="post">
+                <?php
+                    include 'includes/functions/db_connection.php';
+                    try {
+                        $resultado = $connection->query(" SELECT count(*) AS fila FROM administrador ");
+                        $filas = $resultado->fetch_assoc();
+                    } catch(Exception $e){
+                        echo $e->getMessage();
+                    }
+                    $fila = $filas['fila'];
+                    if($fila === '0'){ ?>
                     <div class="campo">
                         <label for="cedula">Cedula: </label>
                         <input type="number" name="cedula" id="cedula" placeholder="Cedula de identidad">
@@ -33,6 +43,9 @@
                     <div class="campo">
                         <p>*Una vez creado el administrador no se podran crear mas administradores</p>
                     </div>
+                    <?php } else { ?>
+                    <p>Ya existe un administrador</p>
+                    <?php } ?>
                 </form>
         </div>
     </div>

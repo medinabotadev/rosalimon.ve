@@ -1472,3 +1472,143 @@ textarea {
   color: var(--rosaColor);
   text-decoration: none;
 }
+/*======================================== SECCION PRINCIPAL ADMINISTRADOR */
+.barraAdmin{
+  padding: 1rem;
+  border-bottom: 2px solid lightgray;
+  text-align: center;
+}
+@media (min-width: 768px){
+  .barraAdmin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.barraAdmin h1{
+  margin: 0;
+  font-size: 2.2rem;
+  color: var(--rosaColor);
+  font-family: var(--fuentePrincipal);
+  font-weight: bold;
+}
+.barraAdmin a{
+  text-decoration: none;
+  color: var(--rosaColor);
+  padding: .5rem;
+  transition: .5s ease-in-out;
+  border-radius: .5rem;
+}
+.barraAdmin a:hover{
+  background-color: var(--rosaColor);
+  color: white;
+  transition: .5s ease-in-out;
+}
+@media (min-width: 768px){
+  .contenedorAdmin{
+    display: flex;
+  }
+  .menuAdmin{
+    /* flex-basis: 30%; */
+    max-width: 30rem;
+    min-height: 100vh;
+    border-right: 2px solid lightgray;
+  }
+  .contenidoPrincipal{
+    flex-basis: 100%;
+    overflow: scroll;
+    max-height: 100vh;
+  }
+}
+.navAdmin{
+  text-align: center;
+}
+.navAdmin a{
+  display: block;
+  font-size: 2.2rem;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: var(--rosaColor);
+  border-bottom: 2px solid lightgray;
+  transition: .5s ease-in-out;
+}
+.navAdmin a:hover{
+  color: white;
+  background-color: var(--rosaColor);
+  transition: .5s ease-in-out;
+}
+.navAdmin p{
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-family: var(--fuentePrincipal);
+  font-weight: bold;
+}
+.navAdmin a img{
+  width: 2.5rem;
+  vertical-align: middle;
+}
+/* SECCION DE INFORMACION GENERAL */
+.informacionGeneral{
+  border-radius: .5rem;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: center;
+}
+@media (min-width: 768px){
+  .informacionGeneral{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.informacionGeneral p{
+  background-color: rgb(255, 235, 239);
+  color: var(--rosaColor);
+  text-transform: uppercase;
+  font-size: 3rem;
+  border-radius: .5rem;
+  width: 95%;
+  margin: 3rem auto;
+}
+@media (min-width: 768px){
+  .informacionGeneral p{
+    flex-basis: calc(50% - 1rem);
+  }
+}
+.informacionGeneral p span{
+  display: block;
+  font-size: 9rem;
+}
+/* SECCION DE CONTACTO */
+.PersonasContactar{
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.persona{
+  background-color:  rgb(255, 235, 239);
+  border-radius: .5rem;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  border: 2px solid lightgrey;
+}
+.persona p{
+  text-align: center;
+  color: var(--rosaColor);
+  font-weight: bold;
+}
+.persona p:nth-child(2){
+  color: #000000;
+  font-weight: normal;
+  /* border: 2px solid lightgrey; */
+}
+.persona p span{
+  color: black;
+  font-weight: lighter;
+}
+.mensaje-persona{
+  background-color: white;
+  padding: .5rem;
+  border-radius: .5rem;
+  line-height: 1.5;
+}
