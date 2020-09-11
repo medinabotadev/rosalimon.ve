@@ -1429,3 +1429,46 @@ textarea {
   display: block;
   font-weight: initial;
 }
+/*======================================== LOGIN ADMINISTRADOR ===============================*/
+.entradaAdmin{
+  display: flex;
+  width: 100%;
+}
+.entradaAdmin p{
+  width: 100%;
+}
+.entradaAdmin a{
+  color: var(--rosaColor);
+}
+.login{
+  line-height: unset;
+}
+.contenedor-login{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.contenedor-login h1{
+  text-align: center;
+}
+.contenedor-formulario{
+  width: 95%;
+  max-width: 65rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.contenedor-formulario img{
+  width: 30rem;
+}
+.contenedor-formulario input{
+  border: 2px solid lightgray;
+}
+.contenedor-formulario .campo{
+  color: var(--rosaColor);
+  padding: .5rem;
+}
+.contenedor-formulario .campo a{
+  color: var(--rosaColor);
+  text-decoration: none;
+}

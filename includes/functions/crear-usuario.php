@@ -27,6 +27,7 @@ try {
         session_start();
         $_SESSION['codigo_usuario'] = $codigo_usuario;
         $_SESSION['id'] = $stmt->insert_id;
+        $_SESSION['sesion'] = 'usuario';
         $_SESSION['login'] = true;
     }
     $stmt->close();

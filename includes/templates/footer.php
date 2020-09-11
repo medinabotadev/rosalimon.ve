@@ -13,8 +13,11 @@
                     <a href="contacto.php">Contacto</a>
                 </nav>
             </div>
-            <p>Anaco, 6003 Edo. Anzoátegui, Venezuela.</p>
             <p>Todos Los Derechos Reservados 2020&copy;</p>
+        <div class="entradaAdmin">
+            <p>Anaco, 6003 Edo. Anzoátegui, Venezuela.</p>
+            <p><a href="admin/login.php">Administrador</a></p>
+        </div>
     </footer>
         </div>
 
