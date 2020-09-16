@@ -5,12 +5,15 @@ function usuario_autenticado(){
         include 'crear-usuario.php';
         crearUsuario();
     }
-    echo "<pre>";
-        var_dump($_SESSION);
-    echo "</pre>";
+    // echo "<pre>";
+    //     var_dump($_SESSION);
+    // echo "</pre>";
 }
 function revisar_usuario(){
-    $sesion = $_SESSION['sesion'];
+    $sesion = "";
+    if (!empty($_SESSION['sesion'])) {
+        $sesion = $_SESSION['sesion'];
+    }
     if ($sesion === 'usuario') {
         return true;
     } else if ($sesion === 'admin') {
@@ -19,6 +22,9 @@ function revisar_usuario(){
     }
 }
 
-session_start();
+
+if(!isset($_SESSION)){
+    session_start();
+}
 usuario_autenticado();
 ?>

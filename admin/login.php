@@ -1,16 +1,20 @@
 <?php
 session_start();
-echo "<pre>";
-    var_dump($_SESSION);
-echo "</pre>";
-echo "<pre>";
-var_dump($_GET);
-echo "</pre>";
-if ($_GET['cerrarsesion'] === '1') {
+// echo "<pre>";
+//     var_dump($_SESSION);
+// echo "</pre>";
+// echo "<pre>";
+// var_dump($_GET);
+// echo "</pre>";
+$sesioncerrada = "";
+if(!empty($_GET['cerrarsesion'])){
+    $sesioncerrada = $_GET['cerrarsesion'];
+};
+if ($sesioncerrada === '1') {
     $_SESSION = array();
-    echo "<pre>";
-        var_dump($_SESSION);
-    echo "</pre>";
+    // echo "<pre>";
+    //     var_dump($_SESSION);
+    // echo "</pre>";
 }
 ?>
 <!DOCTYPE html>

@@ -1579,6 +1579,31 @@ textarea {
   display: block;
   font-size: 9rem;
 }
+/* SECCION ORDENES Y PEDIDOS */
+.ordenesTodas{
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.ordenesTodas .orden{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 2px solid lightgray;
+  align-items: center;
+}
+.orden p{
+  color: var(--rosaColor);
+  font-weight: bold;
+}
+.ordenesTodas .orden p span{
+  display: block;
+  color: #000000;
+  font-weight: lighter;
+}
+.orden a{
+  color: var(--rosaColor);
+}
 /* SECCION DE CONTACTO */
 .PersonasContactar{
   width: 95%;
@@ -1611,4 +1636,12 @@ textarea {
   padding: .5rem;
   border-radius: .5rem;
   line-height: 1.5;
+}
+/* EN CONSTRUCCION  */
+.enConstruccion{
+  text-align: center;
+  width: 35rem;
+  margin: 0 auto;
+  display: block;
+  margin-top: 4.5rem;
 }

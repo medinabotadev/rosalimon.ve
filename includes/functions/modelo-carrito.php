@@ -30,9 +30,9 @@ if($accion === 'agregaralcarrito'){
     echo json_encode($respuesta);
 }
 
-if($_GET['accion'] === 'eliminar'){
-    $idProducto = (int) filter_var($_GET['idProducto'], FILTER_SANITIZE_NUMBER_INT);
-
+if($accion === 'eliminar'){
+    // $idProducto = (int) filter_var($_GET['idProducto'], FILTER_SANITIZE_NUMBER_INT);
+    $idProducto = $_POST['id_producto'];
     include 'db_connection.php';
     try{
         $stmt = $connection->prepare(" DELETE FROM carrito WHERE id_producto_carrito = ? AND id_usuario_carrito = ? ");

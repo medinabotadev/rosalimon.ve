@@ -8,7 +8,7 @@ $nombre_archivo = strstr($archivo, '.php',true);
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link rel="icon" type="image/png" href="<?php echo $ruta; ?>img/title.png">
+                <link rel="icon" type="image/png" href="img/title.png">
                 <meta http-equiv="X-UA-Compatible" content="ie=edge">
                 <title>ROSALIMON | <?php echo ucfirst($nombre_archivo) ?></title>
                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />

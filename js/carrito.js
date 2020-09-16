@@ -93,14 +93,19 @@ function eliminarDelCarrito(e){
                 // CREAMOS LA CONEXION
                 const xhr = new XMLHttpRequest();
 
+                // CREAMOS LOS DATOS
+                var datos = new FormData();
+                datos.append('id_producto', idProducto);
+                datos.append('accion', 'eliminar');
+
                 // ABRIMOS LA CONEXION
-                xhr.open('GET', `includes/functions/modelo-carrito.php?idProducto=${idProducto}&accion=eliminar`, true);
+                xhr.open('POST', `includes/functions/modelo-carrito.php`, true);
 
                 // LEEMOS LA RESPUESTA
                 xhr.onload = function(){
                     if(this.status === 200){
                         const respuesta = JSON.parse(xhr.responseText);
-                        
+                        console.log(respuesta);
                         // ELIMINAMOS EL ELEMENTO DEL DOM
                         e.target.parentElement.parentElement.remove();
 
@@ -117,7 +122,7 @@ function eliminarDelCarrito(e){
                 }
 
                 // ENVIAMOS LA PETICION
-                xhr.send();
+                xhr.send(datos);
             }
           })
           

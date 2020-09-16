@@ -24,7 +24,10 @@ try {
     $stmt->bind_param('s', $codigo_usuario);
     $stmt->execute();
     if($stmt->affected_rows > 0){
-        session_start();
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        } 
         $_SESSION['codigo_usuario'] = $codigo_usuario;
         $_SESSION['id'] = $stmt->insert_id;
         $_SESSION['sesion'] = 'usuario';
