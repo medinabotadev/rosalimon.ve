@@ -59,6 +59,8 @@ include_once 'includes/templates/header.php';
                 <input type="radio" name="metodo-envio" value="retiro" id="retiro" required>
             </div>
 
+            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+            <input type="hidden" name="action" value="process">
             <input type="submit" name="submit" value="Confirmar pedido" class="d-block boton botonPrimario">
     </form>
 
