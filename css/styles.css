@@ -1403,6 +1403,28 @@ textarea {
   border-radius: unset;
   border-bottom: 2px solid #d3d3d3;
 }
+/*===================================================== FORMULARIO COMPRA  */
+.formulario-compra{
+  width: 95%;
+}
+@media (min-width: 768px){
+  .formulario-compra{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .formulario-compra fieldset{
+    flex-basis: calc(50% - 1rem);
+  }
+  .metodo-envio{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .formulario-compra input[type="submit"]{
+    width: inherit!important;
+  }
+}
 /*===================================================== RESUMEN DE ORDEN ====================*/
 .resumen-orden .item{
   border: unset;

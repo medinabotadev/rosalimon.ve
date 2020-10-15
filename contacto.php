@@ -39,6 +39,8 @@
                     </div>
 
                 </fieldset>
+                <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+                <input type="hidden" name="action" value="process">
                 <input type="submit" name="submit" value="Enviar" class="boton botonPrimario">
             </form>
 
