@@ -1,13 +1,14 @@
 // VARIABLES GLOBALES
-    const itemCarrito = document.querySelector('.productosCarrito'),
-          botonAgregar = document.querySelector('#agregarAlCarrito');
+const itemCarrito = document.querySelector('.productosCarrito'),
+    botonAgregar = document.querySelector('#agregarAlCarrito');
 // EVENTLISTENERS
 eventListeners();
-function eventListeners(){
+
+function eventListeners() {
     // BOTON AGREGAR AL CARRITO
-    if(botonAgregar){
-    document.querySelector('#agregarAlCarrito').addEventListener('click', agregarAlCarrito);
-    document.querySelector('#cantidad').value;
+    if (botonAgregar) {
+        document.querySelector('#agregarAlCarrito').addEventListener('click', agregarAlCarrito);
+        document.querySelector('#cantidad').value;
     }
 
     // BOTON ELIMINAR DEL CARRITO
@@ -15,7 +16,7 @@ function eventListeners(){
         itemCarrito.addEventListener('click', eliminarDelCarrito);
     }
 
-    numeroProductos();
+    cantidadProductos();
     totalCompra();
 
 }
@@ -26,15 +27,15 @@ function agregarAlCarrito(e) {
     cantidad = document.querySelector('#cantidad').value;
     codigoProducto = document.querySelector('#codigo_producto').value;
     idProducto = document.querySelector('#id_producto').value;
-    
-    if(cantidad === ''){
+
+    if (cantidad === '') {
         Swal.fire({
             position: 'center',
             icon: 'error',
             title: 'Debe seleccionar una cantidad',
             showConfirmButton: false,
             timer: 3000
-          })
+        })
     } else {
         // SI EL USUARIO ESCOGIO UNA CANTIDAD HACER LLAMADO A AJAX
         var xhr = new XMLHttpRequest();
@@ -51,10 +52,10 @@ function agregarAlCarrito(e) {
         xhr.open('POST', 'includes/functions/modelo-carrito.php', true);
 
         // EJECUTAR LA RESPUESTA
-        xhr.onload = function(){
+        xhr.onload = function () {
             if (this.status === 200) {
                 var respuesta = JSON.parse(xhr.responseText);
-                if(respuesta.respuesta === 'correcto'){
+                if (respuesta.respuesta === 'correcto') {
                     Swal.fire({
                         icon: 'success',
                         title: 'Se agrego este producto al carrito',
@@ -62,94 +63,93 @@ function agregarAlCarrito(e) {
                         timer: 3000
                     })
                 }
-                numeroProductos();
-                totalCompra();
             }
-    }
+        }
         // ENVIAMOS LOS DATOS
         xhr.send(datos);
-}
+    }
 }
 
 // ELIMINAR UN PRODUCTO DEL CARRITO
-function eliminarDelCarrito(e){
+function eliminarDelCarrito(e) {
     // SE APLICA DELEGATION
-    if(e.target.classList.contains('eliminarProducto')){
+    if (e.target.classList.contains('eliminarProducto')) {
         const idProducto = e.target.getAttribute('data-idproducto');
-        
+
         Swal.fire({
-            title: 'Estas segura/o de eliminar este producto?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonColor: '#87907d',
-            cancelButtonColor: '#cf4e4e',
-            confirmButtonText: 'Si, eliminar del carrito!',
-            cancelButtonText: 'Cancelar'
-          })
-          .then((result) => {
-            if (result.isConfirmed) {
-                // SI EL USUARIO HA ACEPTADO HACEMOS LLAMADO A AJAX
-                
-                // CREAMOS LA CONEXION
-                const xhr = new XMLHttpRequest();
+                title: 'Estas segura/o de eliminar este producto?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#87907d',
+                cancelButtonColor: '#cf4e4e',
+                confirmButtonText: 'Si, eliminar del carrito!',
+                cancelButtonText: 'Cancelar'
+            })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    // SI EL USUARIO HA ACEPTADO HACEMOS LLAMADO A AJAX
 
-                // CREAMOS LOS DATOS
-                var datos = new FormData();
-                datos.append('id_producto', idProducto);
-                datos.append('accion', 'eliminar');
+                    // CREAMOS LA CONEXION
+                    const xhr = new XMLHttpRequest();
 
-                // ABRIMOS LA CONEXION
-                xhr.open('POST', `includes/functions/modelo-carrito.php`, true);
+                    // CREAMOS LOS DATOS
+                    var datos = new FormData();
+                    datos.append('id_producto', idProducto);
+                    datos.append('accion', 'eliminar');
 
-                // LEEMOS LA RESPUESTA
-                xhr.onload = function(){
-                    if(this.status === 200){
-                        const respuesta = JSON.parse(xhr.responseText);
-                        console.log(respuesta);
-                        // ELIMINAMOS EL ELEMENTO DEL DOM
-                        e.target.parentElement.parentElement.remove();
+                    // ABRIMOS LA CONEXION
+                    xhr.open('POST', `includes/functions/modelo-carrito.php`, true);
 
-                        // MOSTRAMOS LA NOTIFICACION
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Se eliminó este producto del carrito',
-                            showConfirmButton: false,
-                            timer: 3000
-                        })
-                        numeroProductos();
-                        totalCompra();
+                    // LEEMOS LA RESPUESTA
+                    xhr.onload = function () {
+                        if (this.status === 200) {
+                            const respuesta = JSON.parse(xhr.responseText);
+                            console.log(respuesta);
+                            // ELIMINAMOS EL ELEMENTO DEL DOM
+                            e.target.parentElement.parentElement.remove();
+
+                            // MOSTRAMOS LA NOTIFICACION
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Se eliminó este producto del carrito',
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                            cantidadProductos();
+                            totalCompra();
+                        }
                     }
-                }
 
-                // ENVIAMOS LA PETICION
-                xhr.send(datos);
-            }
-          })
-          
+                    // ENVIAMOS LA PETICION
+                    xhr.send(datos);
+                }
+            })
+
     }
 }
-
 // FUNCION PARA LEER CANTIDAD DE PRODUCTOS EN EL CARRITO
-function numeroProductos(){
-    const totalProductos = document.querySelectorAll('.item-carrito'),
-          contenedorNumero = document.querySelector('.totalProductos'),
-          cantidadProductosHeader = document.querySelector('.botonCarrito span');
-
-    if(totalProductos.length == 1){
-        contenedorNumero.innerHTML = `(${totalProductos.length} producto)`
+function cantidadProductos() {
+    const contenedorNumero = document.querySelector('.totalProductos'),
+        items_por_productos = document.querySelectorAll('.items_por_productos');
+    let totalProductos = 0;
+    items_por_productos.forEach(items_por_productos => {
+        totalProductos += parseFloat(items_por_productos.innerHTML.slice(10))
+    });
+    if (totalProductos == 1) {
+        contenedorNumero.innerHTML = `(${totalProductos} producto)`;
     } else {
-        contenedorNumero.innerHTML = `(${totalProductos.length} productos)`
+        contenedorNumero.innerHTML = `(${totalProductos} productos)`;
     };
 }
 
 // FUNCION PARA LEER EL MONTO TOTAL DE COSTOS EN EL CARRITO
-function totalCompra(){
-    const totalCompraProductos = document.querySelectorAll('.item-carrito .precio');
-
-    total = 0;
-    for(i = 0; i < totalCompraProductos.length; i++){
-        var precios = parseFloat(totalCompraProductos[i].textContent.replace('$', ""));
-        total += precios
+function totalCompra() {
+    const item = document.querySelectorAll('.item'),
+        items_por_productos = document.querySelectorAll('.items_por_productos'),
+        precio_producto = document.querySelectorAll('.item-carrito .precio');
+    let total = 0
+    for (i = 0; i < item.length; i++) {
+        total += items_por_productos[i].textContent.slice(10) * (precio_producto[i].textContent.replace('$', ""))
     }
-    document.querySelector('.totalCompra').innerHTML = `${total} $`;
+    document.querySelector('.totalCompra').innerHTML = `${parseFloat(total)} $`;
 };

@@ -2,10 +2,10 @@
 include 'includes/functions/sesiones.php';
 include_once 'includes/templates/header.php' 
 ?>
-<?php $codigoProducto = $_GET['producto'];
+<?php $idProducto = $_GET['id_producto'];
     try{
     require_once 'includes/functions/db_connection.php';
-    $sql = " SELECT * FROM productos WHERE codigo_producto = '$codigoProducto' ";
+    $sql = " SELECT * FROM productos WHERE id_producto = '$idProducto' ";
     $resultado = $connection->query($sql);
     } catch (\Exception $e) {
     echo $e->getMessage();
@@ -80,8 +80,14 @@ include_once 'includes/templates/header.php'
                             <legend>Ordenar</legend>
                             <label for="cantidad">Cantidad: </label>
                             <select name="" id="cantidad" required class="d-block">
-                                <option value="" disabled selected>--Seleccione--</option>
-                                <option value="1">1</option>
+                                <?php if ($producto['cantidad_inventario'] == "0") { ?>
+                                    <option value="" disabled selected>No disponible en inventario</option>
+                                <?php } else { ?>
+                                    <option value="" disabled selected>Seleccione una cantidad</option>
+                                    <?php for($i = 1; $i <= (int) $producto['cantidad_inventario']; $i++){ ?>
+                                        <option value="<?php echo $i ?>"><?php echo $i ?></option>
+                                    <?php } ?>
+                                <?php } ?>
                             </select>
 
                             <input type="hidden" id="id_producto" value="<?php echo $producto['id_producto']; ?>">

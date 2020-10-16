@@ -138,7 +138,7 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
                             <div class="item-carrito">
                                 <img src="../media/<?php echo $producto['codigo_producto'] ?>/<?php echo $producto['img_1'] ?>" alt="">
                                 <h3><?php echo $producto['nombre_producto'] ?></h3>
-                                <p>Cantidad: 1</p>
+                                <p>Cantidad: <?php echo $producto['cantidad'] ?></p>
                                 <p class="precio"><?php echo "$" . $producto['precio_producto']; ?></p>
                             </div>
                         </div>

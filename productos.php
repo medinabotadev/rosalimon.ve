@@ -41,7 +41,7 @@
                     <?php
                         try{
                         require_once 'includes/functions/db_connection.php';
-                        $sql = " SELECT codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 1 ";
+                        $sql = " SELECT id_producto, codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 1 ";
                         $resultado = $connection->query($sql);
                         } catch (\Exception $e) {
                         echo $e->getMessage();
@@ -58,7 +58,7 @@
                             <div class="contenido-item">
                                 <h3><?php echo $productos['nombre_producto'];; ?></h3>
                                 <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
-                                <a href="item.php?producto=<?php echo $productos['codigo_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
+                                <a href="item.php?id_producto=<?php echo $productos['id_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
                     <?php } ?>
@@ -77,7 +77,7 @@
                     <?php
                         try{ 
                         require_once 'includes/functions/db_connection.php';
-                        $sql = " SELECT codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 2 ";
+                        $sql = " SELECT id_producto, codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 2 ";
                         $resultado = $connection->query($sql);
                         } catch (\Exception $e) {
                             echo $e->getMessage();
@@ -94,7 +94,7 @@
                             <div class="contenido-item">
                                 <h3><?php echo $productos['nombre_producto']; ?></h3>
                                 <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
-                                <a href="item.php?producto=<?php echo $productos['codigo_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
+                                <a href="item.php?id_producto=<?php echo $productos['id_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
                     <?php } ?>
@@ -113,7 +113,7 @@
                     <?php
                         try{ 
                         require_once 'includes/functions/db_connection.php';
-                        $sql = " SELECT codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 3 ";
+                        $sql = " SELECT id_producto, codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 3 ";
                         $resultado = $connection->query($sql);
                         } catch (\Exception $e) {
                             echo $e->getMessage();
@@ -130,7 +130,7 @@
                             <div class="contenido-item">
                                 <h3><?php echo $productos['nombre_producto'];; ?></h3>
                                 <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
-                                <a href="item.php?producto=<?php echo $productos['codigo_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
+                                <a href="item.php?id_producto=<?php echo $productos['id_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
                     <?php } ?>
@@ -149,7 +149,7 @@
                     <?php
                         try{ 
                         require_once 'includes/functions/db_connection.php';
-                        $sql = " SELECT codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 4 ";
+                        $sql = " SELECT id_producto, codigo_producto, nombre_producto, precio_producto, img_1 FROM productos WHERE id_categoria_producto = 4 ";
                         $resultado = $connection->query($sql);
                         } catch (\Exception $e) {
                             echo $e->getMessage();
@@ -166,7 +166,7 @@
                             <div class="contenido-item">
                                 <h3><?php echo $productos['nombre_producto'];; ?></h3>
                                 <p class="precio"><?php echo "$" . $productos['precio_producto']; ?></p>
-                                <a href="item.php?producto=<?php echo $productos['codigo_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
+                                <a href="item.php?id_producto=<?php echo $productos['id_producto']; ?>" class="boton botonPrimario">Ver Producto</a>
                             </div>
                         </div>
                     <?php } ?>

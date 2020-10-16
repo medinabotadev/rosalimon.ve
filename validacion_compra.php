@@ -17,7 +17,7 @@ if ($_POST['action'] == 'process') {
             // OBTENEMOS EL TOTAL DE LA COMPRA
             try {
                 include 'includes/functions/db_connection.php';
-                $resultado = $connection->query(" SELECT SUM(precio_producto) AS total_orden FROM carrito INNER JOIN productos ON carrito.id_producto_carrito = productos.id_producto INNER JOIN usuarios ON carrito.id_usuario_carrito = usuarios.id_usuario WHERE id_usuario = $idUsuario ");
+                $resultado = $connection->query(" SELECT SUM(precio_producto * cantidad) AS total_orden FROM carrito INNER JOIN productos ON carrito.id_producto_carrito = productos.id_producto INNER JOIN usuarios ON carrito.id_usuario_carrito = usuarios.id_usuario WHERE id_usuario = $idUsuario ");
                 $total = $resultado->fetch_assoc();
             } catch (Exception $e) {
                 echo $e->getMessage();
@@ -144,7 +144,7 @@ if ($_POST['action'] == 'process') {
                         <div class="item-carrito">
                             <img src="media/<?php echo $producto['codigo_producto'] ?>/<?php echo $producto['img_1'] ?>" alt="">
                             <h3><?php echo $producto['nombre_producto'] ?></h3>
-                            <p>Cantidad: 1</p>
+                            <p>Cantidad: <?php echo $producto['cantidad'] ?></p>
                             <p class="precio"><?php echo "$" . $producto['precio_producto']; ?></p>
                         </div>
                     </div>

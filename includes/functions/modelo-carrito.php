@@ -10,8 +10,8 @@ if($accion === 'agregaralcarrito'){
     $id_producto = $_POST['id_producto'];
     try{
         include 'db_connection.php';
-        $stmt = $connection->prepare(" INSERT INTO carrito (id_usuario_carrito, id_producto_carrito) VALUES (?, ?) ");
-        $stmt->bind_param('ii', $id_usuario, $id_producto);
+        $stmt = $connection->prepare(" INSERT INTO carrito (id_usuario_carrito, id_producto_carrito, cantidad) VALUES (?, ?, ?) ");
+        $stmt->bind_param('iii', $id_usuario, $id_producto, $cantidad);
         $stmt->execute();
         if($stmt->affected_rows > 0){
             $respuesta = array(

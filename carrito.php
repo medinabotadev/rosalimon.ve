@@ -24,7 +24,6 @@ include_once 'includes/templates/header.php'
                 <span class="d-block">Total:</span>
                 <span class="totalProductos"></span>
                 <span class="precio totalCompra"></span>
-
                 <a class="" href="formulario-compra.php">
                 <input type="submit" value="Procesar orden de compra" class="d-block boton botonPrimario">
                 </a>
@@ -42,6 +41,8 @@ include_once 'includes/templates/header.php'
                         ["id_usuario_carrito"]=>
                         string(2) "49"
                         ["id_producto_carrito"]=>
+                        string(1) "2"
+                        ["cantidad"]=>
                         string(1) "2"
                         ["id_producto"]=>
                         string(1) "2"
@@ -72,11 +73,11 @@ include_once 'includes/templates/header.php'
                     <div class="item-carrito">
                         <img src="media/<?php echo $producto['codigo_producto'] ?>/<?php echo $producto['img_1'] ?>" alt="">
                         <h3><?php echo $producto['nombre_producto'] ?></h3>
-                        <p>Cantidad: 1</p>
+                        <p class="items_por_productos">Cantidad: <?php echo $producto['cantidad'] ?></p>
                         <p class="precio"><?php echo "$" . $producto['precio_producto']; ?></p>
                     </div>
                     <div class="botonesCarrito">
-                        <a class="boton botonPrimario" href="item.php?producto=<?php echo $producto['codigo_producto'] ?>">Ver producto</a>
+                        <a class="boton botonPrimario" href="item.php?id_producto=<?php echo $producto['id_producto'] ?>">Ver producto</a>
                         <button class="eliminarProducto" data-idproducto="<?php echo $producto['id_producto'] ?>" id="eliminarDelCarrito" >Eliminar del carrito</button>
                     </div>
                 </div>

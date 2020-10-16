@@ -78,6 +78,7 @@ include_once 'includes/templates/header.php';
                 <span class="d-block">Total:</span>
                 <span class="totalProductos"></span>
                 <span class="precio totalCompra"></span>
+                </a>
                 <p>Tienes preguntas sobre el proceso de compra? <a href="contacto.php">Contactanos</a> o mira los <a href="pasos-compra.php">pasos a seguir!</a></p>
             </aside>
             <div class="productosCarrito">
@@ -122,7 +123,7 @@ include_once 'includes/templates/header.php';
                         <div class="item-carrito">
                             <img src="media/<?php echo $producto['codigo_producto'] ?>/<?php echo $producto['img_1'] ?>" alt="">
                             <h3><?php echo $producto['nombre_producto'] ?></h3>
-                            <p>Cantidad: 1</p>
+                            <p class="items_por_productos">Cantidad: <?php echo $producto['cantidad'] ?></p>
                             <p class="precio"><?php echo "$" . $producto['precio_producto']; ?></p>
                         </div>
                     </div>
