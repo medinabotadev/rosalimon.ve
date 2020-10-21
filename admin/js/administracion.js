@@ -5,11 +5,19 @@ eventListeners();
 
 function eventListeners() {
 
-    const formulario = document.querySelector('#formulario')
+    const formulario = document.querySelector('#formulario'),
+          listadoOrdenes = document.querySelector('.listadoOrdenes'),
+          listadoContactos = document.querySelector('.listadoPersonasContactar');
+
     if (formulario) {
         formulario.addEventListener('submit', validarRegistro);
     }
-    document.querySelector('.listadoOrdenes').addEventListener('click', verificar_click_ordenes);
+    if (listadoOrdenes) {
+        listadoOrdenes.addEventListener('click', verificar_click_ordenes);
+    }
+    if (listadoContactos) {
+        listadoContactos.addEventListener('click', verificar_click_contactos);
+    }
 }
 
 function validarRegistro(e) {
@@ -77,6 +85,7 @@ function validarRegistro(e) {
     }
 }
 
+// LISTA DE ORDENES
 function verificar_click_ordenes(e){
     if (e.target.getAttribute('src') == 'img/delete.svg') {
         eliminarOrden(e);
@@ -132,7 +141,7 @@ function marcarStatus(e){
         const datos = new FormData;
         datos.append('orden_id', orden_id);
         datos.append('status', 1);
-        datos.append('accion', 'actualizar_status');
+        datos.append('accion', 'actualizar_status_orden');
 
         const xhr = new XMLHttpRequest();
 
@@ -152,7 +161,7 @@ function marcarStatus(e){
         const datos = new FormData;
         datos.append('orden_id', orden_id);
         datos.append('status', 0);
-        datos.append('accion', 'actualizar_status');
+        datos.append('accion', 'actualizar_status_orden');
 
         const xhr = new XMLHttpRequest();
 
@@ -179,10 +188,100 @@ function cantidadCompletados(){
     for (let i = 0; i < total_ordenes; i++) {
         if (ordenes[i].checked) {
             cantidad_completados.push(i);
-        } else {
-            cantidad_no_completados.push(i)
         }
     }
     porcentaje = (cantidad_completados.length / total_ordenes) * 100;
     // console.log(porcentaje);
 }
+// FIN LISTA DE ORDENES
+
+
+// LISTA DE PERSONAS CONTACTAR
+function verificar_click_contactos(e) {
+    if (e.target.getAttribute('src') == 'img/delete.svg') {
+        eliminarContacto(e);
+    } else if (e.target.classList.contains('checkbox')){
+        marcarStatusContacto(e);
+    }
+}
+function eliminarContacto(e) {
+    const contacto_id = e.target.parentElement.getAttribute('data-contactoId');
+    Swal.fire({
+        title: 'Esta seguro/a que desea eliminar esta solicitud de contacto?',
+        text: "No podra deshacer los cambios!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            const datos = new FormData;
+            datos.append('contacto_id', contacto_id);
+            datos.append('accion', 'borrar_contacto')
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('POST', 'includes/functions/modelo-admin.php', true);
+
+            xhr.onload = function(){
+                if(this.status == 200){
+                    const respuesta = JSON.parse(xhr.responseText);
+                    if (respuesta.respuesta == 'correcto') {
+                        e.target.parentElement.parentElement.parentElement.remove();
+                        Swal.fire(
+                            'Correcto',
+                            'Se ha eliminado la solicitud',
+                            'success'
+                          )
+                    }
+                }
+            }
+            xhr.send(datos)
+        }
+      })
+}
+function marcarStatusContacto(e) {
+    const contacto_id = e.target.getAttribute('data-contactoId');
+    if (e.target.checked) {
+        // COMPLETADO
+        const datos = new FormData;
+        datos.append('contacto_id', contacto_id);
+        datos.append('status', 1);
+        datos.append('accion', 'actualizar_status_contacto');
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'includes/functions/modelo-admin.php', true);
+
+        xhr.onload = function(){
+            if (this.status = 200) {
+                const respuesta = JSON.parse(xhr.responseText);
+                console.log(`Contacto ${contacto_id} completado: ${respuesta.respuesta}`);
+            }
+        }
+
+        xhr.send(datos)
+    } else {
+        // DESCOMPLETADO
+        const datos = new FormData;
+        datos.append('contacto_id', contacto_id);
+        datos.append('status', 0);
+        datos.append('accion', 'actualizar_status_contacto');
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'includes/functions/modelo-admin.php', true);
+
+        xhr.onload = function(){
+            if (this.status = 200) {
+                const respuesta = JSON.parse(xhr.responseText);
+                console.log(`Contacto ${contacto_id} descompletado: ${respuesta.respuesta}`);
+            }
+        }
+
+        xhr.send(datos)
+    }
+}
+// FIN LISTA DE PERSONAS CONTACTAR

@@ -142,8 +142,8 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
                                 <p class="precio"><?php echo "$" . $producto['precio_producto']; ?></p>
                             </div>
                         </div>
-            <?php } ?>
-            </div>
+                    <?php } ?>
+                </div>
     </div>
 <?php } else if ($informacionAmostrar === 'ordenes' && empty($_GET['orden'])) { ?>
     <?php
@@ -158,20 +158,20 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
     <!-- SOLO SE MOSTRARAN LAS ORDENES -->
     <div class="ordenesTodas">
         <table class="listadoOrdenes">
-                <thead>
+            <thead>
+                <tr>
+                    <th>Estado</th>
+                    <th># de orden</th>
+                    <th>Fecha</th>
+                    <th>Nombre y apellido</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($ordenes as $orden) { ?>
                     <tr>
-                        <th>Estado</th>
-                        <th># de orden</th>
-                        <th>Fecha</th>
-                        <th>Nombre y apellido</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($ordenes as $orden){ ?>
-                    <tr>
-                        <td><input type="checkbox" name="" id="" class="checkbox ordenes" data-ordenId="<?php echo $orden['id_usuario_orden']; ?>" <?php if($orden['status'] == 1){ echo "checked"; }; ?>></td>
+                        <td><input type="checkbox" name="" id="" class="checkbox ordenes" data-ordenId="<?php echo $orden['id_usuario_orden']; ?>" <?php if ($orden['status'] == 1) { echo "checked"; }; ?>></td>
                         <td><?php echo $orden['id_usuario_orden']; ?></td>
                         <td><?php echo $orden['fecha_pedido']; ?></td>
                         <td><?php echo $orden['nombre'] . " " . $orden['apellido']; ?></td>
@@ -181,17 +181,17 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
                             <a href="#" id="eliminar_orden" class="eliminar_orden" data-ordenId="<?php echo $orden['id_usuario_orden']; ?>"><img src="img/delete.svg" alt=""></a>
                         </td>
                     </tr>
-                    <?php } ?>
-                </tbody>
+                <?php } ?>
+            </tbody>
         </table>
     </div>
 <?php } ?>
 
 
 <!-- SECCION PRODUCTOS Y DESTACADOS BAJO CONSTRUCCION -->
-<?php if($informacionAmostrar === 'productos' || $informacionAmostrar === 'destacados') { ?>
-<h1 class="headeres">Seccion en construccion</h1>
-<img class="enConstruccion" src="img/sketch.svg" alt="">
+<?php if ($informacionAmostrar === 'productos' || $informacionAmostrar === 'destacados') { ?>
+    <h1 class="headeres">Seccion en construccion</h1>
+    <img class="enConstruccion" src="img/sketch.svg" alt="">
 <?php } ?>
 
 <!-- SECCION CONTACTO -->
@@ -206,14 +206,34 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
     ?>
     <h1 class="headeres">Personas a contactar</h1>
     <div class="PersonasContactar">
-        <?php foreach ($contactos as $contacto) { ?>
-            <div class="persona">
-                <p>Nombre: <span><?php echo $contacto['nombre_contacto']; ?></span></p>
-                <p class="mensaje-persona"><?php echo $contacto['mensaje_contacto']; ?></p>
-                <p>Correo: <span><?php echo $contacto['email_contacto']; ?></span> | Telefono: <span><?php echo $contacto['telefono_contacto']; ?></span> | Contactar via: <span><?php echo $contacto['forma_contacto']; ?></span></p>
-                <p>Fecha: <span><?php echo $contacto['fecha_contacto']; ?></span></p>
-            </div>
-        <?php } ?>
+            <table class="listadoPersonasContactar">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Nombre</th>
+                        <th>Mensaje</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Forma de contacto</th>
+                        <th>Fecha de contacto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($contactos as $contacto) { ?>
+                        <tr>
+                            <td><input type="checkbox" class="checkbox" data-contactoId="<?php echo $contacto['id_contacto'] ?>" <?php if($contacto['status_contacto'] == 1){ echo 'checked'; } ?>></td>
+                            <td><?php echo $contacto['nombre_contacto']; ?></td>
+                            <td><?php echo $contacto['mensaje_contacto']; ?></td>
+                            <td><?php echo $contacto['email_contacto']; ?></td>
+                            <td><?php echo $contacto['telefono_contacto']; ?></td>
+                            <td><?php echo $contacto['forma_contacto']; ?></td>
+                            <td><?php echo $contacto['fecha_contacto']; ?></td>
+                            <td><a href="#" id="eliminar_contacto" class="eliminar_contacto" data-contactoId="<?php echo $contacto['id_contacto']; ?>"><img src="img/delete.svg" alt=""></a></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
     </div>
 <?php } ?>
 </main>
