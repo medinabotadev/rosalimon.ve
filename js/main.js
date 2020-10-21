@@ -63,7 +63,7 @@ $(document).ready(function(){
     setInterval(function(){
         if(i <= 5) {
         $('.testimonial blockquote img:nth-child(' + i +')').fadeIn(2000);
-        $('.testimonial blockquote img:nth-child(' + (i - 1) +')').fadeOut(200);
+        $('.testimonial blockquote img:nth-child(' + (i - 1) +')').fadeOut(150);
         i++
         } else {
         // $('.testimonial blockquote img:nth-child(1)').show();

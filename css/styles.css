@@ -1607,25 +1607,44 @@ textarea {
   margin: 0 auto;
   margin-top: 1rem;
 }
-.ordenesTodas .orden{
-  display: flex;
+.ordenesTodas .listadoOrdenes .checkbox{
+  margin: 0;
+  height: 2rem;
+}
+.ordenesTodas .listadoOrdenes .checkbox:after{
+  content: 'No Completado';
+  background-color: rgb(238, 144, 144);
+  height: 2.5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: inline;
+}
+.ordenesTodas .listadoOrdenes .checkbox:checked:after{
+  content: 'Completado';
+  background-color: lightgreen;
+  height: 2.5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: inline;
+}
+.ordenesTodas .listadoOrdenes{
+  width: 100%;
   text-align: center;
-  justify-content: space-between;
+}
+.ordenesTodas .listadoOrdenes img{
+  width: 2.5rem;
+  margin-left: 2rem;
+}
+.listadoOrdenes tbody{
+  width: 100%;
+}
+.listadoOrdenes tbody tr{
+  height: 5rem;
+}
+.listadoOrdenes tbody tr td{
   border-bottom: 2px solid lightgray;
-  align-items: center;
 }
-.orden p{
-  color: var(--rosaColor);
-  font-weight: bold;
-}
-.ordenesTodas .orden p span{
-  display: block;
-  color: #000000;
-  font-weight: lighter;
-}
-.orden a{
-  color: var(--rosaColor);
-}
+
 /* SECCION DE CONTACTO */
 .PersonasContactar{
   width: 95%;

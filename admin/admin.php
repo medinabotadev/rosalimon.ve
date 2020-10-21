@@ -149,7 +149,7 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
     <?php
                 try {
                     include 'includes/functions/db_connection.php';
-                    $ordenes = $connection->query(" SELECT id_usuario_orden, monto, nombre, apellido, fecha_pedido FROM ordenes ORDER BY id_usuario_orden DESC");
+                    $ordenes = $connection->query(" SELECT id_usuario_orden, monto, nombre, apellido, fecha_pedido, status FROM ordenes ORDER BY id_usuario_orden DESC");
                 } catch (Exception $e) {
                     echo $e->getMessage();
                 }
@@ -157,15 +157,33 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
     <h1 class="headeres">Ordenes de compra</h1>
     <!-- SOLO SE MOSTRARAN LAS ORDENES -->
     <div class="ordenesTodas">
-        <?php foreach ($ordenes as $orden) { ?>
-            <div class="orden">
-                <p>Numero de orden:<span><?php echo $orden['id_usuario_orden']; ?></span></p>
-                <p>Fecha de orden:<span><?php echo $orden['fecha_pedido']; ?></span></p>
-                <p>Nombre y apellido:<span><?php echo $orden['nombre'] . " " . $orden['apellido']; ?></span></p>
-                <p>Total:<span><?php echo $orden['monto']; ?></span></p>
-                <a href="admin.php?mostrar=ordenes&orden=<?php echo $orden['id_usuario_orden']; ?>">Ver orden completa</a>
-            </div>
-        <?php } ?>
+        <table class="listadoOrdenes">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th># de orden</th>
+                        <th>Fecha</th>
+                        <th>Nombre y apellido</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($ordenes as $orden){ ?>
+                    <tr>
+                        <td><input type="checkbox" name="" id="" class="checkbox ordenes" data-ordenId="<?php echo $orden['id_usuario_orden']; ?>" <?php if($orden['status'] == 1){ echo "checked"; }; ?>></td>
+                        <td><?php echo $orden['id_usuario_orden']; ?></td>
+                        <td><?php echo $orden['fecha_pedido']; ?></td>
+                        <td><?php echo $orden['nombre'] . " " . $orden['apellido']; ?></td>
+                        <td><?php echo $orden['monto']; ?> $</td>
+                        <td>
+                            <a href="admin.php?mostrar=ordenes&orden=<?php echo $orden['id_usuario_orden']; ?>"><img src="img/eye-open.svg" alt=""></a>
+                            <a href="#" id="eliminar_orden" class="eliminar_orden" data-ordenId="<?php echo $orden['id_usuario_orden']; ?>"><img src="img/delete.svg" alt=""></a>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+        </table>
     </div>
 <?php } ?>
 
@@ -200,6 +218,9 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
 <?php } ?>
 </main>
 </div>
+
+<script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
+<script type="text/javascript" src="js/administracion.js"></script>
 </body>
 
 </html>
