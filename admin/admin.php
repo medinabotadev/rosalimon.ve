@@ -171,7 +171,9 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
             <tbody>
                 <?php foreach ($ordenes as $orden) { ?>
                     <tr>
-                        <td><input type="checkbox" name="" id="" class="checkbox ordenes" data-ordenId="<?php echo $orden['id_usuario_orden']; ?>" <?php if ($orden['status'] == 1) { echo "checked"; }; ?>></td>
+                        <td><input type="checkbox" name="" id="" class="checkbox ordenes" data-ordenId="<?php echo $orden['id_usuario_orden']; ?>" <?php if ($orden['status'] == 1) {
+                                                                                                                                                        echo "checked";
+                                                                                                                                                    }; ?>></td>
                         <td><?php echo $orden['id_usuario_orden']; ?></td>
                         <td><?php echo $orden['fecha_pedido']; ?></td>
                         <td><?php echo $orden['nombre'] . " " . $orden['apellido']; ?></td>
@@ -187,9 +189,133 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
     </div>
 <?php } ?>
 
-
-<!-- SECCION PRODUCTOS Y DESTACADOS BAJO CONSTRUCCION -->
-<?php if ($informacionAmostrar === 'productos' || $informacionAmostrar === 'destacados') { ?>
+<!-- PRODUCTOS -->
+<?php if ($informacionAmostrar === 'productos' && empty($_GET['id_producto'])) { ?>
+    <?php
+    try {
+        include 'includes/functions/db_connection.php';
+        $productos = $connection->query(" SELECT * FROM productos ");
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    ?>
+    <h1 class="headeres">Productos</h1>
+    <div class="productosTodos">
+        <table class="listadoProductos">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad en inventario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($productos as $producto) { ?>
+                    <tr>
+                        <td><img src="../media/<?php echo $producto['codigo_producto'] ?>/<?php echo $producto['img_1'] ?>" alt=""></td>
+                        <td><?php echo $producto['codigo_producto'] ?></td>
+                        <td><?php echo $producto['nombre_producto'] ?></td>
+                        <td><?php echo "$" . $producto['precio_producto']; ?></td>
+                        <td><?php echo $producto['cantidad_inventario']; ?></td>
+                        <td>
+                            <a href="admin.php?mostrar=productos&id_producto=<?php echo $producto['id_producto'] ?>"><img src="img/edit.svg" alt=""></a>
+                            <a href="#" id="eliminar_producto" class="eliminar_producto" data-productoId="<?php echo $producto['id_producto'] ?>"><img src="img/delete.svg" alt=""></a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+<?php } else if ($informacionAmostrar === 'productos' && isset($_GET['id_producto'])) { ?>
+    <?php
+    $id_producto = $_GET['id_producto'];
+    try {
+        include 'includes/functions/db_connection.php';
+        $resultado = $connection->query(" SELECT * FROM productos WHERE id_producto = $id_producto ");
+        $producto_detalle = $resultado->fetch_assoc();
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    ?>
+    <h1 class="headeres">Editar informacion de producto</h1>
+    <form class="form-admin" action="">
+        <div class="input-group">
+            <label for="codigo_producto">Codigo producto:</label>
+            <input required type="text" id="codigo_producto" name="codigo_producto" class="codigo_producto" value="<?php echo htmlspecialchars($producto_detalle['codigo_producto']) ?>">
+        </div>
+        <div class="input-group">
+            <label for="nombre_producto">Nombre producto:</label>
+            <input required type="text" id="nombre_producto" name="nombre_producto" class="nombre_producto" value="<?php echo htmlspecialchars($producto_detalle['nombre_producto']) ?>">
+        </div>
+        <div class="input-group">
+            <label for="descripcion_producto">Descripcion producto:</label>
+            <input required type="text" id="descripcion_producto" name="descripcion_producto" class="descripcion_producto" value="<?php echo htmlspecialchars($producto_detalle['descripcion_producto']) ?>">
+        </div>
+        <div class="input-group">
+            <label for="precio_producto">Precio producto:</label>
+            <input required type="number" id="precio_producto" name="precio_producto" class="precio_producto" value="<?php echo $producto_detalle['precio_producto'] ?>">
+        </div>
+        <div class="input-group">
+            <label for="id_categoria_producto">Categoria:</label>
+            <select required type="number" id="id_categoria_producto" name="id_categoria_producto" class="id_categoria_producto">
+            <option value="0" disabled>- Seleccione -</option>
+                <?php 
+                try {
+                    include 'includes/functions/db_connection.php';
+                    $categorias = $connection->query(" SELECT * FROM categorias ");
+                } catch (Exception $e) {
+                    echo $e->getMessage();
+                }
+                foreach($categorias as $categoria){ 
+                    if ($categoria['id_categoria'] == $producto_detalle['id_categoria_producto']) { ?>
+                        <option value="<?php echo $categoria['id_categoria'] ?>" selected><?php echo $categoria['categoria'] ?></option>
+                    <?php } else {?>
+                        <option value="<?php echo $categoria['id_categoria'] ?>"><?php echo $categoria['categoria'] ?></option>
+                    <?php } ?>
+                    <?php } ?>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="cantidad_inventario">Cantidad en inventario:</label>
+            <input required type="number" id="cantidad_inventario" name="cantidad_inventario" class="cantidad_inventario" value="<?php echo $producto_detalle['cantidad_inventario'] ?>">
+        </div>
+        <div class="input-group">
+            <input type="hidden" value="<?php echo $id_producto ?>" id="id_producto">
+            <input type="submit" class="submit_editar_producto submit" id="submit_editar_producto" value="Editar producto">
+        </div>
+    </form>
+    <h2 class="headeres">Imagenes</h2>
+    <div class="imagenes-productos-admin">
+        <?php
+            if (!$producto_detalle['img_1'] == ""){
+            echo '<img src="../media/' . $producto_detalle['codigo_producto'] . '/' . $producto_detalle['img_1'] . '" alt="">';
+            }
+            if (!$producto_detalle['img_2'] == ""){
+            echo '<img src="../media/' . $producto_detalle['codigo_producto'] . '/' . $producto_detalle['img_2'] . '" alt="">';
+            }
+            if (!$producto_detalle['img_3'] == ""){
+                echo '<img src="../media/' . $producto_detalle['codigo_producto'] . '/' . $producto_detalle['img_3'] . '" alt="">';
+            }
+            if (!$producto_detalle['img_4'] == ""){
+                echo '<img src="../media/' . $producto_detalle['codigo_producto'] . '/' . $producto_detalle['img_4'] . '" alt="">';
+            }
+            if (!$producto_detalle['img_5'] == ""){
+                echo '<img src="../media/' . $producto_detalle['codigo_producto'] . '/' . $producto_detalle['img_5'] . '" alt="">';
+            }
+            if (!$producto_detalle['img_6'] == ""){
+                echo '<img src="../media/' . $producto_detalle['codigo_producto'] . '/' . $producto_detalle['img_6'] . '" alt="">';
+            }
+            if (!$producto_detalle['img_7'] == ""){
+                echo '<img src="../media/' . $producto_detalle['codigo_producto'] . '/' . $producto_detalle['img_7'] . '" alt="">';
+            }
+        ?>
+    </div>
+<?php } ?>
+<!-- SECCION DESTACADOS BAJO CONSTRUCCION -->
+<?php if ($informacionAmostrar === 'destacados') { ?>
     <h1 class="headeres">Seccion en construccion</h1>
     <img class="enConstruccion" src="img/sketch.svg" alt="">
 <?php } ?>
@@ -206,34 +332,34 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
     ?>
     <h1 class="headeres">Personas a contactar</h1>
     <div class="PersonasContactar">
-            <table class="listadoPersonasContactar">
-                <thead>
+        <table class="listadoPersonasContactar">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Nombre</th>
+                    <th>Mensaje</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Forma de contacto</th>
+                    <th>Fecha de contacto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($contactos as $contacto) { ?>
                     <tr>
-                        <th>Status</th>
-                        <th>Nombre</th>
-                        <th>Mensaje</th>
-                        <th>Correo</th>
-                        <th>Telefono</th>
-                        <th>Forma de contacto</th>
-                        <th>Fecha de contacto</th>
-                        <th>Acciones</th>
+                        <td><input type="checkbox" class="checkbox" data-contactoId="<?php echo $contacto['id_contacto'] ?>" <?php if ($contacto['status_contacto'] == 1) { echo 'checked'; } ?>></td>
+                        <td><?php echo $contacto['nombre_contacto']; ?></td>
+                        <td><?php echo $contacto['mensaje_contacto']; ?></td>
+                        <td><?php echo $contacto['email_contacto']; ?></td>
+                        <td><?php echo $contacto['telefono_contacto']; ?></td>
+                        <td><?php echo $contacto['forma_contacto']; ?></td>
+                        <td><?php echo $contacto['fecha_contacto']; ?></td>
+                        <td><a href="#" id="eliminar_contacto" class="eliminar_contacto" data-contactoId="<?php echo $contacto['id_contacto']; ?>"><img src="img/delete.svg" alt=""></a></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($contactos as $contacto) { ?>
-                        <tr>
-                            <td><input type="checkbox" class="checkbox" data-contactoId="<?php echo $contacto['id_contacto'] ?>" <?php if($contacto['status_contacto'] == 1){ echo 'checked'; } ?>></td>
-                            <td><?php echo $contacto['nombre_contacto']; ?></td>
-                            <td><?php echo $contacto['mensaje_contacto']; ?></td>
-                            <td><?php echo $contacto['email_contacto']; ?></td>
-                            <td><?php echo $contacto['telefono_contacto']; ?></td>
-                            <td><?php echo $contacto['forma_contacto']; ?></td>
-                            <td><?php echo $contacto['fecha_contacto']; ?></td>
-                            <td><a href="#" id="eliminar_contacto" class="eliminar_contacto" data-contactoId="<?php echo $contacto['id_contacto']; ?>"><img src="img/delete.svg" alt=""></a></td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
 <?php } ?>
 </main>

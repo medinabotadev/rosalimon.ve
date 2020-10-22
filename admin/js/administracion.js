@@ -7,7 +7,9 @@ function eventListeners() {
 
     const formulario = document.querySelector('#formulario'),
           listadoOrdenes = document.querySelector('.listadoOrdenes'),
-          listadoContactos = document.querySelector('.listadoPersonasContactar');
+          listadoContactos = document.querySelector('.listadoPersonasContactar'),
+          listadoProductos = document.querySelector('.listadoProductos'),
+          editarProducto = document.querySelector('.form-admin');
 
     if (formulario) {
         formulario.addEventListener('submit', validarRegistro);
@@ -17,6 +19,12 @@ function eventListeners() {
     }
     if (listadoContactos) {
         listadoContactos.addEventListener('click', verificar_click_contactos);
+    }
+    if (listadoProductos) {
+        listadoProductos.addEventListener('click', eliminar_producto)
+    }
+    if (editarProducto) {
+        editarProducto.addEventListener('submit', editar_producto);
     }
 }
 
@@ -195,6 +203,96 @@ function cantidadCompletados(){
 }
 // FIN LISTA DE ORDENES
 
+// LISTA DE PRODUCTOS
+function editar_producto(e){
+    e.preventDefault();
+    
+    const codigo_producto = document.querySelector('#codigo_producto').value,
+          nombre_producto = document.querySelector('#nombre_producto').value,
+          descripcion_producto = document.querySelector('#descripcion_producto').value,
+          precio_producto = document.querySelector('#precio_producto').value,
+          id_categoria_producto = document.querySelector('#id_categoria_producto').value,
+          cantidad_inventario = document.querySelector('#cantidad_inventario').value,
+          id_producto = document.querySelector('#id_producto').value;
+    
+    const datos = new FormData;
+    datos.append('codigo_producto', codigo_producto);
+    datos.append('nombre_producto', nombre_producto);
+    datos.append('descripcion_producto', descripcion_producto);
+    datos.append('precio_producto', precio_producto);
+    datos.append('id_categoria_producto', id_categoria_producto);
+    datos.append('cantidad_inventario', cantidad_inventario);
+    datos.append('id_producto', id_producto);
+    datos.append('accion', 'actualizar_producto');
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('POST', 'includes/functions/modelo-admin.php', true);
+
+    xhr.onload = function(){
+        if (this.status == 200) {
+            const respuesta = JSON.parse(xhr.responseText);
+            if (respuesta.respuesta == 'correcto') {
+                Swal.fire(
+                    'Correcto',
+                    'Se ha actualizado el producto',
+                    'success'
+                )
+            }
+        }
+    }
+    xhr.send(datos);
+}
+function eliminar_producto(e){
+    if (e.target.getAttribute('src') == 'img/delete.svg') {
+        const id_producto = e.target.parentElement.getAttribute('data-productoId');
+        Swal.fire({
+            title: 'Esta seguro/a que desea eliminar este producto?',
+            text: "No podra deshacer los cambios!",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, eliminar',
+            cancelButtonText: 'Cancelar'
+          }).then((result) => {
+            Swal.fire({
+                title: 'Seguro?',
+                text: "No podra deshacer los cambios!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, eliminar',
+                cancelButtonText: 'Cancelar'
+              }).then((result) => {
+                const datos= new FormData;
+                datos.append('id_producto', id_producto);
+                datos.append('accion', 'borrar_producto');
+
+                const xhr = new XMLHttpRequest();
+
+                xhr.open('POST', 'includes/functions/modelo-admin.php', true);
+
+                xhr.onload = function(){
+                    if (this.status == 200) {
+                    const respuesta = JSON.parse(xhr.responseText);
+                    if (respuesta.respuesta == 'correcto') {
+                        e.target.parentElement.parentElement.parentElement.remove();
+                        Swal.fire(
+                            'Correcto',
+                            'Se ha eliminado el producto',
+                            'success'
+                        )
+                    }
+                    }
+                }
+                xhr.send(datos)
+              })
+          })
+    }
+}
+// FIN LISTA DE PRODUCTOS
 
 // LISTA DE PERSONAS CONTACTAR
 function verificar_click_contactos(e) {
