@@ -78,6 +78,57 @@ if ($accion == 'actualizar_producto') {
 
     echo json_encode($respuesta);
 }
+if ($accion == 'agregar_producto') {
+    $codigo_producto = $_POST['codigo_producto'];
+    $nombre_producto = $_POST['nombre_producto'];
+    $descripcion_producto = $_POST['descripcion_producto'];
+    $precio_producto = $_POST['precio_producto'];
+    $id_categoria_producto = $_POST['id_categoria_producto'];
+    $cantidad_inventario = $_POST['cantidad_inventario'];
+    $imagen_1 = '';
+    $imagen_2 = '';
+    $imagen_3 = '';
+    $imagen_4 = '';
+    $imagen_5 = '';
+    $imagen_6 = '';
+    $imagen_7 = '';
+
+    $directorio = '../../../media' . '/' . $codigo_producto . '/';
+    if (!is_dir($directorio)) {
+        mkdir($directorio, 755, true);
+    };
+
+    for ($i=1; $i <= count($_FILES); $i++) {
+        if (move_uploaded_file($_FILES['imagen_' . $i]['tmp_name'], $directorio . $_FILES['imagen_' . $i]['name'])) {
+            ${'imagen_' . $i} = $_FILES['imagen_' . $i]['name'];
+        } else {
+            $respuesta = array(
+                'respuesta' => error_get_last()
+            );
+        }
+    }
+
+    try {
+        include 'db_connection.php';
+        $stmt = $connection->prepare(" INSERT INTO `productos`(`codigo_producto`, `nombre_producto`, `descripcion_producto`, `precio_producto`, `id_categoria_producto`, `img_1`, `img_2`, `img_3`, `img_4`, `img_5`, `img_6`, `img_7`, `cantidad_inventario`, `editado`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) ");
+        $stmt->bind_param('sssdisssssssi', $codigo_producto, $nombre_producto, $descripcion_producto, $precio_producto, $id_categoria_producto, $imagen_1, $imagen_2, $imagen_3, $imagen_4, $imagen_5, $imagen_6, $imagen_7, $cantidad_inventario);
+        $stmt->execute();
+        if ($stmt->affected_rows > 0) {
+            $respuesta = array(
+                'respuesta' => 'correcto'
+            );
+        }
+        $stmt->close();
+        $connection->close();
+    }catch(Exception $e){
+        // EN CASO DE QUE HAYA UN ERROR TOMAR LA EXEPCION
+        $respuesta = array(
+            'error' => $e->getMessage()
+        );
+    }
+
+    echo json_encode($respuesta);
+}
 if ($accion == 'borrar_producto') {
     $id_producto = $_POST['id_producto'];
     try {

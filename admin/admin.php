@@ -38,6 +38,7 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
                 <p>Menu</p>
                 <a href="admin.php?mostrar=ordenes" id="#"><img src="img/order.svg" alt=""> Ordenes</a>
                 <a href="admin.php?mostrar=productos" id="#"><img src="img/products.svg" alt=""> Productos</a>
+                <a href="admin.php?mostrar=agregar_producto" id="#"><img src="img/add.svg" alt=""> Agregar Producto</a>
                 <a href="admin.php?mostrar=destacados" id="#"><img src="img/star.svg" alt=""> Destacados</a>
                 <a href="admin.php?mostrar=contacto" id="#"><img src="img/contact.svg" alt=""> Contactar</a>
             </nav>
@@ -241,7 +242,7 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
     }
     ?>
     <h1 class="headeres">Editar informacion de producto</h1>
-    <form class="form-admin" action="">
+    <form class="form-editar" action="">
         <div class="input-group">
             <label for="codigo_producto">Codigo producto:</label>
             <input required type="text" id="codigo_producto" name="codigo_producto" class="codigo_producto" value="<?php echo htmlspecialchars($producto_detalle['codigo_producto']) ?>">
@@ -313,6 +314,85 @@ if ($_SESSION['sesion'] === 'usuario' || empty($_SESSION)) {
             }
         ?>
     </div>
+<?php } ?>
+<!-- SECCION AGREGAR PRODUCTO -->
+<?php if($informacionAmostrar === 'agregar_producto') { ?>
+    <h1 class="headeres">Agregue un producto</h1>
+    <form class="form-agregar" action="">
+        <div class="input-group">
+            <label for="codigo_producto">Codigo producto:</label>
+            <input required type="text" id="codigo_producto" name="codigo_producto" class="codigo_producto">
+        </div>
+        <div class="input-group">
+            <label for="nombre_producto">Nombre producto:</label>
+            <input required type="text" id="nombre_producto" name="nombre_producto" class="nombre_producto">
+        </div>
+        <div class="input-group">
+            <label for="descripcion_producto">Descripcion producto:</label>
+            <input required type="text" id="descripcion_producto" name="descripcion_producto" class="descripcion_producto">
+        </div>
+        <div class="input-group">
+            <label for="precio_producto">Precio producto:</label>
+            <input required type="number" id="precio_producto" name="precio_producto" class="precio_producto">
+        </div>
+        <div class="input-group">
+            <label for="id_categoria_producto">Categoria:</label>
+            <select required type="number" id="id_categoria_producto" name="id_categoria_producto" class="id_categoria_producto">
+            <option value="0" disabled selected>- Seleccione -</option>
+                <?php 
+                try {
+                    include 'includes/functions/db_connection.php';
+                    $categorias = $connection->query(" SELECT * FROM categorias ");
+                } catch (Exception $e) {
+                    echo $e->getMessage();
+                }
+                foreach($categorias as $categoria){ ?>
+                        <option value="<?php echo $categoria['id_categoria'] ?>"><?php echo $categoria['categoria'] ?></option>
+                <?php } ?>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="cantidad_inventario">Cantidad en inventario:</label>
+            <input required type="number" id="cantidad_inventario" name="cantidad_inventario" class="cantidad_inventario">
+        </div>
+        <div class="input-group">
+            <h2 class="headeres">Imagenes</h2>
+            <p class="text-aling-center">*Nota: Solo se permite agregar un maximo de 7 imagenes por producto <br> Se permite un maximo de tamaño de imagenes de 2MB
+                    <br> Para rendimiento y carga rapida del sitio se recomiendan imagenes inferiores a 1MB
+            </p>
+        </div>
+        <div class="input-group">
+            <label for="imagen-1">Imagen 1 (Imagen principal)</label>
+            <input type="file" id="imagen-1" name="imagen-1">
+        </div>
+        <div class="input-group">
+            <label for="imagen-2">Imagen 2</label>
+            <input type="file" id="imagen-2" name="imagen-2">
+        </div>
+        <div class="input-group">
+            <label for="imagen-3">Imagen 3</label>
+            <input type="file" id="imagen-3" name="imagen-3">
+        </div>
+        <div class="input-group">
+            <label for="imagen-4">Imagen 4</label>
+            <input type="file" id="imagen-4" name="imagen-4">
+        </div>
+        <div class="input-group">
+            <label for="imagen-5">Imagen 5</label>
+            <input type="file" id="imagen-5" name="imagen-5">
+        </div>
+        <div class="input-group">
+            <label for="imagen-6">Imagen 6</label>
+            <input type="file" id="imagen-6" name="imagen-6">
+        </div>
+        <div class="input-group">
+            <label for="imagen-7">Imagen 7</label>
+            <input type="file" id="imagen-7" name="imagen-7">
+        </div>
+        <div class="input-group">
+            <input type="submit" class="submit_agregar_producto submit" id="submit_agregar_producto" value="Agregar producto">
+        </div>
+    </form>
 <?php } ?>
 <!-- SECCION DESTACADOS BAJO CONSTRUCCION -->
 <?php if ($informacionAmostrar === 'destacados') { ?>

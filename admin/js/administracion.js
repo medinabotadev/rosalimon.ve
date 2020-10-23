@@ -9,7 +9,8 @@ function eventListeners() {
           listadoOrdenes = document.querySelector('.listadoOrdenes'),
           listadoContactos = document.querySelector('.listadoPersonasContactar'),
           listadoProductos = document.querySelector('.listadoProductos'),
-          editarProducto = document.querySelector('.form-admin');
+          editarProducto = document.querySelector('.form-editar'),
+          agregarProducto = document.querySelector('.form-agregar');
 
     if (formulario) {
         formulario.addEventListener('submit', validarRegistro);
@@ -25,6 +26,9 @@ function eventListeners() {
     }
     if (editarProducto) {
         editarProducto.addEventListener('submit', editar_producto);
+    }
+    if (agregarProducto) {
+        agregarProducto.addEventListener('submit', agregar_producto);
     }
 }
 
@@ -241,6 +245,63 @@ function editar_producto(e){
             }
         }
     }
+    xhr.send(datos);
+}
+function agregar_producto(e){
+    const submit_agregar = document.querySelector('#submit_agregar_producto')
+          submit_agregar.disable = true
+    e.preventDefault();
+    const codigo_producto = document.querySelector('#codigo_producto').value,
+          nombre_producto = document.querySelector('#nombre_producto').value,
+          descripcion_producto = document.querySelector('#descripcion_producto').value,
+          precio_producto = document.querySelector('#precio_producto').value,
+          id_categoria_producto = document.querySelector('#id_categoria_producto').value,
+          cantidad_inventario = document.querySelector('#cantidad_inventario').value,
+          imagen_1 = document.querySelector('#imagen-1').files[0],
+          imagen_2 = document.querySelector('#imagen-2').files[0],
+          imagen_3 = document.querySelector('#imagen-3').files[0],
+          imagen_4 = document.querySelector('#imagen-4').files[0],
+          imagen_5 = document.querySelector('#imagen-5').files[0],
+          imagen_6 = document.querySelector('#imagen-6').files[0],
+          imagen_7 = document.querySelector('#imagen-7').files[0];
+          for (i  = 1; i <= 7;  i++) {
+          }
+
+    const datos = new FormData();
+
+    datos.append('codigo_producto', codigo_producto);
+    datos.append('nombre_producto', nombre_producto);
+    datos.append('descripcion_producto', descripcion_producto);
+    datos.append('precio_producto', precio_producto);
+    datos.append('id_categoria_producto', id_categoria_producto);
+    datos.append('cantidad_inventario', cantidad_inventario);
+    datos.append('imagen_1', imagen_1);
+    datos.append('imagen_2', imagen_2);
+    datos.append('imagen_3', imagen_3);
+    datos.append('imagen_4', imagen_4);
+    datos.append('imagen_5', imagen_5);
+    datos.append('imagen_6', imagen_6);
+    datos.append('imagen_7', imagen_7);
+    datos.append('accion', 'agregar_producto');
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('POST', 'includes/functions/modelo-admin.php', true);
+
+    xhr.onload = function(){
+        if(this.status == 200){
+            const respuesta = JSON.parse(xhr.responseText);
+            submit_agregar.disable = true
+            if (respuesta.respuesta == 'correcto') {
+                Swal.fire(
+                    'Correcto',
+                    'Se ha agregado el producto exitosamente',
+                    'success'
+                )
+            }
+        }
+    }
+
     xhr.send(datos);
 }
 function eliminar_producto(e){

@@ -138,6 +138,9 @@ z-index: 1;
 .d-block{
   display: block;
 }
+.text-aling-center{
+  text-align: center;
+}
 .ocultar{
   display: none;
 }
@@ -1675,34 +1678,34 @@ textarea {
   margin-right: 1.5rem;
 }
 /* SECCION EDITAR PRODUCTO */
-.form-admin,
-.form-admin label,
-.form-admin input,
-.form-admin select
+.form-editar,
+.form-editar label,
+.form-editar input,
+.form-editar select
 {
   all: revert;
 }
-.form-admin{
+.form-editar{
   width: 95%;
   margin: 2rem auto 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
-.form-admin .input-group{
+.form-editar .input-group{
   margin-top: 1rem;
 }
-.form-admin .input-group label,
-.form-admin .input-group select
+.form-editar .input-group label,
+.form-editar .input-group select
 {
   display: block;
 }
-.form-admin .input-group input,
-.form-admin .input-group select{
+.form-editar .input-group input,
+.form-editar .input-group select{
   width: 95%;
   /* height: 2.5rem; */
   padding: 1rem;
 }
-.form-admin .input-group select{
+.form-editar .input-group select{
   /* height: 5rem; */
 }
 .imagenes-productos-admin{
@@ -1717,18 +1720,77 @@ textarea {
   object-fit: contain;
 }
 @media (min-width: 768px){
-  .form-admin .input-group{
+  .form-editar .input-group{
     flex-basis: 50%;
   }
 }
-.form-admin .submit_editar_producto{
+.form-editar .submit_editar_producto{
   /* height: 4rem; */
   color: white;
   background-color: var(--rosaColor);
   border-style: none;
   border-radius: .5rem;
 }
-.form-admin .submit_editar_producto:hover{
+.form-editar .submit_editar_producto:hover{
+  cursor: pointer;
+}
+/* SECCION AGREGAR UN PRODUCTO */
+.form-agregar,
+.form-agregar label,
+.form-agregar input,
+.form-agregar select
+{
+  all: revert;
+}
+.form-agregar{
+  width: 95%;
+  margin: 2rem auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-agregar .input-group{
+  margin-top: 1rem;
+}
+.form-agregar .input-group label,
+.form-agregar .input-group select
+{
+  display: block;
+}
+.form-agregar .input-group input,
+.form-agregar .input-group select{
+  width: 95%;
+  /* height: 2.5rem; */
+  padding: 1rem;
+}
+.form-agregar .input-group select{
+  /* height: 5rem; */
+}
+.imagenes-productos-admin{
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.imagenes-productos-admin img{
+  height: 25rem;
+  width: 25rem;
+  object-fit: contain;
+}
+@media (min-width: 768px){
+  .form-agregar .input-group{
+    flex-basis: 50%;
+  }
+}
+.form-agregar .submit_agregar_producto{
+  /* height: 4rem; */
+  color: white;
+  background-color: var(--rosaColor);
+  border-style: none;
+  border-radius: .5rem;
+}
+.form-agregar .submit_agregar_producto:hover{
   cursor: pointer;
 }
 /* SECCION DE CONTACTO */
