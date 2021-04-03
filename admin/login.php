@@ -65,6 +65,7 @@ if ($sesioncerrada === '1') {
                     ?>
                 </form>
         </div>
+        
     </div>
     <script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="js/administracion.js"></script>
