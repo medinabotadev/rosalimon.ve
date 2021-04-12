@@ -6,4 +6,7 @@ if($connection->connect_error){
 } else {
     // die("Success connection");
 }
+// XD/rZ6%CtYnRmFUZ password
+// id16581831_root user
+// id16581831_rosalimonve name
 ?>
