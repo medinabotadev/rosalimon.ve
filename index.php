@@ -22,30 +22,28 @@
 
     <div class="page">
         <header class="site-header header-inicio">
-            <div class="contenido-header">
                 <div class="barra">
+
                         <div class="menu-movil">
                             <img src="img/open-menu.svg" alt="">
                         </div>
 
-                         <div class="logotipo">
+                        <div class="logotipo centrar">
                             <a href="index.php">
                                 <img src="img/png.png" alt="logotipo">
                             </a>
                         </div>
+
+                </div>
                         <nav class="navegacion grid">
                             <a href="productos.php">Productos</a>
                             <a href="carrito.php" class="botonCarrito">Carrito<img src="img/carrito.png"alt=""></a>
-                        </nav> 
-               
-                </div>
-                 
-                
-                
-               
+                        </nav>
+            <div class="contenido-header">
 
-                <h1>Que darte amor siempre sea una prioridad</h1>
+                        <h1>Que darte amor siempre sea una prioridad</h1>
             </div>
+
         </header>
 
         <section class="seccion nosotros-inicio">
