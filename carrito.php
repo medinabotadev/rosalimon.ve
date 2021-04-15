@@ -89,7 +89,7 @@ include_once 'includes/templates/header.php'
     </main>
         <?php    } else { ?>
                 <div class="carrito-vacio">
-                    <p>Aun no tienes productos en el carrito</p>
+                    <p>No tienes productos en el carrito</p>
                     <p>Mira nuestro <a href="productos.php">catalogo</a> para agregar un producto</p>
                 </div>
         <?php    } ?>

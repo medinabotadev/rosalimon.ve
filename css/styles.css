@@ -317,6 +317,8 @@ width: 45px;
     grid-column: 2 / 4;
     grid-row: 2 / 4;
     justify-items: center;
+    display: grid;
+    
 }
 @media (min-width: 768px) {
   .grid {

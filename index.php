@@ -37,12 +37,6 @@
                             <a href="productos.php">Productos</a>
                             <a href="carrito.php" class="botonCarrito">Carrito<img src="img/carrito.png"alt=""></a>
                         </nav> 
-
-                        
-                        
-                <div class="barra-fija">
-                    
-                </div>
                
                 </div>
                  
@@ -82,9 +76,9 @@
             </div>
         </section>
 
-        <main>
+        <!-- <main>
            
-        </main> 
+        </main>  -->
 
         <section class="contacto-inicio seccion">
             <h2 class="contenedor"><span>Encuentra</span> el producto mas adecuado para ti</h2>
