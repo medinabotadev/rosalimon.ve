@@ -54,7 +54,7 @@
                     <div class="icono">
                         <h3>Envio</h3>
                         <img src="img/shipping.svg" alt="Confianza">
-                        <p>A partir de 60$ el envío te sale gratis</p>
+                        <p>A partir de 75$ el envío te sale gratis</p>
                     </div>
 
                     <div class="icono">

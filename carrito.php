@@ -8,7 +8,7 @@ include_once 'includes/templates/header.php'
     <main class="carritohtml">
         <h1 class="headeres">Tu carrito de compras</h1>
         <div class="recordatorio seccion">
-            <p><img src="img/bell.svg" alt=""> Te recordamos que por compras mayores a 60$ tu envio sale totalmente gratis <img src="img/bell.svg" alt=""></p>
+            <p><img src="img/bell.svg" alt=""> Te recordamos que por compras mayores a 75$ tu envio sale totalmente gratis <img src="img/bell.svg" alt=""></p>
         </div>
         <?php
             include 'includes/functions/db_connection.php';
